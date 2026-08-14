@@ -1,4 +1,6 @@
 import './ui/globals.css'
+import AppHeader from "./ui/header/header";
+import AppFooter from "./ui/footer/footer";
 import { inter } from "./ui/fonts";
 
 
@@ -7,7 +9,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
     >
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <AppHeader />
+        {children}
+        <AppFooter />
+      </body>
     </html>
   );
 }
