@@ -1,5 +1,7 @@
+import AppHeader from "./ui/header/header";
+
 export default function Home() {
   return (
-   <h1>Hello from r-t portfolio website</h1>
+    <AppHeader />
   );
 }
