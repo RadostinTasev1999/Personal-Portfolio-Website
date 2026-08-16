@@ -10,18 +10,18 @@ export default function AppHeader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             id="nav"
-            className="sm:container sm:mx-auto">
+            className="sm:container sm:mx-auto fixed">
             {/* Header */}
-            <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center">
-                <div className="flex justify-between items-center px-4 sm:px-0">
+            <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-stretch">
+                <div className="px-4 sm:px-0">
                     <div>
-                        <Link href="/">
+                        <Link href="#home">
                         <Image
                             src="/Tasev.png"
                             width={200}
                             height={200}
                             alt='logo'
-                            className='w-48 cursor-pointer'
+                            className='ml-20 w-32 h-32 cursor-pointer'
                         />
                         </Link>
                     </div>
@@ -32,20 +32,21 @@ export default function AppHeader() {
                         className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
                         aria-label="About Me"
                     >
-                        <Link href="/about">About Me</Link>
-                    </div>
-                    <div
-                        className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-                        aria-label="Experience"
-                    >
-                        <Link href="/experience">Experience</Link>
+                        <Link href="#about">About Me</Link>
                     </div>
                     <div
                         className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
                         aria-label="Projects"
                     >
-                        <Link href="/projects">Projects</Link>
+                        <Link href="#skills">Skills</Link>
                     </div>
+                    <div
+                        className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+                        aria-label="Experience"
+                    >
+                        <Link href="#timeline-section">Experience</Link>
+                    </div>
+                    
                 </div>
             </div>
             
