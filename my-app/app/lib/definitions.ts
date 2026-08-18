@@ -8,3 +8,4 @@ export type TimelineItems = {
     bullets: string [],
     url: string
 }
+// 
