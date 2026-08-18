@@ -10,9 +10,9 @@ export default function AppHeader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             id="nav"
-            className="sm:container sm:mx-auto fixed">
+            className="sm:container sm:mx-auto fixed top-0 left-0 ">
             {/* Header */}
-            <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-stretch">
+            <div className="z-10 block sm:flex sm:justify-between sm:flex-row w-full h-28">
                 <div className="px-4 sm:px-0">
                     <div>
                         <Link href="#home">
