@@ -9,3 +9,15 @@ export type TimelineItems = {
     url: string
 }
 // 
+
+export type SectionHeaders = {
+    heading: string,
+    header: string,
+    text: string
+}
+
+export type skillTypes = {
+    skillType?: string,
+    skill?: string[]
+}
+
