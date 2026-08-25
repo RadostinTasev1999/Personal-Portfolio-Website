@@ -1,14 +1,18 @@
 import Skills from "./ui/skills/skills";
-import Home from "./ui/home/home";
+import HeroSection from "./ui/hero/hero";
 import About from "./ui/about/about";
 import Experience from './ui/experience/experience'
 
+
+
 export default function Page() {
+
+
   return (
     <>
     <div className="container mx-auto py-30">
-    {/* Home section */}
-    <Home />
+    {/* HeroSection */}
+    <HeroSection />
     {/* About */}
     <About />
     {/* Skills section */}
