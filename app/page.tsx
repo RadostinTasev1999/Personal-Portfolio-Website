@@ -10,7 +10,7 @@ export default function Page() {
 
   return (
     <>
-    <div className="container mx-auto py-30">
+    <div className="container mx-auto py-10">
     {/* HeroSection */}
     <HeroSection />
     {/* About */}
