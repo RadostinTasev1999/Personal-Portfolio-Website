@@ -4,7 +4,9 @@ export default function SkillsCategory({
     skill,
 }: skillTypes) {
 
-// { skillType: ['JavaScript','TypeScript','HTML','CSS'] }
+// skillTypes = { skill: string[] }
+
+// skill = ['JavaScript','TypeScript','HTML','CSS']
     
     return (
         <>  
