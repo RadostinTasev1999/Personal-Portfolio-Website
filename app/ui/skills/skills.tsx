@@ -19,7 +19,7 @@ export default function Skills(){
 			animate={{ opacity: 1 }}
 			transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
             id="skills"
-            className='py-20' // padding top/bottom
+            className='py-20 px-6' // padding top/bottom
             >
                 {/* // horizontally centered  maximum width horizontal padding */}
             <div id='skills-section-inner' className='mx-auto max-w-6xl px-6'> 
@@ -27,7 +27,7 @@ export default function Skills(){
                 <SectionHeader heading={heading} header={header} text={text} />
                 {/* Skills layout */}
                 <div id="skills-layout" className='grid lg:grid-cols-1'>
-
+                    {/* ["languages","frameworks","tools"] */}
                     {
                         skillTypes.map((skill,index) => (
                             <SkillsCard key={index} skillType={skill} />
