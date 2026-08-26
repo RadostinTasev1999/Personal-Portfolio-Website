@@ -6,6 +6,13 @@ export default function SkillsCard({
     skillType
 }: skillTypes) {
 
+    /*
+        skills = {
+    languages: ['JavaScript','TypeScript','HTML','CSS'],
+    frameworks: ['React', 'Vite','Angular','Next.js'],
+    tools: ['Git','GitHub','GitHub Actions','Jenkins']
+}
+    */
     
     let skillsArr;
 
