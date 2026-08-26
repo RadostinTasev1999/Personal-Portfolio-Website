@@ -15,7 +15,7 @@ export default function About() {
                 transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
     
                 id="about"
-                className='py-20' // padding top/bottom
+                className='py-20 max-w-7xl mx-auto px-6' // padding top/bottom
                 >
         <SectionHeader heading={heading} header={header} text={text} />
         <div id="about" className="relative bg-white overflow-hidden mt-16 ">
