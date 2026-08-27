@@ -8,13 +8,13 @@ export default function SectionHeader({
     return (
         <>
             <div id="section-header" className='mb-12 text-center'>
-                <div className='mb-4 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-cyan-400'>
+                <div className='mb-4 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-blue-500'>
                     {/* inline-flex items-center gap-2 -> this class places Skills horizontally */}
-                    <span className='inline-block h-px w-5 bg-cyan-400' />
+                    <span className='inline-block h-px w-5 bg-blue-500' />
                     <h1 className="text-lg">
                       {heading}
                     </h1>
-                    <span className='inline-block h-px w-5 bg-cyan-400' />
+                    <span className='inline-block h-px w-5 bg-blue-500' />
                 </div>
                 <h2 className="section-heading font-bold text-2xl">
                     {header}
