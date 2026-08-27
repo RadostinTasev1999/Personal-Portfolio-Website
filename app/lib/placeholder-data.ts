@@ -23,3 +23,10 @@ export const skills = {
 }
 
 export const skillTypes = ["languages","frameworks","tools"]
+
+export const statistics = [
+  { name: 'GitHub contributions since 2025', stat: "755"},
+  { name: 'Contributions to GitHub repositories' , stat: '54'},
+  { name: 'Full Stack project', stat: '1'},
+  { name: 'Project shipped', stat:'1'}
+]
