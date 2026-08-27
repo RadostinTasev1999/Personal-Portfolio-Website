@@ -14,7 +14,7 @@ export default function SkillsCategory({
                 {
                    skill && skill.map((el,i) => (
                         <>
-                            <span key={i + 1} className='rounded-full border border-slate-700 bg-slate-900 px-3 py-1.5 text-sm text-slate-300'>
+                            <span key={i + 1} className='border border-gray-300 rounded-full shadow-sm bg-slate-50 px-3 py-1.5 text-sm text-slate-600 hover:border-indigo-600'>
                                 {el}
                             </span>
                         </>
