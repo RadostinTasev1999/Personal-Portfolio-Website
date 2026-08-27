@@ -21,3 +21,8 @@ export type skillTypes = {
     skill?: string[]
 }
 
+export type Statistics = {
+    name: string,
+    stat: string,
+    index: number
+}
