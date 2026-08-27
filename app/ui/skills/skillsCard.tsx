@@ -31,7 +31,7 @@ export default function SkillsCard({
 
     return (
         <>
-            <div id="skills-category" className='mb-8 p-4 border-2 border-solid rounded-xl bg-sky-100/50'>
+            <div id="skills-category" className='mb-8 p-4 border border-gray-300 rounded-xl bg-slate-100 shadow-md'>
                 <div id="skill-category-header" className='mb-3 flex items-center gap-3'>
                     <span className='h-2 w-2 rounded-full bg-indigo-500' />
                     <span className='font-mono text-sm font-semibold text-indigo-500 uppercase'>
