@@ -1,5 +1,7 @@
 import * as motion from "motion/react-client";
 import Image from 'next/image'
+import { statistics } from "@/app/lib/placeholder-data";
+import StatItem from "./stat-item";
 
 export default function HeroSection() {
 
@@ -105,26 +107,13 @@ export default function HeroSection() {
 
               <div id="hero-stats" className="transform-none flex flex-row flex-nowrap mt-6 border border-gray-300 rounded-xl p-6 gap-3 bg-slate-200">
                 {/* stat-item1 */}
-                    <div id="stat-item" className="flex flex-col gap-4 flex-1 items-center">
-                      <strong className="text-3xl/1 font-extrabold bg-clip-text tracking-[0.03em] ">
-                        <span className="text-sm text-blue-500 font-medium">3 +</span>
-                      </strong>
-                      <span className="text-sm text-slate-600 font-medium">Years in Software Development</span>
-                    </div>
-                {/* stat-item2 */}
-                <div id="stat-item" className="flex flex-col gap-4 flex-1 items-center border-l border-gray-400">
-                      <strong className="text-3xl/1 font-extrabold bg-clip-text tracking-[0.03em] ">
-                        <span className="text-sm text-blue-500 font-medium">3 +</span>
-                      </strong>
-                      <span className="text-sm text-slate-600 font-medium">Years in Software Development</span>
-                    </div>
-                {/* stat-item3 */}
-                <div id="stat-item" className="flex flex-col gap-4 flex-1 items-center border-l border-gray-400">
-                      <strong className="text-3xl/1 font-extrabold bg-clip-text tracking-[0.03em] ">
-                        <span className="text-sm text-blue-500 font-medium">3 +</span>
-                      </strong>
-                      <span className="text-sm text-slate-600 font-medium">Years in Software Development</span>
-                    </div>
+                {
+                  statistics.map((el,i) => (
+                    <StatItem key={i} name={el.name} stat={el.stat} index={i} />
+                  ))
+                }
+                    
+                
               </div>
             </motion.section>
     )
