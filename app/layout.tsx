@@ -12,7 +12,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className={`${inter.className} antialiased`}>
         <AppHeader />
-        {children}
+          <main className="min-h-screen bg-[url(/background2.png)] bg-cover bg-center bg-fixed">
+            {children}
+          </main>
         <AppFooter />
       </body>
     </html>
