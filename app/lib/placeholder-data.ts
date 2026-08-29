@@ -13,6 +13,11 @@ export const sectionHeadings = {
     heading: 'Education & Experience',
     header: 'Learning, building, and growing along the way',
     text: 'An overview of my professional and educational experience'
+  },
+  contact: {
+    heading: 'Contact Me',
+    header: 'Lets Get In Touch',
+    text: 'Lets discuss your project idea'
   }
 }
 
