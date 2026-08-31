@@ -6,6 +6,8 @@ import Link from "next/link";
 import SectionHeader from '../section-header/sectionHeader'
 import {sectionHeadings} from '@/app/lib/placeholder-data'
 import { SectionHeaders } from "@/app/lib/definitions";
+import ValueCard from "./valueCard";
+import { valueCards } from "@/app/lib/placeholder-data";
 
 export default function About() {
 
@@ -39,26 +41,12 @@ export default function About() {
                             </div>
                             <div id="about-values" className="box-border grid gap-[16px] grid-cols-[356.5px]">
                                 {/* Value card */}
-                                <div id="about-value-card" className="box-border block py-[20px] px-[20px] border border-gray-300 rounded-lg bg-slate-50 hover:bg-slate-200">
-                                    <h4 className="text-[14.08px] font-[700] tracking-[0.1408px]">Collaborative</h4>
-                                    <p className="text-[13.12px] leading-[20.932px]">
-                                        Team player.
-                                    </p>
-                                </div>
-                                {/* Value card */}
-                                <div id="about-value-card" className="box-border block py-[20px] px-[20px] border border-gray-300 rounded-lg bg-slate-50 hover:bg-slate-200">
-                                    <h4 className="text-[14.08px] font-[700] tracking-[0.1408px]">Collaborative</h4>
-                                    <p className="text-[13.12px] leading-[20.932px]">
-                                        Team player.
-                                    </p>
-                                </div>
-                                {/* Value Card */}
-                                <div id="about-value-card" className="box-border block py-[20px] px-[20px] border border-gray-300 rounded-lg bg-slate-50 hover:bg-slate-200">
-                                    <h4 className="text-[14.08px] font-[700] tracking-[0.1408px]">Collaborative</h4>
-                                    <p className="text-[13.12px] leading-[20.932px]">
-                                        Team player.
-                                    </p>
-                                </div>
+                                {
+                                    valueCards.map((value) => (
+                                        <ValueCard key={value.id} heading={value.heading} text={value.text} />
+                                    ))
+                                }
+                               
                             </div>
                             <div id="buttons" className="flex flex-wrap gap-[16px] items-center">
                                 {/* Download Resume */}
@@ -72,7 +60,7 @@ export default function About() {
                                 </Link>
                                 
                                 {/* Contact Form */}
-                                <Link href="" className="shadow-lg text-sky-500 py-[13.6px] px-[28px] text-[15.2px] border border-gray-300 rounded-[10px] font-semibold tracking-[0.16px] hover:border-sky-500">
+                                <Link href="/#contact-section" className="shadow-lg text-sky-500 py-[13.6px] px-[28px] text-[15.2px] border border-gray-300 rounded-[10px] font-semibold tracking-[0.16px] hover:border-sky-500">
                                     Contact me
                                 </Link>
                             </div>
