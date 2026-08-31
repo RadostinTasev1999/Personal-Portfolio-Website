@@ -27,17 +27,11 @@ export default function Skills(){
                 <SectionHeader heading={heading} header={header} text={text} />
                 {/* Skills layout */}
                 <div id="skills-layout" className='grid lg:grid-cols-1'>
-                    {/* ["languages","frameworks","tools"] */}
                     {
-                        skillTypes.map((skill,index) => (
-                            <SkillsCard key={index} skillType={skill} />
+                        skillTypes.map((type) => (
+                            <SkillsCard key={type.id} skillType={type.skillType} skills={type.skills} />
                         ))
                     }
-                    {/* Languages skills */}
-                        
-                    {/* Framework skills */}
-                    
-                    {/* Tools and Platforms */}
                     
                 </div>
             </div>
