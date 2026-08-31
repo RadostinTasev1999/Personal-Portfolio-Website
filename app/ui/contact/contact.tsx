@@ -1,4 +1,5 @@
 "use client"
+import * as motion from "motion/react-client";
 import ContactForm from "./contactForm"
 import SectionHeader from "../section-header/sectionHeader"
 import { useState } from "react"
@@ -129,7 +130,13 @@ export default function Contact(){
 
     return (
         // -> Main Section container
-        <section id="contact-section" className="py-20 px-6">
+        <motion.section 
+            id="contact-section" 
+            className="py-20 px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
+            >
             <SectionHeader heading={heading} header={header} text={text} />
             <div id="container" className="w-[50vw] my-[50px] mx-auto border p-4 border-gray-300 bg-slate-50 rounded-lg shadow-md">
                 <h2 className="text-center my-[30px] text-sky-500 text-[26px] font-semibold">Contact me</h2>
@@ -157,6 +164,6 @@ export default function Contact(){
                     valid={valid}
                 />
             </div>
-        </section>
+        </motion.section>
     )
 }
