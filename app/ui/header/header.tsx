@@ -1,7 +1,9 @@
 // import montserrat from '../fonts'
+import {navigationLinks} from '@/app/lib/placeholder-data'
 import Link from 'next/link';
+import NavLinks from './navLinks';
 import * as motion from "motion/react-client";
-import Image from 'next/image';
+
 
 export default function AppHeader() {
 
@@ -22,18 +24,11 @@ export default function AppHeader() {
                 </button>
                 {/* Navigation links */}
                 <ul id="nav-links" className='flex flex-row gap-5'>
-                    <li>
-                        <Link href="/#hero-section">Home</Link>
-                    </li>
-                    <li>
-                        <Link href="/#about">About</Link>
-                    </li>
-                    <li>
-                        <Link href="/#skills">Skills</Link>
-                    </li>
-                    <li>
-                        <Link href="/#timeline-section">Experience</Link>
-                    </li>
+                    {
+                        navigationLinks.map((el) => (
+                            <NavLinks key={el.id} name={el.name} link={el.link} />
+                        ))
+                    }
                 </ul>
             </div>
         </nav>
