@@ -1,33 +1,12 @@
 import SkillsCategory from "./skillsCategory"
-import { skillTypes } from "@/app/lib/definitions"
+import { SkillTypes } from "@/app/lib/definitions"
 import { skills } from "@/app/lib/placeholder-data"
 
 export default function SkillsCard({
-    skillType
-}: skillTypes) {
+    skillType,
+    skills
+}: SkillTypes) {
 
-    /*
-        skills = {
-    languages: ['JavaScript','TypeScript','HTML','CSS'],
-    frameworks: ['React', 'Vite','Angular','Next.js'],
-    tools: ['Git','GitHub','GitHub Actions','Jenkins']
-}
-    */
-    
-    let skillsArr;
-
-    switch (skillType) {
-
-        case "languages":
-            skillsArr = skills.languages; // ['JavaScript','TypeScript','HTML','CSS']
-            break;
-        case "frameworks":
-            skillsArr = skills.frameworks
-            break;
-        case "tools":
-            skillsArr = skills.tools
-            break;
-    }
 
     return (
         <>
@@ -38,7 +17,16 @@ export default function SkillsCard({
                         {skillType}
                     </span>
                 </div>
-                <SkillsCategory skill={skillsArr} />
+                {/* Skill pills */}
+                <div id="skill-pils" className='flex flex-wrap gap-2'>
+
+                   {
+                        skills && skills.map((skill) => (
+                            <SkillsCategory key={skill.id} skill={skill.name} />
+                        ))
+                   }
+
+                </div>
             </div>
         </>
     )
