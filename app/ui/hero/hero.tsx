@@ -1,5 +1,6 @@
 import * as motion from "motion/react-client";
 import Image from 'next/image'
+import Link from "next/link";
 import { statistics } from "@/app/lib/placeholder-data";
 import StatItem from "./stat-item";
 
@@ -84,7 +85,7 @@ export default function HeroSection() {
 
                   <div id="hero-cta" className="flex flex-row gap-4 mt-4">
                     <button id="btn-primary" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">View Projects</button>
-                    <button id="btn-outline" className="hover:bg-sky-200 text-black font-bold py-2 px-4 rounded-full border border-blue-500">Get in Touch</button>
+                    <Link href="/#contact-section" id="btn-outline" className="hover:bg-sky-200 text-black font-bold py-2 px-4 rounded-full border border-blue-500">Get in Touch</Link>
                   </div>
 
                 </div>
