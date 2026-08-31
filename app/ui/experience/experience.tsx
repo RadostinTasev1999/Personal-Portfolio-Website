@@ -1,44 +1,13 @@
 import * as motion from 'motion/react-client'
 import TimelineItem from './timelineItem'
 import {TimelineItems} from '../../lib/definitions'
+import {timelineItems} from '@/app/lib/placeholder-data'
 import { sectionHeadings } from '@/app/lib/placeholder-data'
 import { SectionHeaders } from '../../lib/definitions'
 import SectionHeader from '../section-header/sectionHeader'
 
 export default function Experience() {
 
-    const timelineItems : TimelineItems[] = [
-        {
-            year: '2023 - 2026',
-            position: 'Front-End Developer with JavaScript',
-            company: 'Software University',
-            bullets: [
-                'Computer Networking Fundamentals',
-                'Programming Basics',
-                'Programming Fundamentals',
-                'JS Advanced',
-                'HTML & CSS',
-                'JS Applications',
-                'JS Back-End',
-                'ReactJS',
-                'Angular',
-                'Software Engineering and DevOps'
-            ],
-            url: 'https://softuni.bg/certificates/details/259367/6159310e'
-        },
-        {
-            year: '2024 - 2026',
-            position: 'Computer analyst software support - Microsoft Office 365',
-            company: 'Concentrix',
-            bullets: [
-                'Delivered L1 Technical Support for Microsoft Teams incidents',
-                'Collaborated with engineering teams to report software bugs and advocate for product enhancements.',
-                'Utilized debugging tools (e.g., Fiddler, WireShark, Devtools) to perform root cause analysis and identify technical solutions.',
-                'Authored technical documentation to standardize troubleshooting procedures and assist in knowledge sharing across teams'
-            ],
-            url: ''
-        }
-    ]
 
     const { heading,header,text }: SectionHeaders = sectionHeadings.experience
 
@@ -54,7 +23,19 @@ export default function Experience() {
                 <SectionHeader heading={heading} header={header} text={text} />
                 <div id="timeline" className="relative">
                     {/* Timeline item */}
-                    <TimelineItem timelineItems={timelineItems}/>
+                    {
+                        timelineItems.map((item) => (
+                            <TimelineItem 
+                                key={item.id} 
+                                id={item.id}
+                                year={item.year}
+                                position={item.position}
+                                company={item.company}
+                                bullets={item.bullets}
+                                url={item.url}
+                                />
+                        ))
+                    }
                     
                 </div>
 
