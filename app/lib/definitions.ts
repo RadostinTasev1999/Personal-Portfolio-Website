@@ -18,10 +18,16 @@ export type SectionHeaders = {
     text: string
 }
 
-export type skillTypes = {
+export type SkillTypes = {
     skillType?: string,
-    skill?: string[]
+    skills?: SkillSet,
+    skill?: string
 }
+
+type SkillSet = {
+    id: number,
+    name: string
+}[]
 
 export type Statistics = {
     name: string,
@@ -47,3 +53,31 @@ export type ContactFormData = {
         messageError: string
     }
 }
+
+export type NavigationLinks = {
+    name: string,
+    link: string
+}
+
+export type ValueCards = {
+    heading: string,
+    text: string
+}
+
+export type TimeLineItems = {
+    id: number,
+    year: string,
+    position: string,
+    company: string,
+    bullets: Bullets,
+    url: string
+}
+
+export type BulletText = {
+    text: string
+}
+
+type Bullets = {
+    id: number,
+    name: string
+}[];
