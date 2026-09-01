@@ -18,6 +18,11 @@ export const sectionHeadings = {
     heading: 'Contact Me',
     header: 'Lets Get In Touch',
     text: 'Lets discuss your project idea'
+  },
+  resume: {
+    heading:'Resume',
+    header:'',
+    text: ''
   }
 }
 
@@ -122,9 +127,14 @@ export const navigationLinks = [
     id: 4
   },
   {
+    name: 'Resume',
+    link: '/#resume-section',
+    id: 5
+  },
+  {
     name: 'Contact',
     link: '/#contact-section',
-    id: 5
+    id: 6
   }
 ]
 
