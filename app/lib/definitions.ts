@@ -14,8 +14,8 @@ export type TimelineItems = {
 
 export type SectionHeaders = {
     heading: string,
-    header: string,
-    text: string
+    header?: string,
+    text?: string
 }
 
 export type SkillTypes = {
