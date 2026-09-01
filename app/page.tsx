@@ -3,7 +3,7 @@ import HeroSection from "./ui/hero/hero";
 import About from "./ui/about/about";
 import Experience from './ui/experience/experience'
 import Contact from "./ui/contact/contact";
-
+import Resume from "./ui/resume/resume";
 
 export default function Page() {
 
@@ -21,6 +21,8 @@ export default function Page() {
         {/* Experience section */}
         <Experience />
 
+        {/* Resume section */}
+        <Resume />
         {/* Contact Form - client component */}
         <Contact />
 
