@@ -9,7 +9,7 @@ export default function NavLinks({
     return (
         <>
         <li>
-            <Link href={link}>{name}</Link>
+            <Link href={link} className='text-[14.4px] py-[6px] px-[13.6px] rounded-[8px] hover:bg-gray-100 hover:shadow-md'>{name}</Link>
         </li>
         </>
     )
