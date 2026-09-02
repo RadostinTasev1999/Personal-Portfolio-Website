@@ -2,7 +2,13 @@ import { section } from "motion/react-client";
 import * as motion from "motion/react-client";
 import SectionHeader from "../section-header/sectionHeader";
 import {sectionHeadings} from '@/app/lib/placeholder-data' 
+import { resumeTags } from "@/app/lib/placeholder-data";
+import { resumeHighlights } from "@/app/lib/placeholder-data";
+
+import ResumeTags from './resumeTags'
 import Link from "next/link";
+import ResumeNote from './resumeNote'
+import ResumeHighlight from './resumeHighlight'
 
 export default function Resume() {
 
@@ -40,9 +46,12 @@ export default function Resume() {
                         </p>
                         {/* Technology tags */}
                         <div id="resume-tags" className="flex flex-wrap gap-[8px]">
-                            <span className="border-[1px] solid text-[12.8px] font-semibold py-[5.6px] px-[13.6px] rounded-[999px] bg-slate-50 border-gray-300 shadow-md hover:border-sky-500">React 19</span>
-                            <span className="border-[1px] solid text-[12.8px] font-semibold py-[5.6px] px-[13.6px] rounded-[999px] bg-slate-50 border-gray-300 shadow-md hover:border-sky-500">React 19</span>
-                            <span className="border-[1px] solid text-[12.8px] font-semibold py-[5.6px] px-[13.6px] rounded-[999px] bg-slate-50 border-gray-300 shadow-md hover:border-sky-500">React 19</span>
+                            
+                            {
+                                resumeTags.map((el) => (
+                                    <ResumeTags key={el.id} tag={el.tag} />
+                                ))
+                            }
                             
                         </div>
                         {/* Buttons */}
@@ -57,39 +66,19 @@ export default function Resume() {
                         {/* className="shadow-lg text-sky-500 py-[13.6px] px-[28px] text-[15.2px] border border-gray-300 rounded-[10px] font-semibold tracking-[0.16px] hover:border-sky-500" */}
                         </div>
                         {/* Availability note / Status message */}
-                        <div className="italic text-gray-500 flex gap-[5px]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                            </svg>
-
-                            <p className="font-semibold">I am open to full time roles and freelance projects</p>
-                        </div>
+                        <ResumeNote />
                     </div>
 
                     {/* Right side of card */}
                     <div id="resume-right" className="flex flex-col gap-[20px] relative z-[1] shrink-0">
-                        <div id="resume-highlight" className="border-[1px] border-gray-300 bg-slate-200 shadow-md rounded-[12px] py-[20px] px-[24px] hover:border-sky-500">
-                            {/* Heading */}
-                            <h3 className="font-bold mb-[12px]">What I focus on</h3>
-                            {/* list */}
-                            <ul className="flex flex-col list-none gap-[6.4px] list-outside">
-                                <li className="list-item text-[14.4px] leading-[22.5px] pl-[16px] relative before:content-['·'] before:absolute before:left-0 before:font-bold before:text-blue-500 before:text-[25px]">Build responsive UI with TailwindCss and HeadlessUI</li>
-                                <li className="list-item text-[14.4px] leading-[22.5px] pl-[16px] relative before:content-['·'] before:absolute before:left-0 before:font-bold before:text-blue-500 before:text-[25px]">Build responsive UI with TailwindCss and HeadlessUI</li>
-                                <li className="list-item text-[14.4px] leading-[22.5px] pl-[16px] relative before:content-['·'] before:absolute before:left-0 before:font-bold before:text-blue-500 before:text-[25px]">Build responsive UI with TailwindCss and HeadlessUI</li>
-                                {/* <li className="list-item text-[14.4px] leading-[22.5px] pl-[16px]">Build responsive UI with TailwindCss and HeadlessUI</li> */}
-                                {/* <li className="list-item text-[14.4px] leading-[22.5px] pl-[16px]">Build responsive UI with TailwindCss and HeadlessUI</li> */}
-                            </ul>
-                        </div>
-                        <div id="resume-highlight" className="border-[1px] border-gray-300 bg-slate-200 shadow-md rounded-[12px] py-[20px] px-[24px] hover:border-sky-500">
-                            {/* Heading */}
-                            <h3 className="font-bold mb-[12px]">Recent achievements</h3>
-                            {/* list */}
-                            <ul className="flex flex-col list-none gap-[6.4px] list-outside">
-                                <li className="list-item text-[14.4px] leading-[22.5px] pl-[16px] relative before:content-['·'] before:absolute before:left-0 before:font-bold before:text-blue-500 before:text-[25px]">Build responsive UI with TailwindCss and HeadlessUI</li>
-                                <li className="list-item text-[14.4px] leading-[22.5px] pl-[16px] relative before:content-['·'] before:absolute before:left-0 before:font-bold before:text-blue-500 before:text-[25px]">Build responsive UI with TailwindCss and HeadlessUI</li>
-                                <li className="list-item text-[14.4px] leading-[22.5px] pl-[16px] relative before:content-['·'] before:absolute before:left-0 before:font-bold before:text-blue-500 before:text-[25px]">Build responsive UI with TailwindCss and HeadlessUI</li>
-                            </ul>
-                        </div>
+                        
+                        {
+                            resumeHighlights.map((el) => (
+                                <ResumeHighlight key={el.id} heading={el.heading} items={el.items}/>
+                            ))
+                        }
+                            
+                        
                     </div>
 
                 </div>
