@@ -2,7 +2,8 @@
 import * as motion from "motion/react-client";
 import ContactForm from "./contactForm"
 import SectionHeader from "../section-header/sectionHeader"
-import { useState } from "react"
+import { ChangeEvent, ChangeEventHandler, useState } from "react"
+import { SubmitEventHandler } from "react";
 import { sectionHeadings } from "@/app/lib/placeholder-data"
 
 export default function Contact(){
@@ -26,18 +27,18 @@ export default function Contact(){
     const [valid, setIsValid] = useState(false)
 
     // -> Callback handlers
-    const submitHandler = (e) => {
+    const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 
-        e.preventDefault()
+        event.preventDefault()
 
-        console.log(e.target)
+        console.log(event.target)
 
     }
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
 
 
-        switch (e.target.name) {
+        switch (e.target?.name) {
             case 'name':
                 setName(e.target.value)
                 break;
@@ -56,13 +57,13 @@ export default function Contact(){
         }
     }
 
-    const buttonUpdate = (newState) => {
+    const buttonUpdate = (newState:boolean) => {
         
         setIsValid(newState)
         
     }
 
-    const handleBlur = (e) => {
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement> | React.FocusEvent<HTMLTextAreaElement>) => {
 
         const nameRegExp = /^[A-Za-z\s]*$/
         const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -137,8 +138,12 @@ export default function Contact(){
             animate={{ opacity: 1 }}
             transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
             >
+            {/* Section Header */}
+
             <SectionHeader heading={heading} header={header} text={text} />
+
             <div id="container" className="w-[50vw] my-[50px] mx-auto border p-4 border-gray-300 bg-slate-50 rounded-lg shadow-md">
+
                 <h2 className="text-center my-[30px] text-sky-500 text-[26px] font-semibold">Contact me</h2>
                 {/* Contact form */}
                 <ContactForm
