@@ -1,7 +1,8 @@
 // -> This file will contain type definitions for data
 // -> type definitions describe the shape of the data, and what data type each property should accept.
 
-import { ChangeEvent } from "react"
+import { ChangeEvent, FC } from "react"
+import { SubmitEventHandler, FocusEventHandler } from "react"
 
 export type TimelineItems = {
     year: string,
@@ -36,9 +37,9 @@ export type Statistics = {
 }
 
 export type ContactFormData = {
-    submitHandler: (e: SubmitEvent) => void,
-    handleChange: (e: ChangeEvent) => void,
-    handleBlur: (e: Event) => void,
+    submitHandler: (event: React.FormEvent<HTMLFormElement>) => void,
+    handleChange: (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void,
+    handleBlur: (event: React.FocusEvent<HTMLInputElement> | React.FocusEvent<HTMLTextAreaElement>) => void,
     valid: boolean,
     state: {
         name: string,
@@ -81,3 +82,27 @@ type Bullets = {
     id: number,
     name: string
 }[];
+
+
+export type Facts = {
+    icon: FC,
+    text: string
+}
+
+export type ResumeTag = {
+    tag: string
+}
+
+export type ResumeHighlightItems = {
+    heading: string,
+    items: item
+}
+
+type item = {
+    id: number,
+    text: string
+}[]
+
+export type ItemText = {
+    text: string
+}
