@@ -12,7 +12,7 @@ export default function AppHeader() {
             <div id="nav-inner" className='max-w-[1200px] mx-auto flex justify-between items-center pt-[20px] pb-[32px]'>
                 {/* Logo */}
                 <span id="nav-logo" className='font-bold tracking-tight'>
-                    <Link href="/#hero-section">
+                    <Link href="/#main-container">
                         {`<rt.dev />`}
                     </Link>
                 </span>
