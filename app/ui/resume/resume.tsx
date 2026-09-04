@@ -1,18 +1,17 @@
-import { section } from "motion/react-client";
 import * as motion from "motion/react-client";
 import SectionHeader from "../section-header/sectionHeader";
-import {sectionHeadings} from '@/app/lib/placeholder-data' 
+import {sectionHeadings} from '@/app/lib/placeholder-data' ;
 import { resumeTags } from "@/app/lib/placeholder-data";
 import { resumeHighlights } from "@/app/lib/placeholder-data";
 
-import ResumeTags from './resumeTags'
+import ResumeTags from './resumeTags';
 import Link from "next/link";
-import ResumeNote from './resumeNote'
-import ResumeHighlight from './resumeHighlight'
+import ResumeNote from './resumeNote';
+import ResumeHighlight from './resumeHighlight';
 
 export default function Resume() {
 
-    const {heading, header, text} = sectionHeadings.resume
+    const {heading, header, text} = sectionHeadings.resume;
 
     return (
         <motion.section 
@@ -85,5 +84,5 @@ export default function Resume() {
 
             </div>
         </motion.section>
-    )
+    );
 }

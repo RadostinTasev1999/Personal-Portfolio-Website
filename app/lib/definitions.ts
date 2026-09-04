@@ -1,8 +1,7 @@
 // -> This file will contain type definitions for data
 // -> type definitions describe the shape of the data, and what data type each property should accept.
 
-import { ChangeEvent, FC } from "react"
-import { SubmitEventHandler, FocusEventHandler } from "react"
+import { ChangeEvent, FC } from "react";
 
 export type TimelineItems = {
     year: string,
@@ -66,7 +65,7 @@ export type ValueCards = {
 }
 
 export type TimeLineItems = {
-    id: number,
+    id?: number,
     year: string,
     position: string,
     company: string,

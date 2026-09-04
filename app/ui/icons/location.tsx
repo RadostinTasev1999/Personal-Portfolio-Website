@@ -6,5 +6,5 @@ export default function IconLocation() {
             </svg>
 
         </span>
-    )
+    );
 }

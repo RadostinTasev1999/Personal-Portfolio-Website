@@ -8,5 +8,5 @@ export default function ResumeNote() {
 
             <p className="font-semibold">I am open to full time roles and freelance projects</p>
         </div>
-    )
+    );
 }

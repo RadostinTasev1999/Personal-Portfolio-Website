@@ -1,8 +1,8 @@
-import Link from "next/link"
+import Link from "next/link";
 import {
     FiLinkedin,
     FiGithub  
-} from "react-icons/fi"
+} from "react-icons/fi";
 
 import { BiLogoGmail } from "react-icons/bi";
 
@@ -25,7 +25,7 @@ export default function AppFooter(){
              icon: <BiLogoGmail/>
         }
        
-    ]
+    ];
 
 
     return (
@@ -46,6 +46,6 @@ export default function AppFooter(){
 				</div>
 			</div>
 		</footer>
-    )
+    );
 }
 

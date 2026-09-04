@@ -1,15 +1,14 @@
-import * as motion from 'motion/react-client'
-import TimelineItem from './timelineItem'
-import {TimelineItems} from '../../lib/definitions'
-import {timelineItems} from '@/app/lib/placeholder-data'
-import { sectionHeadings } from '@/app/lib/placeholder-data'
-import { SectionHeaders } from '../../lib/definitions'
-import SectionHeader from '../section-header/sectionHeader'
+import * as motion from 'motion/react-client';
+import TimelineItem from './timelineItem';
+import {timelineItems} from '@/app/lib/placeholder-data';
+import { sectionHeadings } from '@/app/lib/placeholder-data';
+import { SectionHeaders } from '../../lib/definitions';
+import SectionHeader from '../section-header/sectionHeader';
 
 export default function Experience() {
 
 
-    const { heading,header,text }: SectionHeaders = sectionHeadings.experience
+    const { heading,header,text }: SectionHeaders = sectionHeadings.experience;
 
     return (
         <motion.section 
@@ -27,7 +26,6 @@ export default function Experience() {
                         timelineItems.map((item) => (
                             <TimelineItem 
                                 key={item.id} 
-                                id={item.id}
                                 year={item.year}
                                 position={item.position}
                                 company={item.company}
@@ -41,5 +39,5 @@ export default function Experience() {
 
             </div>
         </motion.section>
-    )
+    );
 }

@@ -1,9 +1,7 @@
 import * as motion from "motion/react-client";
-import Image from 'next/image'
 import Link from "next/link";
-import StatItem from "./stat-item";
 import Badge from "./badge";
-import JobRoles from './jobRoles'
+import JobRoles from './jobRoles';
 import HeroStatistics from "./statistics";
 
 export default function HeroSection() {
@@ -79,5 +77,5 @@ export default function HeroSection() {
                 <HeroStatistics />
         
             </motion.section>
-    )
+    );
 }

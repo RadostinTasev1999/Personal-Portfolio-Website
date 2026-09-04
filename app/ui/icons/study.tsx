@@ -9,5 +9,5 @@ export default function IconStudent() {
             </svg>
 
         </span>
-    )
+    );
 }

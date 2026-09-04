@@ -1,7 +1,7 @@
 import Skills from "./ui/skills/skills";
 import HeroSection from "./ui/hero/hero";
 import About from "./ui/about/about";
-import Experience from './ui/experience/experience'
+import Experience from './ui/experience/experience';
 import Contact from "./ui/contact/contact";
 import Resume from "./ui/resume/resume";
 

@@ -1,4 +1,4 @@
-import { Statistics } from "@/app/lib/definitions"
+import { Statistics } from "@/app/lib/definitions";
 
 export default function StatItem({
     name, stat, index
@@ -13,5 +13,5 @@ export default function StatItem({
                 <span className="text-sm text-slate-600 font-medium">{name}</span>
             </div>
         </>
-    )
+    );
 }

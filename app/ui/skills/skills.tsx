@@ -1,5 +1,4 @@
-import * as motion from 'motion/react-client'
-import SkillsCategory from './skillsCategory'
+import * as motion from 'motion/react-client';
 import SectionHeader from '../section-header/sectionHeader';
 import { sectionHeadings } from '@/app/lib/placeholder-data';
 import { SectionHeaders } from '@/app/lib/definitions';
@@ -10,7 +9,7 @@ export default function Skills(){
 
    
 
-    const { heading, header, text }: SectionHeaders = sectionHeadings.skills
+    const { heading, header, text }: SectionHeaders = sectionHeadings.skills;
 
     return (
         <>
@@ -38,7 +37,7 @@ export default function Skills(){
 
         </motion.section>
         </>
-    )
+    );
 }
 
 /*

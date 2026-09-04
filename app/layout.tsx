@@ -1,4 +1,4 @@
-import './ui/globals.css'
+import './ui/globals.css';
 import AppHeader from "./ui/header/header";
 import AppFooter from "./ui/footer/footer";
 import { inter } from "./ui/fonts";

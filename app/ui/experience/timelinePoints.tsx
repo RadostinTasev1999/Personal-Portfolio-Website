@@ -1,4 +1,4 @@
-import { BulletText } from "@/app/lib/definitions"
+import { BulletText } from "@/app/lib/definitions";
 
 export default function TimeLinePoints({
     text
@@ -12,5 +12,5 @@ export default function TimeLinePoints({
                 {/* Position Bullet */}
             </li>
         </>
-    )
+    );
 }

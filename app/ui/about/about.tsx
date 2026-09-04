@@ -1,24 +1,22 @@
-'use client'
+'use client';
 
 import * as motion from "motion/react-client";
-import Image from 'next/image'
 import Link from "next/link";
 
-import SectionHeader from '../section-header/sectionHeader'
+import SectionHeader from '../section-header/sectionHeader';
 
-import {sectionHeadings} from '@/app/lib/placeholder-data'
+import {sectionHeadings} from '@/app/lib/placeholder-data';
 import { aboutText } from "@/app/lib/placeholder-data";
 
 import { SectionHeaders } from "@/app/lib/definitions";
 
-import ValueCard from "./valueCard";
 import AboutValues from "./aboutValues";
-import AboutPhoto from './aboutPhoto'
-import AboutFacts from './aboutFacts'
+import AboutPhoto from './aboutPhoto';
+import AboutFacts from './aboutFacts';
 
 export default function About() {
 
-     const { heading, header, text } : SectionHeaders = sectionHeadings.about
+     const { heading, header, text } : SectionHeaders = sectionHeadings.about;
 
     return (
         <>
@@ -78,5 +76,5 @@ export default function About() {
             </motion.section>
         </>
     
-    )
-}
+    );
+};

@@ -29,5 +29,5 @@ export default function JobRoles() {
                 |
             </motion.span>
         </motion.div>
-    )
+    );
 }

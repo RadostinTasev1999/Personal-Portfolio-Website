@@ -1,14 +1,13 @@
-"use client"
+"use client";
 import * as motion from "motion/react-client";
-import ContactForm from "./contactForm"
-import SectionHeader from "../section-header/sectionHeader"
-import { ChangeEvent, ChangeEventHandler, useState } from "react"
-import { SubmitEventHandler } from "react";
-import { sectionHeadings } from "@/app/lib/placeholder-data"
+import ContactForm from "./contactForm";;
+import SectionHeader from "../section-header/sectionHeader";
+import { sectionHeadings } from "@/app/lib/placeholder-data";
+import { useState } from "react";
 
 export default function Contact(){
 
-    const { heading, header, text } =  sectionHeadings.contact
+    const { heading, header, text } =  sectionHeadings.contact;
 
     // -> state to track each field value
     const [name, setName] = useState('');
@@ -24,101 +23,101 @@ export default function Contact(){
 
     // -> state to enable/disable Send button
 
-    const [valid, setIsValid] = useState(false)
+    const [valid, setIsValid] = useState(false);
 
     // -> Callback handlers
     const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 
-        event.preventDefault()
+        event.preventDefault();
 
-        console.log(event.target)
+        console.log(event.target);
 
-    }
+    };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
 
 
         switch (e.target?.name) {
             case 'name':
-                setName(e.target.value)
+                setName(e.target.value);;
                 break;
             case 'email':
-                setEmail(e.target.value)
+                setEmail(e.target.value);;
                 break;
             case 'subject':
-                setSubject(e.target.value)
+                setSubject(e.target.value);;
                 break;
             case 'message':
-                setMesasge(e.target.value)
+                setMesasge(e.target.value);;
                 break;
         
             default:
                 break;
         }
-    }
+    };
 
     const buttonUpdate = (newState:boolean) => {
         
-        setIsValid(newState)
+        setIsValid(newState);
         
-    }
+    };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement> | React.FocusEvent<HTMLTextAreaElement>) => {
 
-        const nameRegExp = /^[A-Za-z\s]*$/
-        const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        const textRegExp = /^[A-Za-z0-9!@#$%^&*()_+=\-[\]{};':"\\|,.<>/? ]{1,150}$/
+        const nameRegExp = /^[A-Za-z\s]*$/;
+        const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const textRegExp = /^[A-Za-z0-9!@#$%^&*()_+=\-[\]{};':"\\|,.<>/? ]{1,150}$/;
 
         switch (e.target.name) {
             case 'name':
 
                 if (!name) {
-                    setNameError('Please enter name')
-                    buttonUpdate(true) // disable send button
+                    setNameError('Please enter name');
+                    buttonUpdate(true); // disable send button
                 }else if (!nameRegExp.test(name)) {
-                    setNameError('Please enter valid name')
-                     buttonUpdate(true)
+                    setNameError('Please enter valid name');
+                     buttonUpdate(true);
                 } else{
-                    setNameError('')
-                    buttonUpdate(false)
+                    setNameError('');
+                    buttonUpdate(false);
                 }
                 // setNameTouched(true)
                 break;
             case 'email':
                 
                 if (!email) {
-                    setEmailError('Please enter email')
-                    buttonUpdate(true)
+                    setEmailError('Please enter email');
+                    buttonUpdate(true);
                 } else if (!emailRegExp.test(email)) {
-                    setEmailError('Please enter valid email')
-                    buttonUpdate(true)
+                    setEmailError('Please enter valid email');
+                    buttonUpdate(true);
                 } else{
-                    setEmailError('')
-                    buttonUpdate(false)
+                    setEmailError('');
+                    buttonUpdate(false);
                 }
                 break;
             case 'subject':
                 if (!subject) {
-                    setSubjectError('Please enter subject')
-                    buttonUpdate(true)
+                    setSubjectError('Please enter subject');
+                    buttonUpdate(true);
                 } else if (!textRegExp.test(subject)) {
-                    setSubjectError('Please enter valid subject')
-                    buttonUpdate(true)
+                    setSubjectError('Please enter valid subject');
+                    buttonUpdate(true);
                 } else{
                     setSubjectError('');
-                    buttonUpdate(false)
+                    buttonUpdate(false);
                 }
                 break;
             case 'message':
                 if (!message) {
-                    setMessageError('Please enter message')
-                    buttonUpdate(true)
+                    setMessageError('Please enter message');
+                    buttonUpdate(true);
                 } else if (!textRegExp.test(message)) {
-                    setMessageError('Please enter valid message')
-                    buttonUpdate(true)
+                    setMessageError('Please enter valid message');
+                    buttonUpdate(true);
                 } else{
-                    setMessageError('')
-                    buttonUpdate(false)
+                    setMessageError('');
+                    buttonUpdate(false);
                 }
                 break;
         
@@ -126,7 +125,7 @@ export default function Contact(){
                 break;
         }
         
-    }
+    };
 
 
     return (
@@ -170,5 +169,5 @@ export default function Contact(){
                 />
             </div>
         </motion.section>
-    )
+    );
 }

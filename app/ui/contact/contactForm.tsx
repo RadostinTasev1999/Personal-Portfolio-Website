@@ -1,7 +1,6 @@
-"use client"
+"use client";
 
-import { h4 } from "motion/react-client"
-import { ContactFormData } from "@/app/lib/definitions"
+import { ContactFormData } from "@/app/lib/definitions";
 
 export default function ContactForm({
     submitHandler,
@@ -122,5 +121,5 @@ export default function ContactForm({
 
                 <button type="submit" disabled={valid} className="w-[150px] my-[30px] mx-[35px] h-[50px] border border-gray-300 rounded-xl bg-sky-400 text-slate-50 shadow-md cursor-pointer font-semibold">Send Message</button>
             </form>
-    )
+    );
 }

@@ -1,4 +1,4 @@
-import { SectionHeaders } from "@/app/lib/definitions"
+import { SectionHeaders } from "@/app/lib/definitions";
 
 export default function SectionHeader({
     heading, header, text
@@ -24,5 +24,5 @@ export default function SectionHeader({
                 </p>
             </div>
         </>
-    )
+    );
 }

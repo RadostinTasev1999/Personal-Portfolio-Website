@@ -1,6 +1,5 @@
-import SkillsCategory from "./skillsCategory"
-import { SkillTypes } from "@/app/lib/definitions"
-import { skills } from "@/app/lib/placeholder-data"
+import SkillsCategory from "./skillsCategory";
+import { SkillTypes } from "@/app/lib/definitions";
 
 export default function SkillsCard({
     skillType,
@@ -29,5 +28,5 @@ export default function SkillsCard({
                 </div>
             </div>
         </>
-    )
+    );
 }

@@ -7,5 +7,5 @@ export default function Badge() {
                 Available for opportunities
             </div>
         </div>
-    )
+    );
 }

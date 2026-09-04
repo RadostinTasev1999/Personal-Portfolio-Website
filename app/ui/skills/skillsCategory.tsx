@@ -1,4 +1,4 @@
-import { SkillTypes } from "@/app/lib/definitions"
+import { SkillTypes } from "@/app/lib/definitions";
 
 export default function SkillsCategory({
     skill,
@@ -14,7 +14,7 @@ export default function SkillsCategory({
                 {skill}
             </span>
         </>
-    )
+    );
 }
 
 /*

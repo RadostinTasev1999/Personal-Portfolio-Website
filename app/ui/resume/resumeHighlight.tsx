@@ -1,5 +1,5 @@
-import { ResumeHighlightItems } from "@/app/lib/definitions"
-import HighlightItem from './highlightItem'
+import { ResumeHighlightItems } from "@/app/lib/definitions";
+import HighlightItem from './highlightItem';
 
 export default function ResumeHighlight({
     heading,
@@ -21,5 +21,5 @@ export default function ResumeHighlight({
                 
             </ul>
         </div>
-    )
+    );
 }
