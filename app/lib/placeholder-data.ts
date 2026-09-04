@@ -1,7 +1,9 @@
-import IconBook from "../ui/icons/learn"
-import IconLocation from "../ui/icons/location"
-import IconStudent from "../ui/icons/study"
-import IconWork from "../ui/icons/work"
+import IconBook from "../ui/icons/learn";
+import IconLocation from "../ui/icons/location";
+import IconStudent from "../ui/icons/study";
+import IconWork from "../ui/icons/work";
+
+export const logo = `<rt.dev />`;
 
 export const sectionHeadings = {
   about: {
@@ -29,13 +31,13 @@ export const sectionHeadings = {
     header:'',
     text: ''
   }
-}
+};
 
 export const skills = {
     languages: ['JavaScript','TypeScript','HTML','CSS'],
     frameworks: ['React', 'Vite','Angular','Next.js'],
     tools: ['Git','GitHub','GitHub Actions','Jenkins']
-}
+};
 
 export const skillTypes = [
   {
@@ -100,7 +102,7 @@ export const skillTypes = [
               }
             ]
   }
-]
+];
 
 
 export const statistics = [
@@ -124,7 +126,7 @@ export const statistics = [
     name: 'Project shipped',
     stat: '1'
   }
-]
+];
 
 export const navigationLinks = [
   {
@@ -157,7 +159,7 @@ export const navigationLinks = [
     link: '/#contact-section',
     id: 6
   }
-]
+];
 
 export const valueCards = [
   {
@@ -180,7 +182,7 @@ export const valueCards = [
     heading: 'Collaborative',
     text: 'Team player.'
   }
-]
+];
 
 export const timelineItems = [
   {
@@ -257,7 +259,7 @@ export const timelineItems = [
     ],
     url: ''
   }
-]
+];
 
 export const aboutFacts = [
   {
@@ -281,7 +283,7 @@ export const aboutFacts = [
     text: 'Passionate continuous learner, seeking for the next challenge'
   },
 
-]
+];
 
 export const aboutText = [
   {
@@ -300,7 +302,7 @@ export const aboutText = [
     id:4,
     text: "I am passionate continuous learner, always tackling new challenges to deepen my understadning in software technologies."
   }
-]
+];
 
 export const resumeTags = [
   {
@@ -319,7 +321,7 @@ export const resumeTags = [
     id: 4,
     tag: 'Angular'
   }
-]
+];
 
 export const resumeHighlights = [
   {
@@ -366,4 +368,4 @@ export const resumeHighlights = [
       }
     ]
   }
-]
+];
