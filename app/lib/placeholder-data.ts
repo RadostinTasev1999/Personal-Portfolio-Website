@@ -30,6 +30,11 @@ export const sectionHeadings = {
     heading:'Resume',
     header:'',
     text: ''
+  },
+  projects: {
+    heading: 'Projects',
+    header: '',
+    text: ''
   }
 };
 
@@ -323,6 +328,56 @@ export const resumeTags = [
   }
 ];
 
+export const name = {
+  firstName: 'Radostin',
+  lastName: 'Tasev'
+};
+
+export const projectCardsData = [
+  {
+    id: 1,
+    img: '/TechDevice.png',
+    title: 'Tech Devices React App',
+    text: 'Enable people to collaborate on Tech topics by discussing various product updates,bugs, fixes etc.',
+    tags : [
+      {
+        id: 1,
+        name:'React'
+      },
+      {
+        id: 2,
+        name:'TaiwlindCss'
+      },
+      {
+        id: 3,
+        name:'Vite'
+      }
+    ],
+    url: 'https://github.com/RadostinTasev1999/React-Project-2025'
+  },
+  {
+    id: 2,
+    img: '/Bridge.jpg',
+    title: 'LifeStyle Forum Angular',
+    text: 'Enable users to share stories and ideas on topics, including Travel, Lifestyle, Technology, Culture and Food.',
+    tags : [
+      {
+        id: 1,
+        name:'Angular'
+      },
+      {
+        id: 2,
+        name:'TypeScript'
+      },
+      {
+        id: 3,
+        name:'Bootstrap'
+      }
+    ],
+    url: 'https://github.com/RadostinTasev1999/Angular-Project-Final-2025'
+  }
+];
+
 export const resumeHighlights = [
   {
     id: 1,
@@ -369,3 +424,5 @@ export const resumeHighlights = [
     ]
   }
 ];
+
+export const biographyText = "I build responsive user interfaces and interactive user experience with React, TypeScript and Next.js."
