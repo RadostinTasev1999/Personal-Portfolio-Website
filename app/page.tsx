@@ -4,6 +4,7 @@ import About from "./ui/about/about";
 import Experience from './ui/experience/experience';
 import Contact from "./ui/contact/contact";
 import Resume from "./ui/resume/resume";
+import Projects from "./ui/projects/projects";
 
 export default function Page() {
 
@@ -20,7 +21,8 @@ export default function Page() {
         <Skills />
         {/* Experience section */}
         <Experience />
-
+        {/* Projects section */}
+        <Projects />
         {/* Resume section */}
         <Resume />
         {/* Contact Form - client component */}
