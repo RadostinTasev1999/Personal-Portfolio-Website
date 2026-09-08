@@ -105,3 +105,40 @@ type item = {
 export type ItemText = {
     text: string
 }
+
+export type ProjectCardData = {
+    imgUrl: string,
+    title: string,
+    text: string,
+    tags: Tags,
+    url: string
+}
+
+type Tags = {
+    id: number,
+    name: string
+}[]
+
+export type Tag = {
+    tag: string
+}
+
+
+export type ImageUrl = {
+    imgUrl: string
+}
+
+export type CardContentData = {
+    tags: Tags,
+    url: string,
+    title: string,
+    text: string
+}
+
+export type BiographyText = {
+    text: string
+}
+
+export type VantaEffect = {
+    destroy: () => void;
+};
