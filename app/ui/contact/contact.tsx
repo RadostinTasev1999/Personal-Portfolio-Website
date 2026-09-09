@@ -141,9 +141,9 @@ export default function Contact(){
 
             <SectionHeader heading={heading} header={header} text={text} />
 
-            <div id="container" className="w-[50vw] my-[50px] mx-auto border p-4 border-gray-300 bg-slate-50 rounded-lg shadow-md">
+            <div id="container" className="flex flex-col w-[35vw] my-[50px] mx-auto border py-[10px] border-gray-300 bg-[#f5f8ff] rounded-2xl shadow-md">
 
-                <h2 className="text-center my-[30px] text-sky-500 text-[26px] font-semibold">Contact me</h2>
+                <h2 className="text-center my-[30px] text-sky-500 text-[26px] font-semibold shrink">Contact me</h2>
                 {/* Contact form */}
                 <ContactForm
                     submitHandler={submitHandler}
