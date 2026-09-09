@@ -7,7 +7,7 @@ export default function ResumeHighlight({
 }: ResumeHighlightItems) {
 
     return (
-        <div id="resume-highlight" className="border-[1px] border-gray-300 bg-slate-200 shadow-md rounded-[12px] py-[20px] px-[24px] hover:border-sky-500">
+        <div id="resume-highlight" className="border-[1px] border-gray-300 bg-slate-100 shadow-md rounded-[12px] py-[20px] px-[24px] hover:border-sky-500">
             {/* Heading */}
             <h3 className="font-bold mb-[12px]">{heading}</h3>
             {/* list */}
