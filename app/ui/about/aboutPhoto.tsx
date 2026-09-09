@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function AboutPhoto() {
 
     return (
-        <div id="about-photo-wrap" className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl shadow-lg hover:shadow-xl">
+        <div id="about-photo-wrap" className="relative mx-auto max-w-md overflow-hidden rounded-2xl shadow-lg hover:shadow-xl">
             <Image
                 src="/IMG_7282.jpg"
                 alt="Profile picture"
