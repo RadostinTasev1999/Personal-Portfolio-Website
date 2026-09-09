@@ -30,10 +30,10 @@ export default function Resume() {
                 </div>
 
                 {/* Resume card */}
-                <div id="resume-card" className="flex gap-[64px] p-[48px] justify-center border-[1px] border-gray-300 rounded-lg bg-gray-100 shadow-lg">
+                <div id="resume-card" className="flex flex-wrap gap-[64px] p-[48px] justify-center border-[1px] border-gray-300 rounded-xl bg-[#f5f8ff] shadow-lg md:flex-nowrap">
 
                     {/* Left side of card */}
-                    <div id="resume-left" className="flex flex-col gap-[24px] relative z-[1] grow-0">
+                    <div id="resume-left" className="flex flex-col gap-[24px] shrink basis-full">
 
                         {/* Heading */}
                         <h2 className="font-bold text-[35.2px] font-[800] tracking-[0.64px] m-0">Download My Resume</h2>
@@ -69,7 +69,7 @@ export default function Resume() {
                     </div>
 
                     {/* Right side of card */}
-                    <div id="resume-right" className="flex flex-col gap-[20px] relative z-[1] shrink-0">
+                    <div id="resume-right" className="flex flex-col gap-[20px] shrink basis-full">
                         
                         {
                             resumeHighlights.map((el) => (
