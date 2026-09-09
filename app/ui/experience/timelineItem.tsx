@@ -18,7 +18,7 @@ export default function TimelineItem({
                     {year}
                     {/* Year */}
                 </div>
-                <div id="timeline-card" className="rounded-xl border border-gray-300 bg-slate-200 p-6 shadow-md">
+                <div id="timeline-card" className="rounded-xl border border-gray-300 bg-[#f5f8ff] p-6 shadow-md">
 
                     <h3 className="text-xl font-semibold text-slate-950">
                         {position}
