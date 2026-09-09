@@ -22,8 +22,8 @@ export default function ContactForm({
 }: ContactFormData){
 
     return (
-        <form onSubmit={submitHandler} className="flex flex-col items-center">
-                <div id="name" className="my-[15px] mx-auto flex flex-col items-center gap-[15px] w-90 height-[40px]">
+        <form onSubmit={submitHandler} className="flex flex-col items-center shrink">
+                <div id="name" className="my-[15px] mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
                     <label htmlFor="name" className="font-sans">
                         Your Name
                     </label>
@@ -47,7 +47,7 @@ export default function ContactForm({
                     }
                          
                 </div>
-                <div id="email" className="my-[15px] mx-auto flex flex-col items-center gap-[15px] w-90 height-[40px]">
+                <div id="email" className="my-[15px] mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
                     <label htmlFor="email" className="font-sans">
                         Your Email
                     </label>
@@ -70,7 +70,7 @@ export default function ContactForm({
                         )
                     }
                 </div>
-                <div id="subject" className="my-[15px] mx-auto flex flex-col items-center gap-[15px] w-90 height-[40px]">
+                <div id="subject" className="my-[15px] mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
                     <label htmlFor="subject" className="font-sans">
                         Subject
                     </label>
@@ -93,7 +93,7 @@ export default function ContactForm({
                         )
                     }
                 </div>
-                <div id="message" className="my-[15px] mx-auto flex flex-col items-center gap-[15px] w-90 height-[40px]">
+                <div id="message" className="my-[15px] mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
                     
                     <label htmlFor="message" className="font-sans">
                         Your Message
