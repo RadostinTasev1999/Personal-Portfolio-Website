@@ -14,7 +14,7 @@ export default function ProjectCard({
 }: ProjectCardData){
 
     return (
-            <div id="project-card" className="flex flex-col content-between gap-[20px] justify-between border border-gray-300 rounded-xl max-w-80 bg-slate-50 shadow-lg">
+            <div id="project-card" className="flex flex-col content-between gap-[20px] justify-between border border-gray-300 rounded-xl max-w-80 bg-[#f5f8ff] shadow-lg">
                 {/* Image */}
                 <ProjectImage imgUrl={imgUrl} />
                 {/* Card content */}
