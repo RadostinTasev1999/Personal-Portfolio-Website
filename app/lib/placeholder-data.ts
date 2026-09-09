@@ -181,11 +181,6 @@ export const valueCards = [
     id:3,
     heading: 'Collaborative',
     text: 'Team player.'
-  },
-  {
-    id:4,
-    heading: 'Collaborative',
-    text: 'Team player.'
   }
 ];
 
