@@ -33,14 +33,14 @@ export default function About() {
                     <SectionHeader heading={heading} header={header} text={text} />
 
                     {/* About Layout */}
-                    <div id="about-layout" className="grid gap-12 lg:grid-cols-2 lg:items-start border border-gray-300 shadow-md rounded-md px-6 py-10 bg-slate-50 ">
+                    <div id="about-layout" className="flex flex-row flex-wrap gap-[60px] border border-gray-300 shadow-md rounded-xl px-6 py-10 bg-[#f5f8ff] md:flex-nowrap">
                         {/* About content */}
-                        <div id="about-content" className="flex flex-col gap-[28px]">
+                        <div id="about-content" className="flex flex-col gap-[28px] shrink basis-full">
                             {/* About Body */}
-                            <div id="about-body" className="block">
+                            <div id="about-body" className="flex flex-col gap-[5px]">
                                 {
                                     aboutText.map((el) => (
-                                        <p key={el.id} className="pb-[10px]">{el.text}</p>
+                                        <p className="max-w-110" key={el.id}>{el.text}</p>
                                     ))
                                 }
                             </div>
@@ -59,13 +59,13 @@ export default function About() {
                                 </Link>
                                 
                                 {/* Contact Form */}
-                                <Link href="/#contact-section" className="shadow-lg text-sky-500 py-[13.6px] px-[28px] text-[15.2px] border border-gray-300 rounded-[10px] font-semibold tracking-[0.16px] hover:border-sky-500">
+                                <Link href="/#contact-section" className="shadow-lg text-sky-500 py-[13.6px] px-[28px] bg-[#edf2ff] text-[15.2px] border border-gray-300 rounded-[10px] font-semibold tracking-[0.16px] hover:border-sky-500">
                                     Contact me
                                 </Link>
                             </div>
                         </div>
                         {/* About Photo */}
-                        <div id="about-photo-col" className="flex flex-col gap-[20px]">
+                        <div id="about-photo-col" className="flex flex-col gap-[28px] shrink basis-full">
                             {/* Photo */}
                             <AboutPhoto />
                             {/* Quick Facts */}
