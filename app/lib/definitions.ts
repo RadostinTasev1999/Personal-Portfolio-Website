@@ -142,3 +142,16 @@ export type BiographyText = {
 export type VantaEffect = {
     destroy: () => void;
 };
+
+export type ToggleMenu = {
+    toggleMenu: () => void;
+}
+
+export type NavLinks = {
+    navLinks: Links
+}
+type Links = {
+    name: string,
+    link: string,
+    id: number
+}[]
