@@ -39,9 +39,7 @@ export default function Resume() {
                         <h2 className="font-bold text-[35.2px] font-[800] tracking-[0.64px] m-0">Download My Resume</h2>
                         {/* Description */}
                         <p id="resume-note" className="text-[15.2px] leading-[1.7]">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis consequatur voluptates delectus excepturi labore nesciunt alias, facere libero saepe iste inventore molestias perferendis, atque et doloribus voluptate, eveniet debitis?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia hic officia dolore et optio sunt veritatis adipisci porro? Cumque enim quisquam blanditiis velit cum corporis voluptas, itaque et delectus sed.
-
+                            Learn more about my background, including Skills, Experience and Projects.
                         </p>
                         {/* Technology tags */}
                         <div id="resume-tags" className="flex flex-wrap gap-[8px]">
@@ -73,7 +71,7 @@ export default function Resume() {
                         
                         {
                             resumeHighlights.map((el) => (
-                                <ResumeHighlight key={el.id} heading={el.heading} items={el.items}/>
+                                <ResumeHighlight key={el.id} heading={el.heading} items={el.items} id={el.id}/>
                             ))
                         }
                             
