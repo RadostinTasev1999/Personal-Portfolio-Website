@@ -21,7 +21,7 @@ export default function HeroSection() {
     return (
             <motion.section
               id="hero-section" 
-              className="max-w-7xl mx-auto px-6 py-10 bg-[#f5f8ff] shadow-md border-gray-300 rounded-xl mt-12"
+              className="max-w-7xl mx-auto px-6 py-4 bg-[#f5f8ff] shadow-md border-gray-300 rounded-xl mt-12"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ ease: 'easeInOut', duration: 0.5, delay: 0.1 }}
