@@ -3,7 +3,8 @@ import HighlightItem from './highlightItem';
 
 export default function ResumeHighlight({
     heading,
-    items
+    items,
+    id
 }: ResumeHighlightItems) {
 
     return (
@@ -14,7 +15,7 @@ export default function ResumeHighlight({
             <ul className="flex flex-col list-none gap-[6.4px] list-outside">
                 {
                     items.map((el) => (
-                        <HighlightItem key={el.id} text={el.text} />
+                        <HighlightItem key={el.id} text={el.text} id={id} url={el.url}/>
                     ))
                 }
                 
