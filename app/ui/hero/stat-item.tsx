@@ -6,12 +6,13 @@ export default function StatItem({
 
     return (
         <>
-            <div id="stat-item" className={`flex flex-col gap-4 flex-1 items-center ${index > 0 ? "border-l border-gray-400" : "" } `}>
-                <strong className="text-3xl/1 font-extrabold bg-clip-text tracking-[0.03em] ">
+            <div id="stat-item" className={`flex flex-col flex-1 gap-[5px] items-center border rounded-3xl border-sky-500 shadow-md bg p-[10px] bg-[#f5f8ff]`}>
+                <strong className="text-3xl/1 font-extrabold bg-clip-text tracking-[0.03em] basis-full">
                     <span className="text-sm text-blue-500 font-medium">{stat}</span>
                 </strong>
-                <span className="text-sm text-slate-600 font-medium">{name}</span>
+                <span className="text-sm text-slate-600 font-medium basis-full">{name}</span>
             </div>
         </>
     );
 }
+// ${index > 0 ? "md:border-l border-gray-400 pl-[15px]" : "" } 
