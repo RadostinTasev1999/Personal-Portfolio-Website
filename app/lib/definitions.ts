@@ -94,7 +94,8 @@ export type ResumeTag = {
 
 export type ResumeHighlightItems = {
     heading: string,
-    items: item
+    items: item,
+    id: number
 }
 
 type item = {
@@ -102,8 +103,10 @@ type item = {
     text: string
 }[]
 
-export type ItemText = {
-    text: string
+export type ItemData = {
+    text: string,
+    id: number,
+    url:string
 }
 
 export type ProjectCardData = {
