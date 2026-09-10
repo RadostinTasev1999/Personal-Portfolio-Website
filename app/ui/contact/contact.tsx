@@ -132,7 +132,7 @@ export default function Contact(){
         // -> Main Section container
         <motion.section 
             id="contact-section" 
-            className="py-20 px-6"
+            className="flex flex-col items-center py-20 px-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
@@ -141,7 +141,7 @@ export default function Contact(){
 
             <SectionHeader heading={heading} header={header} text={text} />
 
-            <div id="container" className="flex flex-col w-[35vw] my-[50px] mx-auto border py-[10px] border-gray-300 bg-[#f5f8ff] rounded-2xl shadow-md">
+            <div id="container" className="flex flex-col w-[40vw] my-[10px] mx-[10px] border py-[10px] px-[18px] border-gray-300 bg-[#f5f8ff] rounded-2xl shadow-md">
 
                 <h2 className="text-center my-[30px] text-sky-500 text-[26px] font-semibold shrink">Contact me</h2>
                 {/* Contact form */}
