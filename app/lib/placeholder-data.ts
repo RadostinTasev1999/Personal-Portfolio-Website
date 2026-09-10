@@ -170,17 +170,17 @@ export const valueCards = [
   {
     id:1,
     heading: 'Collaborative',
-    text: 'Team player.'
+    text: 'Maintain open communication with teammates / Fast and clear discussion under time pressure'
   },
   {
     id:2,
-    heading: 'Collaborative',
-    text: 'Team player.'
+    heading: 'Open minded',
+    text: 'Continuously learn new information and apply knowledge in development practice'
   },
   {
     id:3,
-    heading: 'Collaborative',
-    text: 'Team player.'
+    heading: 'Consistent work',
+    text: 'Plan / Execute / Reflect on outcome'
   }
 ];
 
@@ -380,19 +380,11 @@ export const resumeHighlights = [
     items: [
       {
         id: 1,
-        text: 'Build responsive UI with TailwindCss and HeadlessUI'
+        text: 'Responsive UI using TailwindCss'
       },
       {
         id: 2,
-        text: 'Build responsive UI with TailwindCss and HeadlessUI'
-      },
-      {
-        id: 3,
-        text: 'Build responsive UI with TailwindCss and HeadlessUI'
-      },
-      {
-        id: 4,
-        text: 'Build responsive UI with TailwindCss and HeadlessUI'
+        text: 'Reusability of UI components'
       }
     ]
   },
@@ -402,19 +394,13 @@ export const resumeHighlights = [
     items: [
       {
         id: 1,
-        text: 'Build responsive UI with TailwindCss and HeadlessUI'
+        text: 'HackerRank Problem Solving Basic certificate',
+        url: 'https://www.hackerrank.com/certificates/iframe/78efaddf9488'
       },
       {
         id: 2,
-        text: 'Build responsive UI with TailwindCss and HeadlessUI'
-      },
-      {
-        id: 3,
-        text: 'Build responsive UI with TailwindCss and HeadlessUI'
-      },
-      {
-        id: 4,
-        text: 'Build responsive UI with TailwindCss and HeadlessUI'
+        text: 'HackerRank JavaScript Basic certificate',
+        url: 'https://www.hackerrank.com/certificates/iframe/c6a712646abd'
       }
     ]
   }
