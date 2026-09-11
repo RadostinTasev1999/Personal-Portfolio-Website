@@ -6,8 +6,6 @@ export default function JobRoles() {
             id="hero-role"
             className="text-xl
                                 font-medium
-                                flex
-                                flex-row
                                 "
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -15,19 +13,20 @@ export default function JobRoles() {
         >
             <div id="hero-stack">
                 <span id="role-text" className="text-blue-500">{`JavaScript Developer / React Engineer / Problem Solver ...`}</span>
+                <motion.span
+                    id="cursor"
+                    className="ml-1 text-blue-500 inline-flex"
+                    animate={{ opacity: [1, 0, 1] }}
+                    transition={{
+                        duration: 0.8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                >
+                    |
+                </motion.span>
             </div>
-            <motion.span
-                id="cursor"
-                className="ml-1 text-blue-500"
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{
-                    duration: 0.8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            >
-                |
-            </motion.span>
+            
         </motion.div>
     );
 }
