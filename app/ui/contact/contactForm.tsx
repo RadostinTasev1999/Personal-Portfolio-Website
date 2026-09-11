@@ -4,26 +4,18 @@ import { ContactFormData } from "@/app/lib/definitions";
 import { Textarea } from "@/components/ui/textarea";
 import { FieldGroup,Field, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 
 export default function ContactForm({
     submitHandler,
     handleChange,
     handleBlur,
-    valid,
-    state:{
-        name,
-        email,
-        subject,
-        message
-    },
-    errors: {
-        nameError,
-        emailError,
-        subjectError,
-        messageError
-    }
+    inputs,
+    errors
 }: ContactFormData){
+
+    console.log('Errors are:', errors.isValid);
 
     return (
         <form onSubmit={submitHandler} className="flex flex-col items-center shrink">
@@ -32,20 +24,20 @@ export default function ContactForm({
                     <Field className="my-[15px] w-auto mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
                         <FieldLabel htmlFor="name">Your name</FieldLabel>
                         <Input 
-                            className="w-[80%] mb-[20px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent" 
+                            className="w-[80%] mb-[1px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent" 
                             type="text"
                             id="name"
                             name="name"
                             placeholder="Enter your name" 
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={name}
+                            value={inputs.name}
                             tabIndex={1}
                             />
                     {
-                        nameError && (
-                            <h4 className="text-red-500 italic ">
-                                {nameError}
+                        errors.nameError && (
+                            <h4 className="text-red-500 text-[15px] italic ">
+                                {errors.nameError}
                             </h4>
                         )
                     }
@@ -54,20 +46,20 @@ export default function ContactForm({
                     <Field className="my-[15px] w-auto mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
                         <FieldLabel htmlFor="email">Your email</FieldLabel>
                         <Input 
-                            className="w-[80%] mb-[20px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent"
+                            className="w-[80%] mb-[1px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent"
                             type="email"
                             id="email" 
                             name="email"
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={email}
+                            value={inputs.email}
                             placeholder="example@gmail.com" 
                             tabIndex={2}
                         />
                     {
-                        emailError && (
-                            <h4 className="text-red-500 italic">
-                                {emailError}
+                        errors.emailError && (
+                            <h4 className="text-red-500 text-[15px] italic">
+                                {errors.emailError}
                             </h4>
                         )
                     }
@@ -77,20 +69,20 @@ export default function ContactForm({
                     <Field className="my-[15px] w-auto mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
                         <FieldLabel htmlFor="subject">Enter Subject</FieldLabel>
                         <Input 
-                            className="w-[80%] mb-[20px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent"
+                            className="w-[80%] mb-[1px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent"
                             type="text"
                             id="subject" 
                             name="subject"
                             placeholder="Enter Subject" 
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={subject}
+                            value={inputs.subject}
                             tabIndex={3}
                             />
                     {
-                        subjectError && (
-                            <h4 className="text-red-500 italic">
-                                {subjectError}
+                        errors.subjectError && (
+                            <h4 className="text-red-500 text-[15px] italic">
+                                {errors.subjectError}
                             </h4>
                         )
                     }
@@ -105,20 +97,20 @@ export default function ContactForm({
                             placeholder="Start typing..." 
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={message}
+                            value={inputs.message}
                             tabIndex={4}
                             />
                     {
-                        messageError && (
-                            <h4 className="text-red-500 italic">
-                                {messageError}
+                        errors.messageError && (
+                            <h4 className="text-red-500 text-[15px] italic">
+                                {errors.messageError}
                             </h4>
                         )
                     }
                     </Field>
                 </FieldGroup>
 
-                <button type="submit" disabled={valid} className="w-[150px] my-[30px] mx-[35px] h-[50px] border border-gray-300 rounded-xl bg-sky-400 text-slate-50 shadow-md cursor-pointer font-semibold">Send Message</button>
+                <Button type="submit" disabled={errors.isValid} className={`w-[150px] my-[30px] mx-[35px] h-[45px] border border-gray-300 rounded-xl bg-sky-400 text-slate-50 shadow-md cursor-pointer font-semibold ${errors.isValid ? "bg-slate-300 cursor-pointer"  : ""}`}>Send Message</Button>
             </form>
     );
 }
