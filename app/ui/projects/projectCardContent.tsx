@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ProjectTags from "./projectTags";
 import { CardContentData } from "@/app/lib/definitions";
+import { Button } from "@/components/ui/button";
 
 export default function CardContent({
     tags,
@@ -27,7 +28,11 @@ export default function CardContent({
             </div>
             {/* Project Link */}
             <div className="ml-4 mt-4 mb-5">
-                <Link href={url} className="text-indigo-500 text-[16px] font-semibold after:content-['->']">View on Github</Link>
+                <Link href={url}>
+                    <Button className="text-indigo-500 text-[15px] font-semibold border border-indigo-500 rounded-xl bg-slate-50 after:content-['->'] hover:bg-indigo-50">
+                        View on Github
+                    </Button>
+                </Link>
             </div>
         </div>
     );
