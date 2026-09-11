@@ -39,8 +39,7 @@ export type ContactFormData = {
     submitHandler: (event: React.FormEvent<HTMLFormElement>) => void,
     handleChange: (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void,
     handleBlur: (event: React.FocusEvent<HTMLInputElement> | React.FocusEvent<HTMLTextAreaElement>) => void,
-    valid: boolean,
-    state: {
+    inputs: {
         name: string,
         email: string,
         subject: string,
@@ -50,7 +49,8 @@ export type ContactFormData = {
         nameError: string,
         emailError: string,
         subjectError: string,
-        messageError: string
+        messageError: string,
+        isValid: boolean
     }
 }
 
