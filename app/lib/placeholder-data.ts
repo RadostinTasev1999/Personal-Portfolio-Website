@@ -118,7 +118,7 @@ export const statistics = [
   },
   {
     id: 2,
-    name: 'Contributions to GitHub repositories',
+    name: 'Contributions to repositories',
     stat: '54'
   },
   {
