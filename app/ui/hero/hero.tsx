@@ -26,11 +26,6 @@ export default function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ ease: 'easeInOut', duration: 0.5, delay: 0.1 }}
              >
-              {/* Background */}
-              <div className="hero-bg"></div>
-              <div className="hero-orb hero-orb-1"></div>
-              <div className="hero-orb hero-orb-2"></div>
-
               {/* Main hero content */}
 
               <div id="hero-inner" className="relative z-[1] w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center">
