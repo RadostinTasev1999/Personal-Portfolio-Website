@@ -3,7 +3,7 @@ import StatItem from './stat-item';
 
 export default function HeroStatistics() {
     return (
-        <div id="hero-stats" className="transform-none flex flex-col mt-6 border border-gray-300 rounded-3xl p-6 gap-3 bg-slate-100 md:flex-row">
+        <div id="hero-stats" className="transform-none flex flex-col mt-6 p-6 gap-3 bg-[#f5f8ff] md:flex-row">
             
             {
                         statistics.map((el,i) => (
