@@ -31,8 +31,7 @@ type SkillSet = {
 
 export type Statistics = {
     name: string,
-    stat: string,
-    index: number
+    stat: string
 }
 
 export type ContactFormData = {
