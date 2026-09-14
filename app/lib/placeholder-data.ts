@@ -406,4 +406,4 @@ export const resumeHighlights = [
   }
 ];
 
-export const biographyText = "I build responsive user interfaces and interactive user experience with React, TypeScript and Next.js."
+export const biographyText = "I build responsive user interfaces and interactive user experience with React, TypeScript and Next.js.";

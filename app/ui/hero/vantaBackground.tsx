@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import * as THREE from 'three';
 import GLOBE from "vanta/dist/vanta.globe.min";
 import { VantaEffect } from "@/app/lib/definitions";
-import { div } from "motion/react-client";
 
 export default function VantaBackground() {
 
