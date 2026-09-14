@@ -39,7 +39,7 @@ export default function Resume() {
                         {/* Heading */}
                         <h2 className="font-bold text-[35.2px] font-[800] tracking-[0.64px] m-0">Download My Resume</h2>
                         {/* Description */}
-                        <p id="resume-note" className="text-[15.2px] leading-[1.7]">
+                        <p id="resume-note" className="text-sm font-normal leading-[1.7]">
                             Learn more about my background, including Skills, Experience and Projects.
                         </p>
                         {/* Technology tags */}
