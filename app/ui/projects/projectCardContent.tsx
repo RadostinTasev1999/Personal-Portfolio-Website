@@ -13,9 +13,9 @@ export default function CardContent({
     return (
         <div id="card-content" className="flex flex-col gap-[10px] justify-center items-start rounded-b-xl">
             {/* Card Title */}
-            <span className="text-slate-600 ml-4 mt-2 font-semibold">{title}</span>
+            <span className="ml-4 mt-2 text-sm font-bold">{title}</span>
             {/* Card text */}
-            <p className="text-slate-500 text-sm ml-4 mr-2 mt-3">{text}</p>
+            <p className="text-slate-600 text-sm font-normal ml-4 mr-2 mt-3">{text}</p>
             {/* Project tags */}
             <div id="project-card-tags" className="flex flex-wrap gap-[8px] ml-4 mt-3">
                 {/* Tags */}
