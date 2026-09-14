@@ -41,7 +41,7 @@ export default function About() {
                             <div id="about-body" className="flex flex-col gap-[5px]">
                                 {
                                     aboutText.map((el) => (
-                                        <p className="max-w-110" key={el.id}>{el.text}</p>
+                                        <p className="max-w-110 text-sm font-normal" key={el.id}>{el.text}</p>
                                     ))
                                 }
                             </div>
