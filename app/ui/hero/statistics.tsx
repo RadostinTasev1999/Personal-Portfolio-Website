@@ -6,8 +6,8 @@ export default function HeroStatistics() {
         <div id="hero-stats" className="transform-none flex flex-col mt-6 p-6 gap-3 bg-[#f5f8ff] md:flex-row">
             
             {
-                        statistics.map((el,i) => (
-                          <StatItem key={el.id} name={el.name} stat={el.stat} index={i} />
+                        statistics.map((el) => (
+                          <StatItem key={el.id} name={el.name} stat={el.stat} />
                         ))
                       }
 
