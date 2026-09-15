@@ -12,6 +12,10 @@ export type TimelineItems = {
 }
 // 
 
+export type LinkUrl = {
+    url: string
+}
+
 export type SectionHeaders = {
     heading: string,
     header?: string,
