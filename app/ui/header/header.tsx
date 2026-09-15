@@ -2,7 +2,7 @@
 
 // import montserrat from '../fonts'
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import {navigationLinks} from '@/app/lib/placeholder-data';
 import Link from 'next/link';
 import NavLinks from './navLinks';
@@ -14,12 +14,13 @@ import MobileLinks from './mobileLinks';
 export default function AppHeader() {
 
     const [menuOpen, setMenuOpen] = useState(false);
+    // -> we prevent unnecessary creation of the function on re-renders
+    // -> memoized function is created only once and remains the same throughout the component's lifecycle.
+    const toggleMenu = useCallback(() => {
 
-    const toggleMenu = () => {
+        setMenuOpen(state => !state);
 
-        
-         setMenuOpen(state => !state);
-    };
+    },[]);
 
     return (
         <nav id="nav" className='fixed top-0 left-0 right-0 z-100 w-full p-0 border-b border-slate-200 shadow-md bg-slate-100'>
