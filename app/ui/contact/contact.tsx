@@ -4,7 +4,7 @@ import ContactForm from "./contactForm";;
 import { FieldLegend } from '@/components/ui/field';
 import SectionHeader from "../section-header/sectionHeader";
 import { sectionHeadings } from "@/app/lib/placeholder-data";
-import { useReducer } from "react";
+import { useReducer, useCallback } from "react";
 
 const inputReducer = (state, action) => {
 
@@ -174,15 +174,15 @@ export default function Contact(){
     );
 
     // -> Callback handlers
-    const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    const submitHandler = useCallback((event: React.FormEvent<HTMLFormElement>) => {
 
         event.preventDefault();
 
         console.log(event.target);
 
-    };
+    },[]);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
 
 
         switch (e.target?.name) {
@@ -219,10 +219,10 @@ export default function Contact(){
             default:
                 break;
         }
-    };
+    },[]);
 
 
-    const handleBlur = (e: React.FocusEvent<HTMLInputElement> | React.FocusEvent<HTMLTextAreaElement>) => {
+    const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement> | React.FocusEvent<HTMLTextAreaElement>) => {
 
         const nameRegExp = /^[A-Za-z\s]*$/;
         const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -315,7 +315,7 @@ export default function Contact(){
                 break;
         }
         
-    };
+    },[]);
 
 
     return (
