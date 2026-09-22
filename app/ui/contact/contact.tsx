@@ -1,4 +1,5 @@
 "use client";
+
 import * as motion from "motion/react-client";
 import ContactForm from "./contactForm";;
 import { FieldLegend } from '@/components/ui/field';
@@ -178,7 +179,6 @@ export default function Contact(){
 
         event.preventDefault();
 
-        console.log(event.target);
 
     },[]);
 
@@ -227,18 +227,19 @@ export default function Contact(){
         const nameRegExp = /^[A-Za-z\s]*$/;
         const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const textRegExp = /^[A-Za-z0-9!@#$%^&*()_+=\-[\]{};':"\\|,.<>/? ]{1,150}$/;
+        const value = e.currentTarget?.value;
 
-        switch (e.target.name) {
+        switch (e.currentTarget?.name) {
             
             case 'name':
 
-                if (!inputs.name) {
+                if (!value) {
                     dispatchErrors({
                         type: 'EMPTY_NAME',
                         payload: 'Please Enter Name'
                     });
                     // disable send button
-                }else if (!nameRegExp.test(inputs.name)) {
+                }else if (!nameRegExp.test(value)) {
                     dispatchErrors({
                         type: 'INVALID_NAME',
                         payload: 'Please Enter Valid Name'
@@ -251,15 +252,16 @@ export default function Contact(){
                 }
                 // setNameTouched(true)
                 break;
+
             case 'email':
                 
-                if (!inputs.email) {
+                if (!value) {
                     dispatchErrors({
                         type: 'EMPTY_EMAIL',
                         payload: 'Please Enter Email',
                     });
                     
-                } else if (!emailRegExp.test(inputs.email)) {
+                } else if (!emailRegExp.test(value)) {
                     dispatchErrors({
                         type: 'INVALID_EMAIL',
                         payload: 'Please Enter Valid Email'
@@ -273,14 +275,15 @@ export default function Contact(){
                     
                 }
                 break;
+
             case 'subject':
-                if (!inputs.subject) {
+                if (!value) {
                     dispatchErrors({
                         type: 'EMPTY_SUBJECT',
                         payload: 'Please Enter Subject'
                     });
                   
-                } else if (!textRegExp.test(inputs.subject)) {
+                } else if (!textRegExp.test(value)) {
                     dispatchErrors({
                         type: 'INVALID_SUBJECT',
                         payload: 'Please Enter Valid Subject'
@@ -292,13 +295,14 @@ export default function Contact(){
                     });
                 }
                 break;
+
             case 'message':
-                if (!inputs.message) {
+                if (!value) {
                     dispatchErrors({
                         type: 'EMPTY_MESSAGE',
                         payload: 'Please Enter Message'
                     });
-                } else if (!textRegExp.test(inputs.message)) {
+                } else if (!textRegExp.test(value)) {
                     dispatchErrors({
                         type: 'INVALID_MESSAGE',
                         payload: 'Please Enter Valid Message'
