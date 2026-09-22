@@ -2,17 +2,17 @@
 
 import * as motion from "motion/react-client";
 
-import SectionHeader from '../section-header/sectionHeader';
-import AboutButtons from "./aboutButtons";
+import SectionHeader from '../section-header/SectionHeader';
+import AboutButtons from "./AboutButtons";
 
 import {sectionHeadings} from '@/app/lib/placeholder-data';
 import { aboutText } from "@/app/lib/placeholder-data";
 
 import { SectionHeaders } from "@/app/lib/definitions";
 
-import AboutValues from "./aboutValues";
-import AboutPhoto from './aboutPhoto';
-import AboutFacts from './aboutFacts';
+import AboutValues from "./AboutValues";
+import AboutPhoto from "./AboutPhoto";
+import AboutFacts from './AboutFacts';
 
 export default function About() {
 

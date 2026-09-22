@@ -1,13 +1,13 @@
 import * as motion from "motion/react-client";
-import CtaButtons from "./ctaButtons";
-import Badge from "./badge";
-import JobRoles from './jobRoles';
-import HeroStatistics from "./statistics";
+import CtaButtons from "./CtaButtons";
+import Badge from "./Badge";
+import JobRoles from "./JobRoles";
+import HeroStatistics from "./Statistics";
 import { biographyText } from "@/app/lib/placeholder-data";
 import { name } from "@/app/lib/placeholder-data";
 
-import Biography from "./biography";
-import VantaBackground from "./vantaBackground";
+import Biography from "./Biography";
+import VantaBackground from "./VantaBackground";
 
 export default function HeroSection() {
 

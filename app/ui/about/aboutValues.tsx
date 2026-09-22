@@ -1,5 +1,5 @@
 import { valueCards } from "@/app/lib/placeholder-data";
-import ValueCard from './valueCard';
+import ValueCard from "./ValueCard";
 
 
 export default function AboutValues () {

@@ -1,6 +1,6 @@
 import './ui/globals.css';
-import AppHeader from "./ui/header/header";
-import AppFooter from "./ui/footer/footer";
+import AppHeader from './ui/header/Header';
+import AppFooter from './ui/footer/Footer';
 import { inter } from "./ui/fonts";
 
 

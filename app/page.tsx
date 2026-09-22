@@ -1,10 +1,10 @@
-import Skills from "./ui/skills/skills";
-import HeroSection from "./ui/hero/hero";
-import About from "./ui/about/about";
-import Experience from './ui/experience/experience';
-import Contact from "./ui/contact/contact";
-import Resume from "./ui/resume/resume";
-import Projects from "./ui/projects/projects";
+import HeroSection from "./ui/hero/Hero";
+import About from "./ui/about/About";
+import Skills from "./ui/skills/Skills";
+import Experience from "./ui/experience/Experience";
+import Projects from "./ui/projects/Projects";
+import Resume from "./ui/resume/Resume";
+import Contact from "./ui/contact/Contact";
 
 export default function Page() {
 

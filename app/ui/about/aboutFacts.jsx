@@ -1,5 +1,6 @@
 import { aboutFacts } from "@/app/lib/placeholder-data";
-import FactCard from "./factCard";
+import FactCard from "./FactCard";
+
 export default function AboutFacts() {
     return (
         <div id="about-quick-facts" className="flex flex-col gap-[8px]">

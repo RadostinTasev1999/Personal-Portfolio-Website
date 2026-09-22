@@ -1,6 +1,6 @@
 import { TimeLineItems } from "@/app/lib/definitions";
-import TimeLinePoints from "./timelinePoints";
-import TimelineButton from "./timelineButton";
+import TimeLinePoints from "./TimelinePoints";
+import TimelineButton from "./TimelineButton";
 
 export default function TimelineItem({
     year,

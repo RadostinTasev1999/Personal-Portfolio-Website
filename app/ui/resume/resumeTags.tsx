@@ -1,5 +1,5 @@
 import { ResumeTag } from "@/app/lib/definitions";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/Badge";
 
 export default function ResumeTags({
     tag

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { LinkUrl } from "@/app/lib/definitions";
 
 export default function ProjectLink({

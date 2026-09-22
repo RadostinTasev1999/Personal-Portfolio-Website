@@ -1,5 +1,5 @@
 import { statistics } from "@/app/lib/placeholder-data";
-import StatItem from './stat-item';
+import StatItem from './StatItem';
 
 export default function HeroStatistics() {
     return (

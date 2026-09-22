@@ -1,7 +1,7 @@
-import SectionHeader from "../section-header/sectionHeader";
+import SectionHeader from "../section-header/SectionHeader";
 import { sectionHeadings } from "@/app/lib/placeholder-data";
 import { projectCardsData } from "@/app/lib/placeholder-data";
-import ProjectCard from "./projectCard";
+import ProjectCard from "./ProjectCard";
 
 
 export default function Projects() {

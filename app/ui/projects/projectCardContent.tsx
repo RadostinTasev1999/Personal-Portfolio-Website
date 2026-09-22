@@ -1,6 +1,6 @@
-import ProjectTags from "./projectTags";
+import ProjectTags from "./ProjectTags";
 import { CardContentData } from "@/app/lib/definitions";
-import ProjectLink from "./projectLink";
+import ProjectLink from "./ProjectLink";
 
 export default function CardContent({
     tags,

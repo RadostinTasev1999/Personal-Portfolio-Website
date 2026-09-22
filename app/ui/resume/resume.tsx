@@ -1,13 +1,13 @@
 import * as motion from "motion/react-client";
-import SectionHeader from "../section-header/sectionHeader";
+import SectionHeader from "../section-header/SectionHeader";
 import {sectionHeadings} from '@/app/lib/placeholder-data' ;
 import { resumeTags } from "@/app/lib/placeholder-data";
 import { resumeHighlights } from "@/app/lib/placeholder-data";
 
-import ResumeTags from './resumeTags';
-import ResumeButtons from "./resumeButtons";
-import ResumeNote from './resumeNote';
-import ResumeHighlight from './resumeHighlight';
+import ResumeTags from "./ResumeTags";
+import ResumeButtons from "./ResumeButtons";
+import ResumeNote from "./ResumeNote";
+import ResumeHighlight from "./ResumeHighlight";
 
 export default function Resume() {
 
