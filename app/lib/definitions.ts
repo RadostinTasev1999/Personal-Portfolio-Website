@@ -103,13 +103,14 @@ export type ResumeHighlightItems = {
 
 type item = {
     id: number,
-    text: string
+    text: string,
+    url?: string
 }[]
 
 export type ItemData = {
     text: string,
     id: number,
-    url:string
+    url?:string
 }
 
 export type ProjectCardData = {
