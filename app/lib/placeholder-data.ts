@@ -1,7 +1,7 @@
-import IconBook from "../ui/icons/learn";
-import IconLocation from "../ui/icons/location";
-import IconStudent from "../ui/icons/study";
-import IconWork from "../ui/icons/work";
+import IconBook from "../ui/icons/Learn";
+import IconLocation from "../ui/icons/Location";
+import IconStudent from "../ui/icons/Study";
+import IconWork from "../ui/icons/Work";
 
 export const logo = `<rt.dev />`;
 
