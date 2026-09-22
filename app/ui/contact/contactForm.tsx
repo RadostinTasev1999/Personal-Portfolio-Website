@@ -15,8 +15,6 @@ export default function ContactForm({
     errors
 }: ContactFormData){
 
-    console.log('Errors are:', errors.isValid);
-
     return (
         <form onSubmit={submitHandler} className="flex flex-col items-center shrink">
                 <FieldGroup>
