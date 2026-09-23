@@ -162,3 +162,112 @@ type Links = {
     link: string,
     id: number
 }[]
+
+export type HeroData = {
+    firstName: string,
+    lastName: string,
+    bioText: string
+}
+
+export type AboutData = {
+    heading: string,
+    header: string,
+    text: string,
+    aboutBioText: AboutText
+}
+
+type AboutText = {
+    id: number,
+    text: string
+}[]
+
+export type SkillData = {
+    heading: string,
+    header: string,
+    text: string,
+    skillTypes: SkillDataTypes
+}
+
+type SkillDataTypes = {
+    id: number,
+    skillType: string,
+    skills: Skills
+}[]
+
+type Skills = {
+    id: number,
+    name: string
+}[]
+
+export type ExperienceData = {
+    experienceHeading: string,
+    experienceHeader: string,
+    experienceText: string,
+    timelineItems: TimeLineData
+}
+
+type TimeLineData = {
+    id: number,
+    year: string,
+    position: string,
+    company: string,
+    bullets: BulletsData,
+    url: string
+}[]
+
+type BulletsData = {
+    id: number,
+    name: string
+} []
+
+export type ProjectsData = {
+    projectsHeading: string,
+    projectsHeader: string,
+    projectsText: string,
+    projectCardsData: ProjectData
+}
+
+type ProjectData = {
+    id: number,
+    img: string,
+    title: string,
+    text: string,
+    tags: ProjectTags,
+    url: string
+}[]
+
+type ProjectTags = {
+    id: number,
+    name: string
+}[]
+
+export type ResumeData = {
+    resumeHeading: string,
+    resumeHeader: string,
+    resumeText: string,
+    resumeTags: ResumeTags,
+    resumeHighlights: resumeHighlightsData
+
+}
+
+type ResumeTags = {
+    id: number,
+    tag: string
+}[]
+
+type resumeHighlightsData = {
+    id: number,
+    heading: string,
+    items:resumeItemData
+} []
+
+type resumeItemData = {
+    id: number,
+    text: string
+}[]
+
+export type ContactData = {
+    contactHeading: string,
+    contactHeader: string,
+    contactText: string
+}
