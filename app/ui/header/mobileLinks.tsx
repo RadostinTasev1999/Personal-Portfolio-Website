@@ -6,10 +6,11 @@ export default function MobileLinks({
 }: NavLinks){
 
     return (
-        <ul id="mobile-links" className="flex flex-col align-start gap-[0.25rem] absolute top-[100%] right-0 pt-[1rem] pb-[1.5rem] md:hidden">
+        <ul id="mobile-links" className="flex flex-col absolute top-full right-0 px-6 py-2 left-0 z-10 border-b border-slate-200 bg-white shadow-sm md:hidden">
+                                     
             {
                 navLinks.map((el) => (
-                    <li key={el.id} className="font-semibold text-[16px] text-slate-800 px-[10px] py-[2px] border border-slate-400 rounded-xl shadow-md bg-[#f5f8ff] hover:border-sky-500">
+                    <li key={el.id} className="font-medium text-slate-800 py-3 border-b border-slate-100 text-base last:border-b-0">                                      
                         <Link href={el.link}>{el.name}</Link>
                     </li>
                 ))
