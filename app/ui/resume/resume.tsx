@@ -1,18 +1,21 @@
 import * as motion from "motion/react-client";
 import SectionHeader from "../section-header/SectionHeader";
-import {sectionHeadings} from '@/app/lib/placeholder-data' ;
-import { resumeTags } from "@/app/lib/placeholder-data";
-import { resumeHighlights } from "@/app/lib/placeholder-data";
 
 import ResumeTags from "./ResumeTags";
 import ResumeButtons from "./ResumeButtons";
 import ResumeNote from "./ResumeNote";
 import ResumeHighlight from "./ResumeHighlight";
+import { ResumeData } from "@/app/lib/definitions";
 
-export default function Resume() {
+export default function Resume({
+    resumeHeading,
+    resumeHeader,
+    resumeText,
+    resumeTags,
+    resumeHighlights
+}: ResumeData) {
 
-    const {heading, header, text} = sectionHeadings.resume;
-
+    
     return (
         <motion.section 
             id="resume-section" 
@@ -26,7 +29,7 @@ export default function Resume() {
 
                 {/* Section Header */}
                 <div id="section-header" className="mb-[40px] text-center">
-                    <SectionHeader heading={heading} header={header} text={text} />
+                    <SectionHeader heading={resumeHeading} header={resumeHeader} text={resumeText} />
                 </div>
 
                 {/* Resume card */}

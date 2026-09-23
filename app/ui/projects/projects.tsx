@@ -1,12 +1,15 @@
 import SectionHeader from "../section-header/SectionHeader";
-import { sectionHeadings } from "@/app/lib/placeholder-data";
-import { projectCardsData } from "@/app/lib/placeholder-data";
 import ProjectCard from "./ProjectCard";
+import { ProjectsData } from "@/app/lib/definitions";
 
 
-export default function Projects() {
+export default function Projects({
+    projectsHeading,
+    projectsHeader,
+    projectsText,
+    projectCardsData
+}: ProjectsData) {
 
-    const { heading, header, text } = sectionHeadings.projects;
 
 return (
     <>
@@ -14,7 +17,7 @@ return (
         {/* Container for the content */}
         <div id="project-section-inner">
             <div id="section-header">
-                <SectionHeader heading={heading} header={header} text={text} />
+                <SectionHeader heading={projectsHeading} header={projectsHeader} text={projectsText} />
             </div>
 
             {/* Project Cards container */}

@@ -3,13 +3,16 @@ import CtaButtons from "./CtaButtons";
 import Badge from "./Badge";
 import JobRoles from "./JobRoles";
 import HeroStatistics from "./Statistics";
-import { biographyText } from "@/app/lib/placeholder-data";
-import { name } from "@/app/lib/placeholder-data";
+import { HeroData } from "@/app/lib/definitions";
 
 import Biography from "./Biography";
 import VantaBackground from "./VantaBackground";
 
-export default function HeroSection() {
+export default function HeroSection({
+  firstName,
+  lastName,
+  bioText
+}: HeroData) {
 
   /*
     -> The hero section has three main layers:
@@ -37,15 +40,15 @@ export default function HeroSection() {
 
                   {/* Main Heading */}
                   <h1 className="text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-[0.95] tracking-tight mb-3">
-                    {name.firstName}<br/>
-                    {name.lastName}
+                    {firstName}<br/>
+                    {lastName}
                   </h1>
 
                   {/* Job Role */}
                 <JobRoles />
 
                   {/* Biography */}
-                <Biography text={biographyText}/>
+                <Biography text={bioText}/>
                   
 
                   {/* CTA buttons */}

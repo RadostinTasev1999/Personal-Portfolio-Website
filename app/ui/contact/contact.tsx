@@ -4,8 +4,8 @@ import * as motion from "motion/react-client";
 import ContactForm from "./ContactForm";
 import { FieldLegend } from "../../../components/ui/Field";
 import SectionHeader from "../section-header/SectionHeader";
-import { sectionHeadings } from "@/app/lib/placeholder-data";
 import { useReducer, useCallback } from "react";
+import {ContactData} from '@/app/lib/definitions'
 
 const inputReducer = (state, action) => {
 
@@ -156,9 +156,11 @@ const errorReducer = (state, action) => {
     }
 };
 
-export default function Contact(){
-
-    const { heading, header, text } =  sectionHeadings.contact;
+export default function Contact({
+    contactHeading,
+    contactHeader,
+    contactText
+}: ContactData){
 
     // -> state to track each field value
 
@@ -333,7 +335,7 @@ export default function Contact(){
             >
             {/* Section Header */}
 
-            <SectionHeader heading={heading} header={header} text={text} />
+            <SectionHeader heading={contactHeading} header={contactHeader} text={contactText} />
 
             <div id="container" className="flex flex-col w-[30vw] py-[10px] px-[30px] border border-gray-300 bg-[#f5f8ff] rounded-2xl shadow-md">
 

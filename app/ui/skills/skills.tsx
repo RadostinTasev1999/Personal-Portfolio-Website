@@ -1,15 +1,16 @@
 import * as motion from 'motion/react-client';
 import SectionHeader from '../section-header/SectionHeader';
-import { sectionHeadings } from '@/app/lib/placeholder-data';
 import { SectionHeaders } from '@/app/lib/definitions';
 import SkillsCard from './SkillsCard';
 import { skillTypes } from '@/app/lib/placeholder-data';
+import { SkillData } from '@/app/lib/definitions';
 
-export default function Skills(){   
-
-   
-
-    const { heading, header, text }: SectionHeaders = sectionHeadings.skills;
+export default function Skills({
+    heading,
+    header,
+    text,
+    skillTypes
+}: SkillData){   
 
     return (
         <>

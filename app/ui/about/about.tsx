@@ -5,18 +5,18 @@ import * as motion from "motion/react-client";
 import SectionHeader from '../section-header/SectionHeader';
 import AboutButtons from "./AboutButtons";
 
-import {sectionHeadings} from '@/app/lib/placeholder-data';
-import { aboutText } from "@/app/lib/placeholder-data";
-
-import { SectionHeaders } from "@/app/lib/definitions";
+import { AboutData } from "@/app/lib/definitions";
 
 import AboutValues from "./AboutValues";
 import AboutPhoto from "./AboutPhoto";
 import AboutFacts from './AboutFacts';
 
-export default function About() {
-
-     const { heading, header, text } : SectionHeaders = sectionHeadings.about;
+export default function About({
+    heading,
+    header,
+    text,
+    aboutBioText
+}: AboutData) {
 
     return (
         <>
@@ -39,7 +39,7 @@ export default function About() {
                             {/* About Body */}
                             <div id="about-body" className="flex flex-col gap-[5px]">
                                 {
-                                    aboutText.map((el) => (
+                                    aboutBioText.map((el) => (
                                         <p className="max-w-110 text-sm font-normal" key={el.id}>{el.text}</p>
                                     ))
                                 }
