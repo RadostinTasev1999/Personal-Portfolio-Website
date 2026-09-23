@@ -7,34 +7,34 @@ export const logo = `<rt.dev />`;
 
 export const sectionHeadings = {
   about: {
-    heading: 'About',
-    header:'Beyond the code',
-    text: 'JavaScript Web Developer / 3 + years in Software Development'
+    aboutHeading: 'About',
+    aboutHeader:'Beyond the code',
+    aboutText: 'JavaScript Web Developer / 3 + years in Software Development'
   },
   skills: {
-    heading: 'Skills',
-    header: 'Technologies I use to build',
-    text: ''
+     skillsHeading: 'Skills',
+     skillsHeader: 'Technologies I use to build',
+     skillsText: ''
   },
   experience: {
-    heading: 'Education & Experience',
-    header: 'Learning, building, and growing along the way',
-    text: 'An overview of my professional and educational experience'
+    experienceHeading: 'Education & Experience',
+    experienceHeader: 'Learning, building, and growing along the way',
+    experienceText: 'An overview of my professional and educational experience'
   },
   contact: {
-    heading: 'Contact Me',
-    header: 'Lets Get In Touch',
-    text: 'Lets discuss your project idea'
+    contactHeading: 'Contact Me',
+    contactHeader: 'Lets Get In Touch',
+    contactText: 'Lets discuss your project idea'
   },
   resume: {
-    heading:'Resume',
-    header:'',
-    text: ''
+    resumeHeading:'Resume',
+    resumeHeader:'',
+    resumeText: ''
   },
   projects: {
-    heading: 'Projects',
-    header: '',
-    text: ''
+    projectsHeading: 'Projects',
+    projectsHeader: '',
+    projectsText: ''
   }
 };
 
@@ -285,7 +285,7 @@ export const aboutFacts = [
 
 ];
 
-export const aboutText = [
+export const aboutBioText = [
   {
     id:1,
     text: "Hello There! My name is Radostin Tasev - a JavaScript Web Developer graduate from Software University."
