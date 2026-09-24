@@ -25,22 +25,22 @@ export default function About({
                 animate={{ opacity: 1 }}
                 transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
                 id="about"
-                className="py-20 max-w-7xl mx-auto px-6"
-                
+                className="py-24 max-w-6xl mx-auto px-6 border-t border-slate-200"
                  >
                 <div id="about-section-inner">
                     {/* Section Header */}
                     <SectionHeader heading={heading} header={header} text={text} />
 
                     {/* About Layout */}
-                    <div id="about-layout" className="flex flex-row flex-wrap gap-[60px] border border-gray-300 shadow-md rounded-xl px-6 py-10 bg-[#f5f8ff] md:flex-nowrap">
+                    <div id="about-layout" className="grid items-start gap-14 lg:grid-cols-[1.15fr_0.85fr]">
                         {/* About content */}
-                        <div id="about-content" className="flex flex-col gap-[28px] shrink basis-full">
+                        <div id="about-content" className="flex flex-col gap-10">
                             {/* About Body */}
-                            <div id="about-body" className="flex flex-col gap-[5px]">
+                            <div id="about-body" className="flex flex-col gap-4 max-w-xl">
+                                                       
                                 {
                                     aboutBioText.map((el) => (
-                                        <p className="max-w-110 text-sm font-normal" key={el.id}>{el.text}</p>
+                                        <p className="text-base leading-7 text-slate-600" key={el.id}>{el.text}</p>                                               
                                     ))
                                 }
                             </div>
