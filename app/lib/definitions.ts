@@ -118,7 +118,8 @@ export type ProjectCardData = {
     title: string,
     text: string,
     tags: Tags,
-    url: string
+    url: string,
+    reversed: boolean
 }
 
 type Tags = {
