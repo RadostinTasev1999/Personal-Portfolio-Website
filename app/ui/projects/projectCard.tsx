@@ -10,15 +10,16 @@ export default function ProjectCard({
     title,
     text,
     tags,
-    url
+    url,
+    reversed
 }: ProjectCardData){
 
     return (
-            <div id="project-card" className="flex flex-col content-between gap-[20px] justify-between border border-gray-300 rounded-xl max-w-80 bg-[#f5f8ff] shadow-lg">
+            <article id="project-card" className={`grid items-center gap-8 border-t border-slate-200 py-12 first:border-t-0 first:pt-0 md:grid-cols-2 md:gap-16 ${reversed ? "md:[&>div:first-child]:order-2" : ""}`}>
                 {/* Image */}
                 <ProjectImage imgUrl={imgUrl} />
                 {/* Card content */}
                 <CardContent tags={tags} url={url} title={title} text={text} />
-            </div>
+            </article>
     );
 }

@@ -13,7 +13,7 @@ export default function Projects({
 
 return (
     <>
-    <section id="project-section">
+    <section id="project-section" className="mx-auto max-w-6xl border-t border-slate-200 px-6 py-24">
         {/* Container for the content */}
         <div id="project-section-inner">
             <div id="section-header">
@@ -21,10 +21,11 @@ return (
             </div>
 
             {/* Project Cards container */}
-            <div id="project-cards-container" className="flex flex-wrap flex-row justify-center gap-[26px]">
+            <div id="project-cards-container" className="flex flex-col">
+                    {/* flex flex-col */}
                  {/* Project Cards  */}
             {
-                projectCardsData.map((project) => (
+                projectCardsData.map((project,index) => (
                         <ProjectCard 
                             key={project.id} 
                             imgUrl={project.img} 
@@ -32,6 +33,7 @@ return (
                             text={project.text} 
                             tags={project.tags}
                             url={project.url} 
+                            reversed={index % 2 === 1}
                             />
                 ))
             }

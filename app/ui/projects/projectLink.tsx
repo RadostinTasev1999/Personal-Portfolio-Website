@@ -7,9 +7,9 @@ export default function ProjectLink({
 }: LinkUrl) {
 
     return (
-        <div className="ml-4 mt-4 mb-5">
+        <div>
                 <Link href={url}>
-                    <Button className="text-indigo-500 text-[15px] font-semibold border border-indigo-500 rounded-xl bg-slate-50 after:content-['->'] hover:bg-indigo-50">
+                    <Button className="h-auto p-0 text-base text-blue-500 font-semibold after:ml-2 after:content-['→'] hover:text-blue-600">
                         View on Github
                     </Button>
                 </Link>

@@ -7,10 +7,10 @@ export default function ProjectImage({
 
     return (
         
-        <div id="image-container" className="overflow-hidded object-cover">
+        <div id="image-container" className="overflow-hidded">
             <Image
                 src={imgUrl}
-                className="h-60 object-cover rounded-t-xl"
+                className="h-72 w-full rounded-3xl object-cover"
                 width={500}
                 height={500}
                 alt="Profile image"
