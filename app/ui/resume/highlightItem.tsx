@@ -8,7 +8,7 @@ export default function HighlightItem({
     url
 }:ItemData ) {
     return (
-        <li className={`list-item text-sm font-normal leading-[22.5px] pl-[16px] relative before:content-['·'] before:absolute before:left-0 before:font-bold before:text-blue-500 before:text-[25px]`}>
+        <li className={`list-item text-sm font-normal leading-[22.5px] pl-[16px] relative before:content-['·'] before:absolute before:left-0 before:font-bold before:text-blue-500 before:text-[25px]`}>                
             {text}
             {
                 id > 1 && 

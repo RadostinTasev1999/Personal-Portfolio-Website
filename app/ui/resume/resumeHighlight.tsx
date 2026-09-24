@@ -8,9 +8,9 @@ export default function ResumeHighlight({
 }: ResumeHighlightItems) {
 
     return (
-        <div id="resume-highlight" className="border-[1px] border-gray-300 bg-slate-100 shadow-md rounded-[12px] py-[20px] px-[24px] hover:border-sky-500">
+        <div id="resume-highlight" className="border-b border-slate-200 py-6 last:border-b-0">
             {/* Heading */}
-            <h3 className="text-base font-semibold mb-[12px]">{heading}</h3>
+            <h3 className="mb-3 text-base font-semibold text-slate-950">{heading}</h3>
             {/* list */}
             <ul className="flex flex-col list-none gap-[6.4px] list-outside">
                 {

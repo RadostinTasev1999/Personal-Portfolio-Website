@@ -19,34 +19,33 @@ export default function Resume({
     return (
         <motion.section 
             id="resume-section" 
-            className="w-full py-[100px]"
+            className="mx-auto w-full max-w-6xl border-t border-slate-200 px-6 py-24"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: 'easeInOut', duration: 0.5, delay: 0.1 }}
              >
             {/* Container for the content */}
-            <div id="resume-section-inner" className="w-full max-w-[1200px] mx-auto px-[24px]">
+            <div id="resume-section-inner">
 
                 {/* Section Header */}
-                <div id="section-header" className="mb-[40px] text-center">
+                <div id="section-header">
                     <SectionHeader heading={resumeHeading} header={resumeHeader} text={resumeText} />
                 </div>
 
                 {/* Resume card */}
-                <div id="resume-card" className="flex flex-wrap gap-[64px] p-[48px] justify-center border-[1px] border-gray-300 rounded-xl bg-[#f5f8ff] shadow-lg md:flex-nowrap">
+                <div id="resume-card" className="grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
 
                     {/* Left side of card */}
-                    <div id="resume-left" className="flex flex-col gap-[24px] shrink basis-full">
+                    <div id="resume-left" className="flex flex-col gap-6">
 
                         {/* Heading */}
-                        <h2 className="font-bold text-[35.2px] font-[800] tracking-[0.64px] m-0">Download My Resume</h2>
+                        <h2 className="m-0 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Download My Resume</h2>
                         {/* Description */}
-                        <p id="resume-note" className="text-sm font-normal leading-[1.7]">
+                        <p id="resume-note" className="max-w-md text-base leading-7 text-slate-600">
                             Learn more about my background, including Skills, Experience and Projects.
                         </p>
                         {/* Technology tags */}
-                        <div id="resume-tags" className="flex flex-wrap gap-[8px]">
-                            
+                        <div id="resume-tags" className="flex flex-wrap items-center gap-x-4 gap-y-1">
                             {
                                 resumeTags.map((el) => (
                                     <ResumeTags key={el.id} tag={el.tag} />
@@ -61,7 +60,8 @@ export default function Resume({
                     </div>
 
                     {/* Right side of card */}
-                    <div id="resume-right" className="flex flex-col gap-[20px] shrink basis-full">
+                    <div id="resume-right" className="flex flex-col border-t border-slate-200 lg:border-t-0 lg:border-l lg:pl-16">
+                                                  
                         
                         {
                             resumeHighlights.map((el) => (
