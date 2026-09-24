@@ -1,8 +1,6 @@
 import * as motion from 'motion/react-client';
 import SectionHeader from '../section-header/SectionHeader';
-import { SectionHeaders } from '@/app/lib/definitions';
 import SkillsCard from './SkillsCard';
-import { skillTypes } from '@/app/lib/placeholder-data';
 import { SkillData } from '@/app/lib/definitions';
 
 export default function Skills({
@@ -26,7 +24,7 @@ export default function Skills({
                 {/* Section Header */}
                 <SectionHeader heading={heading} header={header} text={text} />
                 {/* Skills layout */}
-                <div id="skills-layout" className='grid lg:grid-cols-1'>
+                <div id="skills-layout" className='grid gap-12 md:grid-cols-3'>
                     {
                         skillTypes.map((type) => (
                             <SkillsCard key={type.id} skillType={type.skillType} skills={type.skills} />

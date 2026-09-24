@@ -1,5 +1,4 @@
 import { SkillTypes } from "@/app/lib/definitions";
-import { Badge } from "@/components/ui/Badge";
 
 export default function SkillsCategory({
     skill,
@@ -11,9 +10,9 @@ export default function SkillsCategory({
     
     return (
         <>
-            <Badge variant="outline" className='border border-gray-300 rounded-full shadow-sm bg-slate-50 px-3 py-1.5 text-xs font-extrabold hover:border-indigo-600'>
+            <span className='border-b border-slate-100 py-2.5 text-lg text-slate-800'>
                 {skill}
-            </Badge>
+            </span>
         </>
     );
 }
