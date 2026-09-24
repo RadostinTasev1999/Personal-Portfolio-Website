@@ -7,10 +7,12 @@ export default function FactCard({
 
     const Icon = icon;
     return (
-        <div id="about-fact" className="flex items-center gap-[10.4px] border border-gray-300 bg-[#edf2ff] rounded-2xl px-[10px] py-[6px] text-[13.6px] hover:border-sky-500">
+        <div id="about-fact" className="flex items-start gap-3 border-b border-slate-200 py-3.5">
             {/* Icon */}
-            <Icon />
-            <p className="font-semibold text-xs">{text}</p>
+            <span className="mt-0.5 text-blue-500">
+                <Icon />
+            </span>            
+            <p className="text-sm leading-6 text-slate-700">{text}</p>
         </div>
     );
 }

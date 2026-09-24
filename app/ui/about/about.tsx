@@ -50,7 +50,7 @@ export default function About({
                             <AboutButtons />
                         </div>
                         {/* About Photo */}
-                        <div id="about-photo-col" className="flex flex-col gap-[28px] shrink basis-full">
+                        <div id="about-photo-col" className="flex flex-col gap-8">
                             {/* Photo */}
                             <AboutPhoto />
                             {/* Quick Facts */}
