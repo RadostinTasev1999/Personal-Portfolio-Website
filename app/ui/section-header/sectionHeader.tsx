@@ -7,21 +7,32 @@ export default function SectionHeader({
     
     return (
         <>
-            <div id="section-header" className='mb-12 text-center'>
-                <div className='mb-4 inline-flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-[0.15em] text-blue-500'>
+            <div id="section-header" className='mb-12 max-w-2xl'>
+                                            
+                <div className='mb-3 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-blue-500'>
                     {/* inline-flex items-center gap-2 -> this class places Skills horizontally */}
-                    <span className='inline-block h-px w-5 bg-blue-500' />
+                    <span className='inline-block h-px w-8 bg-blue-500' />
+                                 
                     <h1 className="text-lg">
                       {heading}
                     </h1>
-                    <span className='inline-block h-px w-5 bg-blue-500' />
+                    
                 </div>
-                <h2 className="section-heading font-bold text-2xl">
-                    {header}
-                </h2>
-                <p className='mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base'>
-                    {text}
-                </p>
+                {
+                    header ? (
+                        <h2 className="font-semibold text-3xl tracking-tight text-slate-950 sm:text-4xl">
+                            {header}
+                        </h2>
+                    )   :   null
+                }
+                {
+                    text ? (
+                        <p className='mt-3 max-w-2xl text-base leading-7 text-slate-500'>
+                            {text}
+                        </p>
+                    )   :   null
+                }
+                
             </div>
         </>
     );
