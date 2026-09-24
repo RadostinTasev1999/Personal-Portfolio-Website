@@ -11,16 +11,19 @@ export default function TimelineItem({
 }: TimeLineItems) {
     return (
         <>
-            <div id="timeline-item" className="relative pb-12 pl-10">
-                <div id="timeline-line" className="absolute left-[5px] top-3 h-full w-px bg-slate-700" />
-                <div id="timeline-dot" className="absolute left-0 top-1.5 h-3 w-3 rounded-full border-2 border-blue-500 bg-slate-950" />
-                <div id="timeline-period" className="mb-3 font-mono text-sm font-medium text-blue-500">
+            <div id="timeline-item" className="group relative pb-14 pl-8 last:pb-0">
+                                          
+                <div id="timeline-line" className="absolute top-3 bottom-0 left-[4px] w-px bg-blue-200 group-last:hidden" />
+                                              
+                <div id="timeline-dot" className="absolute top-1.5 left-0 h-2.5 w-2.5 rounded-full bg-blue-500" />
+                                            
+                <div id="timeline-period" className="mb-2 font-medium text-sm text-blue-500">
                     {year}
                     {/* Year */}
                 </div>
-                <div id="timeline-card" className="rounded-xl border border-gray-300 bg-[#f5f8ff] p-6 shadow-md">
+                <div id="timeline-card">
 
-                    <h3 className="text-xl font-semibold text-slate-950">
+                    <h3 className="text-2xl font-semibold tracking-tight text-slate-950">
                         {position}
                         {/* Position */}
                     </h3>
@@ -30,7 +33,7 @@ export default function TimelineItem({
                         {/* Company */}
                     </p>
 
-                    <ul id="timeline-points" className="mt-4 space-y-2 text-sm leading-6 text-slate-800">
+                    <ul id="timeline-points" className="mt-4 max-w-2xl space-y-2 text-sm leading-6 text-slate-700">                                                   
                         {
                             bullets.map((bullet) => (
                                 
