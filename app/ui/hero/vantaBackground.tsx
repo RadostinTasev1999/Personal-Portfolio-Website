@@ -49,7 +49,7 @@ export default function VantaBackground() {
     return (
         <div 
             ref={vantaRef}
-            className="absolute inset-0 -z-10"
+            className="h-full w-full [mask-image:radial-gradient(circle,black_60%,transparent_76%)]"
         />
     );
 
