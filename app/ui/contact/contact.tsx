@@ -328,7 +328,7 @@ export default function Contact({
         // -> Main Section container
         <motion.section 
             id="contact-section" 
-            className="flex flex-col items-center py-20 px-6"
+            className="mx-auto grid max-w-6xl items-start gap-12 border-t border-slate-200 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
@@ -337,9 +337,9 @@ export default function Contact({
 
             <SectionHeader heading={contactHeading} header={contactHeader} text={contactText} />
 
-            <div id="container" className="flex flex-col w-[30vw] py-[10px] px-[30px] border border-gray-300 bg-[#f5f8ff] rounded-2xl shadow-md">
+            <div id="container" className="flex flex-col gap-6">
 
-                <FieldLegend className="text-center my-[30px] text-sky-500 font-extrabold shrink">Contact me</FieldLegend>
+                <FieldLegend className="text-lg font-semibold text-sky-500">Contact me</FieldLegend>
                 {/* Contact form */}
                 <ContactForm
                     submitHandler={submitHandler}

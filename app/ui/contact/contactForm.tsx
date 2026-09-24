@@ -17,13 +17,13 @@ export default function ContactForm({
 }: ContactFormData){
 
     return (
-        <form onSubmit={submitHandler} className="flex flex-col items-center shrink">
-                <FieldGroup>
+        <form onSubmit={submitHandler} className="flex flex-col w-full">
+                <FieldGroup className="gap-7">
                     {/* Name input */}
-                    <Field className="my-[15px] w-auto mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
-                        <FieldLabel htmlFor="name">Your name</FieldLabel>
+                    <Field className="gap-2">
+                        <FieldLabel htmlFor="name" className="text-sm font-medium text-slate-700">Your name</FieldLabel>
                         <Input 
-                            className="w-[80%] mb-[1px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent" 
+                            className="h-11 w-full rounded-none border-0 border-b border-slate-300 bg-transparent px-0 shadow-none focus-visible:border-blue-500 focus-visible:ring-0" 
                             type="text"
                             id="name"
                             name="name"
@@ -42,10 +42,10 @@ export default function ContactForm({
                     }
                     </Field>
                     {/* Email input */}
-                    <Field className="my-[15px] w-auto mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
-                        <FieldLabel htmlFor="email">Your email</FieldLabel>
+                    <Field className="gap-2">
+                        <FieldLabel htmlFor="email" className="text-sm font-medium text-slate-700">Your email</FieldLabel>
                         <Input 
-                            className="w-[80%] mb-[1px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent"
+                            className="h-11 w-full rounded-none border-0 border-b border-slate-300 bg-transparent px-0 shadow-none focus-visible:border-blue-500 focus-visible:ring-0"
                             type="email"
                             id="email" 
                             name="email"
@@ -65,10 +65,10 @@ export default function ContactForm({
 
                     </Field>
                     {/* Subject input */}
-                    <Field className="my-[15px] w-auto mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
-                        <FieldLabel htmlFor="subject">Enter Subject</FieldLabel>
+                    <Field className="gap-2">
+                        <FieldLabel htmlFor="subject" className="text-sm font-medium text-slate-700">Enter Subject</FieldLabel>
                         <Input 
-                            className="w-[80%] mb-[1px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent"
+                            className="h-11 w-full rounded-none border-0 border-b border-slate-300 bg-transparent px-0 shadow-none focus-visible:border-blue-500 focus-visible:ring-0"
                             type="text"
                             id="subject" 
                             name="subject"
@@ -87,10 +87,10 @@ export default function ContactForm({
                     }
                     </Field>
                     {/* Message Text area */}
-                    <Field className="my-[15px] w-auto mx-auto flex flex-col items-center gap-[15px] height-[40px] shrink basis-auto">
-                        <FieldLabel htmlFor="message">Enter Message</FieldLabel>
+                    <Field className="gap-2">
+                        <FieldLabel htmlFor="message" className="text-sm font-medium text-slate-700">Enter Message</FieldLabel>
                         <Textarea 
-                            className="w-[80%] mx-[35px] h-[100px] p-[15px] border-[2px] border-sky-400 rounded-xl shadow-md bg-transparent"
+                            className="mt-2 min-h-28 w-full rounded-none border-0 border-b border-slate-300 bg-transparent px-0 shadow-none focus-visible:border-blue-500 focus-visible:ring-0"
                             name="message" 
                             id="message"
                             placeholder="Start typing..." 
@@ -109,7 +109,7 @@ export default function ContactForm({
                     </Field>
                 </FieldGroup>
 
-                <Button type="submit" disabled={errors.isValid} className={`w-[150px] my-[30px] mx-[35px] h-[45px] border border-gray-300 rounded-xl bg-sky-400 text-slate-50 shadow-md cursor-pointer font-semibold ${errors.isValid ? "bg-slate-300 cursor-pointer"  : ""}`}>Send Message</Button>
+                <Button type="submit" disabled={errors.isValid} className={`mt-8 h-11 w-fit rounded-full bg-sky-500 px-8 text-sm font-semibold text-white hover:bg-sky-600 ${errors.isValid ? "bg-slate-300" : ""}`}>Send Message</Button>                                                                      
             </form>
     );
 }
