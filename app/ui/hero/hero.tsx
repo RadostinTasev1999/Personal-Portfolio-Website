@@ -24,22 +24,25 @@ export default function HeroSection({
     return (
             <motion.section
               id="hero-section" 
-              className="max-w-7xl mx-auto px-6 py-4 bg-[#f5f8ff] shadow-md border-gray-300 rounded-xl mt-12"
+              className="max-w-6xl mx-auto px-6 pt-32 pb-8"
+                      
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ ease: 'easeInOut', duration: 0.5, delay: 0.1 }}
              >
               {/* Main hero content */}
 
-              <div id="hero-inner" className="relative z-[1] w-full max-w-[1200px] grid grid-cols-2 gap-16 items-center">
+              <div id="hero-inner" className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8">
+                                          
                 {/* Left side */}
-                <div id="hero-text" className="flex flex-col gap-[16px]">
+                <div id="hero-text" className="flex flex-col gap-4">
+                                           
 
                   {/* Current status badge */}
                   <Badge />
 
                   {/* Main Heading */}
-                  <h1 className="text-5xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-[0.95] tracking-tight mb-3">
+                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-slate-950 leading-[0.95] tracking-tight">
                     {firstName}<br/>
                     {lastName}
                   </h1>
@@ -58,7 +61,7 @@ export default function HeroSection({
                 </div>
 
                 {/* Right side */}
-                <div id="hero-image" className="flex justify-center lg:justify-end">
+                <div id="hero-image" className="relative mx-auto aspect-square w-full max-w-md">                                 
                 
                   <VantaBackground />
                       
