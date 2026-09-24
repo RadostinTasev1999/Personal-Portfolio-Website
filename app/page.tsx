@@ -27,7 +27,7 @@ export default function Page() {
 
   return (
     <>
-      <div className="container mx-auto py-10" id="main-container">
+      <div id="main-container" className="px-2">
         {/* HeroSection */}
         <HeroSection 
           firstName={name.firstName}
