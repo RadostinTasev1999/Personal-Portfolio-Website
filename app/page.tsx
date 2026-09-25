@@ -27,7 +27,7 @@ export default function Page() {
 
   return (
     <>
-      <div id="main-container" className="px-2">
+      <div id="main-container">
         {/* HeroSection */}
         <HeroSection 
           firstName={name.firstName}
