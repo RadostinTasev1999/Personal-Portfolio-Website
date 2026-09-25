@@ -13,9 +13,9 @@ export default function SectionHeader({
                     {/* inline-flex items-center gap-2 -> this class places Skills horizontally */}
                     <span className='inline-block h-px w-8 bg-blue-500' />
                                  
-                    <h1 className="text-lg">
+                    <p className="text-md font-semibold">
                       {heading}
-                    </h1>
+                    </p>
                     
                 </div>
                 {
