@@ -1,23 +1,28 @@
 "use client";
 
-import { ContactFormData } from "@/app/lib/definitions";
 import { Textarea } from "../../../components/ui/Textarea";
-// import { FieldGroup,Field, FieldLabel } from "@/app/ui/shad-cn/field";
+import { ClipLoader } from "react-spinners";
 import { FieldGroup, Field, FieldLabel } from "../../../components/ui/Field";
 import { Input } from "../../../components/ui/Input";
 import { Button } from "@/components/ui/Button";
+import ContactFormData from '@/app/lib/definitions';
 
 
 export default function ContactForm({
-    submitHandler,
+    name,
+    email,
+    subject,
+    message,
     handleChange,
-    handleBlur,
-    inputs,
-    errors
+    formAction,
+    inputError,
+    isValid
 }: ContactFormData){
+    
+    
 
     return (
-        <form onSubmit={submitHandler} className="flex flex-col w-full">
+        <form action={formAction} className="flex flex-col w-full">
                 <FieldGroup className="gap-7">
                     {/* Name input */}
                     <Field className="gap-2">
@@ -27,19 +32,19 @@ export default function ContactForm({
                             type="text"
                             id="name"
                             name="name"
-                            placeholder="Enter your name" 
+                            value={name}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={inputs.name}
+                            placeholder="Enter your name"  
                             tabIndex={1}
                             />
                     {
-                        errors.nameError && (
+                        inputError.nameError && (
                             <h4 className="text-red-500 text-[15px] italic ">
-                                {errors.nameError}
+                                {inputError.nameError}
                             </h4>
                         )
                     }
+                    
                     </Field>
                     {/* Email input */}
                     <Field className="gap-2">
@@ -49,16 +54,15 @@ export default function ContactForm({
                             type="email"
                             id="email" 
                             name="email"
+                            value={email}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={inputs.email}
                             placeholder="example@gmail.com" 
                             tabIndex={2}
                         />
                     {
-                        errors.emailError && (
+                        inputError.emailError && (
                             <h4 className="text-red-500 text-[15px] italic">
-                                {errors.emailError}
+                                {inputError.emailError}
                             </h4>
                         )
                     }
@@ -72,16 +76,15 @@ export default function ContactForm({
                             type="text"
                             id="subject" 
                             name="subject"
-                            placeholder="Enter Subject" 
+                            value={subject}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={inputs.subject}
+                            placeholder="Enter Subject"   
                             tabIndex={3}
                             />
                     {
-                        errors.subjectError && (
+                        inputError.subjectError && (
                             <h4 className="text-red-500 text-[15px] italic">
-                                {errors.subjectError}
+                                {inputError.subjectError}
                             </h4>
                         )
                     }
@@ -93,23 +96,29 @@ export default function ContactForm({
                             className="mt-2 min-h-28 w-full rounded-none border-0 border-b border-slate-300 bg-transparent px-0 shadow-none focus-visible:border-blue-500 focus-visible:ring-0"
                             name="message" 
                             id="message"
-                            placeholder="Start typing..." 
+                            value={message}
                             onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={inputs.message}
+                            placeholder="Start typing..." 
                             tabIndex={4}
                             />
                     {
-                        errors.messageError && (
+                        inputError.messageError && (
                             <h4 className="text-red-500 text-[15px] italic">
-                                {errors.messageError}
+                                {inputError.messageError}
                             </h4>
                         )
                     }
                     </Field>
                 </FieldGroup>
-
-                <Button type="submit" disabled={errors.isValid} className={`mt-8 h-11 w-fit rounded-full bg-sky-500 px-8 text-sm font-semibold text-white hover:bg-sky-600 ${errors.isValid ? "bg-slate-300" : ""}`}>Send Message</Button>                                                                      
+                        
+                             {/* <ClipLoader color="#00a6f4" /> */}
+                                    
+                            <Button type="submit" disabled={!isValid} className={`mt-8 h-11 w-fit rounded-full bg-sky-500 px-8 text-sm font-semibold text-white hover:bg-sky-600 ${!isValid ? 'bg-slate-400' : ''}`}>Send Message</Button>
+                        
+                        
+                        
+                    
+                
             </form>
     );
 }
