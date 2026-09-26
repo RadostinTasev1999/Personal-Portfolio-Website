@@ -39,22 +39,19 @@ export type Statistics = {
 }
 
 export type ContactFormData = {
-    submitHandler: (event: React.FormEvent<HTMLFormElement>) => void,
-    handleChange: (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void,
-    handleBlur: (event: React.FocusEvent<HTMLInputElement> | React.FocusEvent<HTMLTextAreaElement>) => void,
-    inputs: {
-        name: string,
-        email: string,
-        subject: string,
-        message: string
-    },
-    errors: {
-        nameError: string,
-        emailError: string,
-        subjectError: string,
-        messageError: string,
-        isValid: boolean
-    }
+    name: string,
+    email: string,
+    subject: string,
+    message: string,
+    inputError: {
+                    nameError: string,
+                    emailError: string,
+                    subjectError: string,
+                    messageError: string
+                },
+    isValid: boolean,
+    handleChange: () => void,
+    formAction: () => void
 }
 
 export type NavigationLinks = {
