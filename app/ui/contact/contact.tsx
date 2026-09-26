@@ -4,157 +4,102 @@ import * as motion from "motion/react-client";
 import ContactForm from "./ContactForm";
 import { FieldLegend } from "../../../components/ui/Field";
 import SectionHeader from "../section-header/SectionHeader";
-import { useReducer, useCallback } from "react";
-import {ContactData} from '@/app/lib/definitions'
+import {ContactData} from '@/app/lib/definitions';
+import { useReducer, useState } from "react";
 
-const inputReducer = (state, action) => {
+function inputReducer(state, action){
+    // TODO ...
+
+    switch (action.type) {
+        
+        case 'UPDATE_FIELD':
+            
+            const name = action.name;
+            const value = action.value;
+            
+            return {
+                ...state,
+                [name]: value
+            };
+
+        case 'RESET_INPUTS':
+            
+            return initialState;
+            
+    
+        default:
+            break;
+    }
 
     /*
         {
-                    type: "HANDLE_CHANGE",
-                    payload: e.target.value
-                }
+            type: 'UPDATE_FIELD',
+            name: e.target.name,
+            value: e.target.value
+        }
+
+        {
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        }
+    */
+
+}
+
+function errorReducer(state, action) {
+
+    /*
+        {
+                type:'SET_ERROR',
+                name: 'nameError',
+                message: 'Please Enter Valid Name.'
+            }
     */
 
     switch (action.type) {
-
-        case "ON_NAME_CHANGE":
+        case 'SET_ERROR':
             
-        return {
-            ...state,
-            name: action.payload
-        };
-
-        case "ON_EMAIL_CHANGE":
-            
-        return {
-            ...state,
-            email: action.payload
-        };
-
-        case "ON_SUBJECT_CHANGE":
-
-        return {
-            ...state,
-            subject: action.payload
-        };
-
-        case "ON_MESSAGE_CHANGE":
-
-        return {
-            ...state,
-            message: action.payload
-        };
-    
-        default:
-            break;
-    }
-};
-
-const errorReducer = (state, action) => {
-
-    switch (action.type) {
-
-        case "EMPTY_NAME":
-            
-        return {
-            ...state,
-            nameError: action.payload,
-            isValid: true // disable send button
-        };
-
-        case "INVALID_NAME":
-
             return {
                 ...state,
-                nameError: action.payload,
-                isValid: true // disable send button
-            };
-
-        case "REFRESH_NAME_ERROR":
-
-            return {
-                ...state,
-                nameError: action.payload,
-                isValid: false // enable send button
-            };
-
-        case "EMPTY_EMAIL":
-
-            return {
-                ...state,
-                emailError: action.payload,
-                isValid: true // disable send button
-            };
-
-        case "INVALID_EMAIL":
-
-            return {
-                ...state,
-                emailError: action.payload,
-                isValid: true
-            };
-
-        case "REFRESH_EMAIL":
-
-            return {
-                ...state,
-                emailError: action.payload,
-                isValid: false
-            };
-
-        case "EMPTY_SUBJECT":
-
-            return {
-                ...state,
-                subjectError: action.payload,
-                isValid: true
+                [action.name]: action.message
             };
         
-        case "INVALID_SUBJECT":
+        case 'RESET_ERROR':
 
             return {
                 ...state,
-                subjectError: action.payload,
-                isValid: true
+                [action.name]: action.message
             };
 
-        case "REFRESH_SUBJECT":
-
-            return {
-                ...state,
-                subjectError: action.payload,
-                isValid: false
-            };
-
-        case "EMPTY_MESSAGE":
-
-            return {
-                ...state,
-                messageError: action.payload,
-                isValid: true
-            };
-
-        case "INVALID_MESSAGE":
-
-            return {
-                ...state,
-                messageError: action.payload,
-                isValid: true
-            };
-
-        case "REFRESH_MESSAGE":
-
-            return {
-                ...state,
-                messageError: action.payload, // null
-                isValid: false
-            };
+            
     
         default:
             break;
     }
+    
+
+}
+
+const initialInputs = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
 };
+
+const initialErrors = {
+    nameError: '',
+    emailError: '',
+    subjectError: '',
+    messageError: ''
+};
+
+const nameRegExp = /^[A-Za-z\s]*$/;
+const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const textRegExp = /^[A-Za-z0-9!@#$%^&*()_+=\-[\]{};':"\\|,.<>/? ]{1,150}$/;
+
 
 export default function Contact({
     contactHeading,
@@ -162,168 +107,151 @@ export default function Contact({
     contactText
 }: ContactData){
 
-    // -> state to track each field value
+    const [input, dispatchInput] = useReducer(inputReducer, initialInputs);
+    const [inputError, dispatchError] = useReducer(errorReducer, initialErrors);
+    const [isValid, setIsValid] = useState(true)
 
-    const [inputs, dispatchInputs] = useReducer(
-        inputReducer,
-        {name: '', email: '', subject: '', message: ''}
-        );
-
-
-    // -> state to track input field errors
-    const [errors, dispatchErrors] = useReducer(
-        errorReducer,
-        {nameError: '', emailError: '', subjectError: '', messageError: '', isValid: false}
-    );
-
-    // -> Callback handlers
-    const submitHandler = useCallback((event: React.FormEvent<HTMLFormElement>) => {
-
-        event.preventDefault();
+    const handleChange = (e) => {
+        // TODO ...
+        console.log(e.target.name);
+        console.log(e.target.value);
+        dispatchInput({
+            type: 'UPDATE_FIELD',
+            name: e.target.name,
+            value: e.target.value
+        });
 
 
-    },[]);
+    };
 
-    const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleReset = () => {
 
+        dispatchInput({
+            type: 'RESET_INPUTS'
+        });
+    };
 
-        switch (e.target?.name) {
+    const validateInputs = () => {
 
-            case 'name':
-                dispatchInputs({
-                    type: "ON_NAME_CHANGE",
-                    payload: e.target.value
-                });
-                // dispatch
-                break;
-            case 'email':
-                dispatchInputs({
-                    type: "ON_EMAIL_CHANGE",
-                    payload: e.target.value
-                });
-                // dispatch
-                break;
-            case 'subject':
-                dispatchInputs({
-                    type: "ON_SUBJECT_CHANGE",
-                    payload: e.target.value
-                });
-                // dispatch
-                break;
-            case 'message':
-                dispatchInputs({
-                    type: "ON_MESSAGE_CHANGE",
-                    payload: e.target.value
-                });
-                // dispatch
-                break;
-        
-            default:
-                break;
+        let isValid = true;
+        // Name input
+        if (input.name.trim() === '') {
+            isValid = false;
+            dispatchError({
+                type: 'SET_ERROR',
+                name: 'nameError',
+                message: 'Please Enter Name.'
+            });
+        } else if(!nameRegExp.test(input.name)) {
+            isValid = false;
+            dispatchError({
+                type:'SET_ERROR',
+                name: 'nameError',
+                message: 'Please Enter Valid Name.'
+            });
+        } else {
+            dispatchError({
+                type: 'RESET_ERROR',
+                name: 'nameError',
+                message: ''
+            });
         }
-    },[]);
 
-
-    const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement> | React.FocusEvent<HTMLTextAreaElement>) => {
-
-        const nameRegExp = /^[A-Za-z\s]*$/;
-        const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const textRegExp = /^[A-Za-z0-9!@#$%^&*()_+=\-[\]{};':"\\|,.<>/? ]{1,150}$/;
-        const value = e.currentTarget?.value;
-
-        switch (e.currentTarget?.name) {
-            
-            case 'name':
-
-                if (!value) {
-                    dispatchErrors({
-                        type: 'EMPTY_NAME',
-                        payload: 'Please Enter Name'
-                    });
-                    // disable send button
-                }else if (!nameRegExp.test(value)) {
-                    dispatchErrors({
-                        type: 'INVALID_NAME',
-                        payload: 'Please Enter Valid Name'
-                    });
-                } else{
-                    dispatchErrors({
-                        type: 'REFRESH_NAME_ERROR',
-                        payload: null
-                    });
-                }
-                // setNameTouched(true)
-                break;
-
-            case 'email':
-                
-                if (!value) {
-                    dispatchErrors({
-                        type: 'EMPTY_EMAIL',
-                        payload: 'Please Enter Email',
-                    });
-                    
-                } else if (!emailRegExp.test(value)) {
-                    dispatchErrors({
-                        type: 'INVALID_EMAIL',
-                        payload: 'Please Enter Valid Email'
-                    });
-                    
-                } else{
-                    dispatchErrors({
-                        type: 'REFRESH_EMAIL',
-                        payload: null
-                    });
-                    
-                }
-                break;
-
-            case 'subject':
-                if (!value) {
-                    dispatchErrors({
-                        type: 'EMPTY_SUBJECT',
-                        payload: 'Please Enter Subject'
-                    });
-                  
-                } else if (!textRegExp.test(value)) {
-                    dispatchErrors({
-                        type: 'INVALID_SUBJECT',
-                        payload: 'Please Enter Valid Subject'
-                    });
-                } else{
-                    dispatchErrors({
-                        type: 'REFRESH_SUBJECT',
-                        payload: null
-                    });
-                }
-                break;
-
-            case 'message':
-                if (!value) {
-                    dispatchErrors({
-                        type: 'EMPTY_MESSAGE',
-                        payload: 'Please Enter Message'
-                    });
-                } else if (!textRegExp.test(value)) {
-                    dispatchErrors({
-                        type: 'INVALID_MESSAGE',
-                        payload: 'Please Enter Valid Message'
-                    });
-                } else{
-                    dispatchErrors({
-                        type: 'REFRESH_MESSAGE',
-                        payload: null
-                    });
-                }
-                break;
-        
-            default:
-                break;
+        // Email input
+        if (input.email.trim() === '') {
+            isValid = false;
+            dispatchError({
+                type: 'SET_ERROR',
+                name: 'emailError',
+                message: 'Please Enter Email'
+            });
+        } else if (!emailRegExp.test(input.email)) {
+            isValid = false;
+            dispatchError({
+                type: 'SET_ERROR',
+                name: 'emailError',
+                message: 'Please Enter Valid Email'
+            });
+        } else {
+            dispatchError({
+                type: 'RESET_ERROR',
+                name: 'emailError',
+                message: ''
+            });
         }
+
+        // Subject Input
+
+        if (input.subject.trim() === '') {
+            isValid = false;
+            dispatchError({
+                type: 'SET_ERROR',
+                name: 'subjectError',
+                message: 'Please Enter Subject'
+            });
+        } else if (!textRegExp.test(input.subject)) {
+            isValid = false;
+            dispatchError({
+                type: 'SET_ERROR',
+                name: 'subjectError',
+                message: 'Please Enter Valid Subject'
+            });
+        } else {
+            dispatchError({
+                type: 'RESET_ERROR',
+                name: 'subjectError',
+                message: ''
+            });
+        }
+
+        // Message Input
+
+        if (input.message.trim() === '') {
+            isValid  = false;
+            dispatchError({
+                type: 'SET_ERROR',
+                name: 'messageError',
+                message: 'Please Enter Message.'
+            });
+        } else if (!textRegExp.test(input.message)) {
+            isValid = false;
+            dispatchError({
+                type:'SET_ERROR',
+                name: 'messageError',
+                message: 'Please Enter Valid Message'
+            });
+        } else {
+            dispatchError({
+                type: 'RESET_ERROR',
+                name: 'messageError',
+                message: ''
+            });
+        }
+
+        return isValid;
+
+    };
+    
+
+    const formAction = (formData) => {
+
+    //    Validate input fields
+       if (!validateInputs()) {
+            setIsValid(false);
+            return; // Invalid inputs
+       } 
+
+    //    Fetch API
+
+
+
         
-    },[]);
+        
+        
 
+    };
 
+                                                    
     return (
         // -> Main Section container
         <motion.section 
@@ -342,11 +270,15 @@ export default function Contact({
                 <FieldLegend className="text-lg font-semibold text-sky-500">Contact me</FieldLegend>
                 {/* Contact form */}
                 <ContactForm
-                    submitHandler={submitHandler}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    inputs={inputs}
-                    errors={errors}
+                   name={input.name}
+                   email={input.email}
+                   subject={input.subject}
+                   message={input.message}
+                   handleChange={handleChange}
+                   formAction={formAction}
+                   inputError={inputError}
+                   isValid={isValid}
+                    
                 />
             </div>
         </motion.section>
