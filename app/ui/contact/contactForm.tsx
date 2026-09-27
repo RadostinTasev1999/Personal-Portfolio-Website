@@ -16,7 +16,8 @@ export default function ContactForm({
     handleChange,
     formAction,
     inputError,
-    isValid
+    isValid,
+    isLoading
 }: ContactFormData){
     
     
@@ -112,8 +113,13 @@ export default function ContactForm({
                 </FieldGroup>
                         
                              {/* <ClipLoader color="#00a6f4" /> */}
-                                    
+                    {
+                        isLoading ?
+                            <ClipLoader className="mt-8" color="#00a6f4" />
+                                    :
                             <Button type="submit" disabled={!isValid} className={`mt-8 h-11 w-fit rounded-full bg-sky-500 px-8 text-sm font-semibold text-white hover:bg-sky-600 ${!isValid ? 'bg-slate-400' : ''}`}>Send Message</Button>
+                    }     
+                            
                         
                         
                         
