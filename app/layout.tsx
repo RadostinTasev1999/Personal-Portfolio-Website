@@ -2,6 +2,7 @@ import './ui/globals.css';
 import AppHeader from './ui/header/Header';
 import AppFooter from './ui/footer/Footer';
 import { inter } from "./ui/fonts";
+import 'dotenv/config';
 
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
