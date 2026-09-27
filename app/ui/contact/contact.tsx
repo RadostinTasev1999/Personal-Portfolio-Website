@@ -6,6 +6,7 @@ import { FieldLegend } from "../../../components/ui/Field";
 import SectionHeader from "../section-header/SectionHeader";
 import {ContactData} from '@/app/lib/definitions';
 import { useReducer, useState } from "react";
+import axios from 'axios';
 
 function inputReducer(state, action){
     // TODO ...
@@ -24,27 +25,12 @@ function inputReducer(state, action){
 
         case 'RESET_INPUTS':
             
-            return initialState;
+            return initialInputs;
             
     
         default:
             break;
     }
-
-    /*
-        {
-            type: 'UPDATE_FIELD',
-            name: e.target.name,
-            value: e.target.value
-        }
-
-        {
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
-        }
-    */
 
 }
 
@@ -108,8 +94,25 @@ export default function Contact({
 }: ContactData){
 
     const [input, dispatchInput] = useReducer(inputReducer, initialInputs);
+    /*
+        {
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+        }
+    */
     const [inputError, dispatchError] = useReducer(errorReducer, initialErrors);
-    const [isValid, setIsValid] = useState(true)
+    /*
+        {
+            nameError: '',
+            emailError: '',
+            subjectError: '',
+            messageError: ''
+        };
+    */
+    const [isValid, setIsValid] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e) => {
         // TODO ...
@@ -121,14 +124,16 @@ export default function Contact({
             value: e.target.value
         });
 
+        isValid === false ? setIsValid(true) : null;
+
 
     };
 
-    const handleReset = () => {
+    const resetInputs = () => {
 
         dispatchInput({
             type: 'RESET_INPUTS'
-        });
+       });
     };
 
     const validateInputs = () => {
@@ -233,21 +238,53 @@ export default function Contact({
     };
     
 
-    const formAction = (formData) => {
+    const formAction = async (formData) => {
 
     //    Validate input fields
        if (!validateInputs()) {
             setIsValid(false);
-            return; // Invalid inputs
+            return; 
        } 
 
-    //    Fetch API
+    //    Show loading indicator
+       setIsLoading(true);
+    //   Fetch API
+       try {
+
+        const data = JSON.stringify({
+            name: input.name,
+            email: input.email,
+            subject: input.subject,
+            message: input.message
+        });
+        
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: data
+        });
+
+        const result = await response.json();
+
+        console.log(response);
+
+        // Validate response status
+        if (response.status !== 200) {
+            // Inform User for server error
+            return;
+        }
+
+       } catch (error) {
+            console.error(error);
+       }
+       
 
 
 
-        
-        
-        
+    // resetInputs
+       resetInputs();
 
     };
 
@@ -278,7 +315,7 @@ export default function Contact({
                    formAction={formAction}
                    inputError={inputError}
                    isValid={isValid}
-                    
+                   isLoading={isLoading}
                 />
             </div>
         </motion.section>
