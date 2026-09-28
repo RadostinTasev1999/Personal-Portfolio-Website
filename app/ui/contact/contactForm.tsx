@@ -5,7 +5,8 @@ import { ClipLoader } from "react-spinners";
 import { FieldGroup, Field, FieldLabel } from "../../../components/ui/Field";
 import { Input } from "../../../components/ui/Input";
 import { Button } from "@/components/ui/Button";
-import ContactFormData from '@/app/lib/definitions';
+import {ContactFormData} from '@/app/lib/definitions';
+import Alert from '@mui/material/Alert';
 
 
 export default function ContactForm({
@@ -17,10 +18,11 @@ export default function ContactForm({
     formAction,
     inputError,
     isValid,
-    isLoading
+    isLoading,
+    successState
 }: ContactFormData){
     
-    
+   
 
     return (
         <form action={formAction} className="flex flex-col w-full">
@@ -112,19 +114,24 @@ export default function ContactForm({
                     </Field>
                 </FieldGroup>
                         
-                             {/* <ClipLoader color="#00a6f4" /> */}
+                    {
+                        successState.isSent && !successState.error && (
+                            <Alert className="mt-8" variant="outlined" severity="success">Message successfully sent</Alert>
+                        )
+                    }
+                    {
+                        !successState.isSent && successState.error && (
+                            <Alert className="mt-8" variant="outlined" severity="error">Error sending message</Alert>
+                        )
+                    }
+
                     {
                         isLoading ?
                             <ClipLoader className="mt-8" color="#00a6f4" />
                                     :
                             <Button type="submit" disabled={!isValid} className={`mt-8 h-11 w-fit rounded-full bg-sky-500 px-8 text-sm font-semibold text-white hover:bg-sky-600 ${!isValid ? 'bg-slate-400' : ''}`}>Send Message</Button>
-                    }     
+                    } 
                             
-                        
-                        
-                        
-                    
-                
             </form>
     );
 }
