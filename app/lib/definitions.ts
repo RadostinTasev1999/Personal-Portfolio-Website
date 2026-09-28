@@ -50,6 +50,11 @@ export type ContactFormData = {
                     messageError: string
                 },
     isValid: boolean,
+    isLoading: boolean,
+    successState: {
+        isSent: boolean,
+        error: boolean
+    },
     handleChange: () => void,
     formAction: () => void
 }
