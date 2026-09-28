@@ -1,94 +1,62 @@
 import FormData from "form-data"; // form-data v4.0.1
-import Mailgun from "mailgun-js";
+import Mailgun from 'mailgun.js';
+import 'dotenv/config';
 
-const mailgun = new Mailgun(FormData);
 
-const mg = mailgun.client({
-        username: 'api',
-        key: process.env.MAILGUN_API_KEY,
-        url: process.env.MAILGUN_DOMAIN
-    });
 
 export async function POST(request){
 
-    /*
-        {
-            name: input.name,
-            email: input.email,
-            subject: input.subject,
-            message: input.message
-        }
-    */
-   try {
     
-    const body = await request.json();
 
     const {
         name,
         email,
         subject,
         message
-    } = body;
+    } = await request.json();
 
-    // Validate data
-    if (!name || !email || !subject || !message) {
+    const data = {
+        from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN}>`,
+        to: ['Radostin Tasev <radostintasev22@yahoo.com>'],
+        subject: 'New message from portfolio contact form',
+        text: `
+            Name: ${name}
+            Email: ${email}
+            Subject: ${subject}
+            Message: ${message}
+        `
+    };
+
+
+    // Instantiate the Mailgun class
+         const mailgun = new Mailgun(FormData);
         
-        return Response.json(
-            {
-                error: 'All fields are required' ,
-            },
-            {
-                status: 400 
-            }
+    // Create the client instance using the client method
+        const mg = mailgun.client({
+            username: 'api',
+            key: process.env.MAILGUN_API_KEY,
             
-        );
-    }
-
-    await mg.messages.create("sandbox5e079c73cfd24065ab4e22de44e9ebb1.mailgun.org", {
-      from: "Mailgun Sandbox <postmaster@sandbox5e079c73cfd24065ab4e22de44e9ebb1.mailgun.org>",
-      to: ["Radostin Tasev <radostin.tasev22@gmail.com>"],
-      subject: "Hello Radostin Tasev",
-      text: "Congratulations Radostin Tasev, you just sent an email with Mailgun! You are truly awesome!",
     });
 
-    return Response.json(
-        {
-            message: 'Email successfully sent'
-        },
-        {
-            status: 200,
-        }
-);
+   try {
+
+    const messageData = await mg.messages.create(process.env.MAILGUN_DOMAIN, data);
+
+    return Response.json({message: 'Data sucessfully sent'});
 
 
     } catch (error) {
 
+
         return Response.json(
             {
-                error: 'Unable to send message.'
+                message: 'Error sending data',
+                error: error instanceof Error ? error.message : String(error)
             },
             {
                 status: 500
             }
-    );
-
+        );
    }
 
 }
-
-
-
-/*
-     try {
-        const data = await mg.messages.create(process.env.MAILGUN_DOMAIN,{
-            from: `Mailgun Sandbox postmaster@${process.env.MAILGUN_DOMAIN}`,
-            to: ["Radostin Tasev <radostin.tasev22@gmail.com>"],
-            subject: 'Hello Radostin Tasev',
-            text: "Congratulations Radostin Tasev, you just sent an email with Mailgun! You are truly awesome!"
-        });
-
-        console.log(data);
-    } catch (error) {
-        console.log(error);
-    }
-*/
