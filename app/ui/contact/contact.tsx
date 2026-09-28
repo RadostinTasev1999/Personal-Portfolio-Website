@@ -6,7 +6,7 @@ import { FieldLegend } from "../../../components/ui/Field";
 import SectionHeader from "../section-header/SectionHeader";
 import {ContactData} from '@/app/lib/definitions';
 import { useReducer, useState } from "react";
-import axios from 'axios';
+// import axios from 'axios';
 
 function inputReducer(state, action){
     // TODO ...
@@ -68,6 +68,30 @@ function errorReducer(state, action) {
 
 }
 
+function successReducer(state, action) {
+
+    switch (action.type) {
+        case 'SHOW_ERROR':
+            
+            return {
+                isSent: false,
+                error: true
+            };
+        
+        case 'SHOW_SUCCESS':
+            
+            return {
+                isSent: true,
+                error: false
+            };
+            
+    
+        default:
+            break;
+    }
+
+}
+
 const initialInputs = {
     name: '',
     email: '',
@@ -82,6 +106,11 @@ const initialErrors = {
     messageError: ''
 };
 
+const initialState = { 
+                        isSent: false, 
+                        error: false
+                    };
+
 const nameRegExp = /^[A-Za-z\s]*$/;
 const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const textRegExp = /^[A-Za-z0-9!@#$%^&*()_+=\-[\]{};':"\\|,.<>/? ]{1,150}$/;
@@ -94,30 +123,15 @@ export default function Contact({
 }: ContactData){
 
     const [input, dispatchInput] = useReducer(inputReducer, initialInputs);
-    /*
-        {
-            name: '',
-            email: '',
-            subject: '',
-            message: ''
-        }
-    */
+    
     const [inputError, dispatchError] = useReducer(errorReducer, initialErrors);
-    /*
-        {
-            nameError: '',
-            emailError: '',
-            subjectError: '',
-            messageError: ''
-        };
-    */
+    
     const [isValid, setIsValid] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
+    const [successState, dispatchSuccess] = useReducer(successReducer, initialState);
 
     const handleChange = (e) => {
         // TODO ...
-        console.log(e.target.name);
-        console.log(e.target.value);
         dispatchInput({
             type: 'UPDATE_FIELD',
             name: e.target.name,
@@ -266,24 +280,27 @@ export default function Contact({
             body: data
         });
 
-        const result = await response.json();
+        
 
-        console.log(response);
-
-        // Validate response status
         if (response.status !== 200) {
-            // Inform User for server error
-            return;
+            dispatchSuccess({
+                type: 'SHOW_ERROR'
+            });
+        } else if (response.status === 200) {
+            dispatchSuccess({
+                type: 'SHOW_SUCCESS'
+            });
         }
 
+        setIsLoading(false);
+
+
+
        } catch (error) {
-            console.error(error);
+            
+            // console.log('Error is:', error);
        }
        
-
-
-
-    // resetInputs
        resetInputs();
 
     };
@@ -316,6 +333,7 @@ export default function Contact({
                    inputError={inputError}
                    isValid={isValid}
                    isLoading={isLoading}
+                   successState={successState}
                 />
             </div>
         </motion.section>
