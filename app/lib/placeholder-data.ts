@@ -407,3 +407,30 @@ export const resumeHighlights = [
 ];
 
 export const biographyText = "I build responsive user interfaces and interactive user experience with React, TypeScript and Next.js.";
+
+// Contact Component data
+
+// ! Initial state:
+export const initialInputs = {
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+};
+
+export const initialErrors = {
+    nameError: '',
+    emailError: '',
+    subjectError: '',
+    messageError: ''
+};
+
+export const initialState = { 
+                        isSent: false, 
+                        error: false
+                    };
+
+// ! RegExpressions
+export const nameRegExp = /^[A-Za-z\s]*$/;
+export const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+export const textRegExp = /^[A-Za-z0-9!@#$%^&*()_+=\-[\]{};':"\\|,.<>/? ]{1,150}$/;
