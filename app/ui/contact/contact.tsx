@@ -6,6 +6,7 @@ import { FieldLegend } from "../../../components/ui/Field";
 import SectionHeader from "../section-header/SectionHeader";
 import {ContactData} from '@/app/lib/definitions';
 import { useReducer, useState } from "react";
+import { initialInputs,initialErrors,initialState,nameRegExp,emailRegExp,textRegExp } from "@/app/lib/placeholder-data";
 // import axios from 'axios';
 
 function inputReducer(state, action){
@@ -91,30 +92,6 @@ function successReducer(state, action) {
     }
 
 }
-
-const initialInputs = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-};
-
-const initialErrors = {
-    nameError: '',
-    emailError: '',
-    subjectError: '',
-    messageError: ''
-};
-
-const initialState = { 
-                        isSent: false, 
-                        error: false
-                    };
-
-const nameRegExp = /^[A-Za-z\s]*$/;
-const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const textRegExp = /^[A-Za-z0-9!@#$%^&*()_+=\-[\]{};':"\\|,.<>/? ]{1,150}$/;
-
 
 export default function Contact({
     contactHeading,
