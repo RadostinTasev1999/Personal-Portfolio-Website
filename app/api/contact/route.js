@@ -40,7 +40,7 @@ export async function POST(request){
 
    try {
 
-    const messageData = await mg.messages.create(process.env.MAILGUN_DOMAIN, data);
+        await mg.messages.create(process.env.MAILGUN_DOMAIN, data);
 
     return Response.json({message: 'Data sucessfully sent'});
 
