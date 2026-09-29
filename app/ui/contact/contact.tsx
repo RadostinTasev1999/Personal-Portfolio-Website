@@ -138,8 +138,9 @@ export default function Contact({
             value: e.target.value
         });
 
-        isValid === false ? setIsValid(true) : null;
-
+        if (!isValid) {
+            setIsValid(true);
+        }
 
     };
 
@@ -252,7 +253,7 @@ export default function Contact({
     };
     
 
-    const formAction = async (formData) => {
+    const formAction = async () => {
 
     //    Validate input fields
        if (!validateInputs()) {
@@ -263,7 +264,6 @@ export default function Contact({
     //    Show loading indicator
        setIsLoading(true);
     //   Fetch API
-       try {
 
         const data = JSON.stringify({
             name: input.name,
@@ -271,37 +271,36 @@ export default function Contact({
             subject: input.subject,
             message: input.message
         });
-        
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: data
-        });
 
-        
+        try {
 
-        if (response.status !== 200) {
-            dispatchSuccess({
-                type: 'SHOW_ERROR'
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: data
             });
-        } else if (response.status === 200) {
-            dispatchSuccess({
-                type: 'SHOW_SUCCESS'
-            });
+
+
+
+            if (response.status !== 200) {
+                dispatchSuccess({
+                    type: 'SHOW_ERROR'
+                });
+            } else if (response.status === 200) {
+                dispatchSuccess({
+                    type: 'SHOW_SUCCESS'
+                });
+            }
+
+            setIsLoading(false);
+
+            resetInputs();
+
+        } catch (error) {
+            console.error(error);
         }
-
-        setIsLoading(false);
-
-
-
-       } catch (error) {
-            
-            // console.log('Error is:', error);
-       }
-       
-       resetInputs();
 
     };
 
