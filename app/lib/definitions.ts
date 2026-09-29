@@ -1,6 +1,9 @@
 // -> This file will contain type definitions for data
 // -> type definitions describe the shape of the data, and what data type each property should accept.
 
+import { ChangeEvent } from "react";
+import React from "react";
+
 export type TimelineItems = {
     year: string,
     position: string,
@@ -52,8 +55,8 @@ export type ContactFormData = {
     successState: {
         isSent: boolean,
         error: boolean
-    },
-    handleChange: () => void,
+    } | undefined,
+    handleChange: (e:ChangeEvent) => void,
     formAction: () => void
 }
 
@@ -87,7 +90,7 @@ type Bullets = {
 
 
 export type Facts = {
-    icon: FC,
+    icon: React.FC,
     text: string
 }
 
