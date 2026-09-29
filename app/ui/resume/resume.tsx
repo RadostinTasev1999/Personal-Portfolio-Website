@@ -1,10 +1,10 @@
 import * as motion from "motion/react-client";
-import SectionHeader from "../section-header/SectionHeader";
+import SectionHeader from "../section-header/sectionHeader";
 
-import ResumeTags from "./ResumeTags";
-import ResumeButtons from "./ResumeButtons";
-import ResumeNote from "./ResumeNote";
-import ResumeHighlight from "./ResumeHighlight";
+import ResumeTags from "./resumeTags";
+import ResumeButtons from "./resumeButtons";
+import ResumeNote from "./resumeNote";
+import ResumeHighlight from "./resumeHighlight";
 import { ResumeData } from "@/app/lib/definitions";
 
 export default function Resume({

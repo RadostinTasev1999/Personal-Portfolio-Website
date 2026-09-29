@@ -1,6 +1,6 @@
 import * as motion from 'motion/react-client';
-import TimelineItem from './TimelineItem';
-import SectionHeader from '../section-header/SectionHeader';
+import TimelineItem from './timelineItem';
+import SectionHeader from '../section-header/sectionHeader';
 import { ExperienceData } from '@/app/lib/definitions';
 
 export default function Experience({

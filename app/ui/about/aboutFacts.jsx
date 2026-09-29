@@ -1,5 +1,5 @@
 import { aboutFacts } from "@/app/lib/placeholder-data";
-import FactCard from "./FactCard";
+import FactCard from "./factCard";
 
 export default function AboutFacts() {
     return (

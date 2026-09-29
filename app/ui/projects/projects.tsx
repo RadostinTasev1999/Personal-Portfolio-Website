@@ -1,5 +1,5 @@
-import SectionHeader from "../section-header/SectionHeader";
-import ProjectCard from "./ProjectCard";
+import SectionHeader from "../section-header/sectionHeader";
+import ProjectCard from "./projectCard";
 import { ProjectsData } from "@/app/lib/definitions";
 
 

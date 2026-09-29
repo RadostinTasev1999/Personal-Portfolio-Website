@@ -1,10 +1,10 @@
-import HeroSection from "./ui/hero/Hero";
-import About from "./ui/about/About";
-import Skills from "./ui/skills/Skills";
-import Experience from "./ui/experience/Experience";
-import Projects from "./ui/projects/Projects";
-import Resume from "./ui/resume/Resume";
-import Contact from "./ui/contact/Contact";
+import HeroSection from "./ui/hero/hero";
+import About from "./ui/about/about";
+import Skills from "./ui/skills/skills";
+import Experience from "./ui/experience/experience";
+import Projects from "./ui/projects/projects";
+import Resume from "./ui/resume/resume";
+import Contact from "./ui/contact/contact";
 import { name } from '@/app/lib/placeholder-data';
 import { biographyText } from "@/app/lib/placeholder-data";
 import { sectionHeadings } from "@/app/lib/placeholder-data";

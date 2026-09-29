@@ -1,5 +1,5 @@
 import { ResumeHighlightItems } from "@/app/lib/definitions";
-import HighlightItem from "./HighlightItem";
+import HighlightItem from "./highlightItem";
 
 export default function ResumeHighlight({
     heading,

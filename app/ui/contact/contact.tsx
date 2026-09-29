@@ -1,9 +1,9 @@
 "use client";
 
 import * as motion from "motion/react-client";
-import ContactForm from "./ContactForm";
-import { FieldLegend } from "../../../components/ui/Field";
-import SectionHeader from "../section-header/SectionHeader";
+import ContactForm from "./contactForm";
+import { FieldLegend } from "../../../components/ui/field";
+import SectionHeader from "../section-header/sectionHeader";
 import {ContactData} from '@/app/lib/definitions';
 import { useReducer, useState } from "react";
 import { initialInputs,initialErrors,initialState,nameRegExp,emailRegExp,textRegExp } from "@/app/lib/placeholder-data";

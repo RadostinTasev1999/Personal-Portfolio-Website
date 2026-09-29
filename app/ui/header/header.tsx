@@ -4,10 +4,10 @@
 
 import { useState, useCallback } from 'react';
 import {navigationLinks} from '@/app/lib/placeholder-data';
-import NavLinks from './NavLinks';
-import HamburgerButton from './HamburgerButton';
-import Logo from './Logo';
-import MobileLinks from './MobileLinks';
+import NavLinks from './navLinks';
+import HamburgerButton from './hamburgerButton';
+import Logo from './logo';
+import MobileLinks from './mobileLinks';
 
 
 export default function AppHeader() {

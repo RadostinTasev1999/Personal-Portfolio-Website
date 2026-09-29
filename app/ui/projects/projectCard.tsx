@@ -1,9 +1,9 @@
 
 import { ProjectCardData } from "@/app/lib/definitions";
 
-import ProjectImage from "./ProjectImage";
+import ProjectImage from "./projectImage";
 
-import CardContent from "./ProjectCardContent";
+import CardContent from "./projectCardContent";
 
 export default function ProjectCard({
     imgUrl,
