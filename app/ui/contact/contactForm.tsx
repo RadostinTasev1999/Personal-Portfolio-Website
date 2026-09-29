@@ -1,9 +1,9 @@
 "use client";
 
-import { Textarea } from "../../../components/ui/Textarea";
+import { Textarea } from "@/components/ui/Textarea";
 import { ClipLoader } from "react-spinners";
-import { FieldGroup, Field, FieldLabel } from "../../../components/ui/Field";
-import { Input } from "../../../components/ui/Input";
+import { FieldGroup, Field, FieldLabel } from "@/components/ui/Field";
+import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import {ContactFormData} from '@/app/lib/definitions';
 import Alert from '@mui/material/Alert';
