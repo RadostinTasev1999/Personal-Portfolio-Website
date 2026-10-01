@@ -5,7 +5,7 @@ import { ClipLoader } from "react-spinners";
 import { FieldGroup, Field, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {ContactFormData} from '@/app/lib/definitions';
+import {ContactFormData} from '@/lib/definitions';
 import Alert from '@mui/material/Alert';
 
 

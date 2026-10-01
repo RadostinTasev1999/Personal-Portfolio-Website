@@ -1,13 +1,17 @@
 "use client";
 
 import * as motion from "motion/react-client";
-import ContactForm from "./contactForm";
+import ContactForm from "./ContactForm";
 import { FieldLegend } from "../../ui/field";
-import SectionHeader from "../section-header/sectionHeader";
-import {ContactData} from '@/app/lib/definitions';
+import SectionHeader from "../section-header/SectionHeader";
+import { ContactData } from "@/lib/definitions";
 import { useReducer, useState } from "react";
-import { initialInputs,initialErrors,initialState,nameRegExp,emailRegExp,textRegExp } from "@/app/lib/placeholder-data";
-// import axios from 'axios';
+import { initialInputs } from '@/lib/placeholder-data';
+import {
+    nameRegExp,
+    emailRegExp,
+    textRegExp
+} from '@/lib/placeholder-data';
 
 function inputReducer(state, action){
     // TODO ...
@@ -96,7 +100,11 @@ function successReducer(state, action) {
 export default function Contact({
     contactHeading,
     contactHeader,
-    contactText
+    contactText,
+    initialInputs,
+    initialErrors,
+    initialState,
+    contactFormHeading
 }: ContactData){
 
     const [input, dispatchInput] = useReducer(inputReducer, initialInputs);
@@ -297,7 +305,9 @@ export default function Contact({
 
             <div id="container" className="flex flex-col gap-6">
 
-                <FieldLegend className="text-lg font-semibold text-sky-500">Contact me</FieldLegend>
+                <FieldLegend className="text-lg font-semibold text-sky-500">
+                    {contactFormHeading}
+                </FieldLegend>
                 {/* Contact form */}
                 <ContactForm
                    name={input.name}
