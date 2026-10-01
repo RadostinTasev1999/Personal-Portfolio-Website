@@ -1,19 +1,34 @@
-import HeroSection from "../components/homepage/hero/hero";
-import About from "../components/homepage/about/about";
-import Skills from "../components/homepage/skills/skills";
-import Experience from "../components/homepage/experience/experience";
-import Projects from "../components/homepage/projects/projects";
-import Resume from "../components/homepage/resume/resume";
-import Contact from "../components/homepage/contact/contact";
-import { name } from '@/app/lib/placeholder-data';
-import { biographyText } from "@/app/lib/placeholder-data";
-import { sectionHeadings } from "@/app/lib/placeholder-data";
-import { aboutBioText } from "@/app/lib/placeholder-data";
-import { skillTypes } from "@/app/lib/placeholder-data";
-import { timelineItems } from "@/app/lib/placeholder-data";
-import { projectCardsData } from "@/app/lib/placeholder-data";
-import { resumeTags } from "@/app/lib/placeholder-data";
-import { resumeHighlights } from "@/app/lib/placeholder-data";
+import HeroSection from "../components/homepage/hero/Hero";
+import About from "../components/homepage/about/About";
+import Skills from "@/components/homepage/skills/Skills";
+import Experience from "../components/homepage/experience/Experience";
+import Projects from "../components/homepage/projects/Projects";
+import Resume from "../components/homepage/resume/Resume";
+import Contact from "../components/homepage/contact/Contact";
+import { name } from "@/lib/placeholder-data";
+import { biographyText } from "@/lib/placeholder-data";
+import { sectionHeadings } from "@/lib/placeholder-data";
+import { aboutBioText } from "@/lib/placeholder-data";
+import { skillTypes } from "@/lib/placeholder-data";
+import { timelineItems } from "@/lib/placeholder-data";
+import { projectCardsData } from "@/lib/placeholder-data";
+import { resumeTags } from "@/lib/placeholder-data";
+import { resumeHighlights } from "@/lib/placeholder-data";
+import { heroBadgeText } from "@/lib/placeholder-data";
+import {jobRolesText} from '@/lib/placeholder-data';
+import {heroCtaButtons} from '@/lib/placeholder-data';
+import {statistics} from '@/lib/placeholder-data';
+import { valueCards } from "@/lib/placeholder-data";
+import {aboutButtonsText} from "@/lib/placeholder-data";
+import {aboutFacts} from '@/lib/placeholder-data';
+import {resumeData} from '@/lib/placeholder-data';
+import { 
+    initialInputs,
+    initialErrors,
+    initialState
+ } from "@/lib/placeholder-data";
+
+ import { contactFormHeading } from "@/lib/placeholder-data";
 
 
 export default function Page() {
@@ -33,6 +48,10 @@ export default function Page() {
           firstName={name.firstName}
           lastName={name.lastName}
           bioText={biographyText}
+          heroBadgeText={heroBadgeText}
+          jobRolesText={jobRolesText}
+          heroCtaButtons={heroCtaButtons}
+          statistics={statistics}
           />
         {/* About (client component)*/}
         <About 
@@ -40,6 +59,9 @@ export default function Page() {
           header={aboutHeader}
           text={aboutText}
           aboutBioText={aboutBioText}
+          valueCards={valueCards}
+          aboutButtonsText={aboutButtonsText}
+          aboutFacts={aboutFacts}
         />
         {/* Skills section */}
         <Skills 
@@ -69,12 +91,17 @@ export default function Page() {
           resumeText={resumeText}
           resumeTags={resumeTags}
           resumeHighlights={resumeHighlights}
+          resumeData={resumeData}
         />
         {/* Contact Form - client component */}
         <Contact 
           contactHeading={contactHeading}
           contactHeader={contactHeader}
           contactText={contactText}
+          initialInputs={initialInputs}
+          initialErrors={initialErrors}
+          initialState={initialState}
+          contactFormHeading={contactFormHeading}
         />
 
       </div>
