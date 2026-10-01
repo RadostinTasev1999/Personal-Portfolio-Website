@@ -1,4 +1,4 @@
-import './ui/globals.css';
+import '@/components/ui/globals.css';
 import AppHeader from '../components/homepage/header/header';
 import AppFooter from '../components/homepage/footer/footer';
 import { inter } from "../components/ui/fonts";
