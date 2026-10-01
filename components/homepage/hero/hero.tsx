@@ -1,17 +1,21 @@
 import * as motion from "motion/react-client";
-import CtaButtons from "./ctaButtons";
-import Badge from "./badge";
-import JobRoles from "./jobRoles";
-import HeroStatistics from "./statistics";
-import { HeroData } from "@/app/lib/definitions";
+import CtaButtons from "./CtaButtons";
+import Badge from "./Badge";
+import JobRoles from "./JobRoles";
+import HeroStatistics from "./Statistics";
+import { HeroData } from "@/lib/definitions";
 
-import Biography from "./biography";
-import VantaBackground from "./vantaBackground";
+import Biography from "./Biography";
+import VantaBackground from "./VantaBackground";
 
 export default function HeroSection({
   firstName,
   lastName,
-  bioText
+  bioText,
+  heroBadgeText,
+  jobRolesText,
+  heroCtaButtons,
+  statistics
 }: HeroData) {
 
   /*
@@ -39,7 +43,9 @@ export default function HeroSection({
                                            
 
                   {/* Current status badge */}
-                  <Badge />
+                  <Badge 
+                    heroBadgeText={heroBadgeText}
+                    />
 
                   {/* Main Heading */}
                   <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-slate-950 leading-[0.95] tracking-tight">
@@ -48,14 +54,20 @@ export default function HeroSection({
                   </h1>
 
                   {/* Job Role */}
-                <JobRoles />
+                <JobRoles 
+                  jobRolesText={jobRolesText}
+                  />
 
                   {/* Biography */}
-                <Biography text={bioText}/>
+                <Biography 
+                  text={bioText}
+                    />
                   
 
                   {/* CTA buttons */}
-                  <CtaButtons />
+                  <CtaButtons 
+                    heroCtaButtons={heroCtaButtons}
+                    />
                   
 
                 </div>
@@ -70,7 +82,9 @@ export default function HeroSection({
               </div>
 
               {/* Statistics */}
-                <HeroStatistics />
+                <HeroStatistics 
+                    statistics={statistics}
+                  />
         
             </motion.section>
     );

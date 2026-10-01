@@ -1,4 +1,4 @@
-import { BiographyText } from "@/app/lib/definitions";
+import {BiographyText} from '@/lib/definitions';
 
 export default function Biography({
     text

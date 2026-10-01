@@ -1,6 +1,9 @@
 import * as motion from "motion/react-client";
+import JobRoleText from '@/lib/definitions';
 
-export default function JobRoles() {
+export default function JobRoles({
+    jobRolesText
+}: JobRoleText) {
     return(
         <motion.div
             id="hero-role"
@@ -10,7 +13,7 @@ export default function JobRoles() {
             transition={{ duration: 0.6, delay: 0.4 }}
         >
             <div id="hero-stack">
-                <span id="role-text" className="text-blue-500">{`JavaScript Developer / React Engineer / Problem Solver ...`}</span>
+                <span id="role-text" className="text-blue-500">{jobRolesText}</span>
                 <motion.span
                     id="cursor"
                     className="ml-1 text-blue-500 inline-flex"
