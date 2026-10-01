@@ -1,5 +1,5 @@
-import SkillsCategory from "./skillsCategory";
-import { SkillTypes } from "@/app/lib/definitions";
+import SkillsCategory from "./SkillsCategory";
+import { SkillTypes } from "@/lib/definitions";
 
 export default function SkillsCard({
     skillType,

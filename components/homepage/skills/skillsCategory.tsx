@@ -1,12 +1,8 @@
-import { SkillTypes } from "@/app/lib/definitions";
+import { SkillTypes } from "@/lib/definitions";
 
 export default function SkillsCategory({
     skill,
 }: SkillTypes) {
-
-// skillTypes = { skill: string[] }
-
-// skill = ['JavaScript','TypeScript','HTML','CSS']
     
     return (
         <>
