@@ -1,14 +1,15 @@
-import { TimeLineItems } from "@/app/lib/definitions";
-import TimeLinePoints from "./timelinePoints";
-import TimelineButton from "./timelineButton";
+import { TimelineItems } from "@/lib/definitions";
+import TimeLinePoints from "./TimelinePoints";
+import TimelineButton from "./TimelineButton";
 
 export default function TimelineItem({
     year,
     position,
     company,
     bullets,
-    url
-}: TimeLineItems) {
+    url,
+    btnText
+}: TimelineItems) {
     return (
         <>
             <div id="timeline-item" className="group relative pb-14 pl-8 last:pb-0">
@@ -44,7 +45,7 @@ export default function TimelineItem({
                     </ul>
                     {
                         company === 'Software University' && (
-                            <TimelineButton url={url}/>
+                            <TimelineButton url={url} btnText={btnText}/>
                         )
 
                     }

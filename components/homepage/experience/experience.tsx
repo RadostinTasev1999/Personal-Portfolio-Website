@@ -1,14 +1,13 @@
 import * as motion from 'motion/react-client';
-import TimelineItem from './timelineItem';
-import SectionHeader from '../section-header/sectionHeader';
-import { ExperienceData } from '@/app/lib/definitions';
+import TimelineItem from './TimelineItem';
+import SectionHeader from '../section-header/SectionHeader';
+import {ExperienceData} from '@/lib/definitions';
 
 export default function Experience({
     experienceHeading,
     experienceHeader,
     experienceText,
     timelineItems
-
 }: ExperienceData) {
 
     return (
@@ -33,6 +32,7 @@ export default function Experience({
                                 company={item.company}
                                 bullets={item.bullets}
                                 url={item.url}
+                                btnText={item.btnText}
                                 />
                         ))
                     }

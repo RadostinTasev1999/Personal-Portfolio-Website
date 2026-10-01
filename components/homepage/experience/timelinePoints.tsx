@@ -1,4 +1,4 @@
-import { BulletText } from "@/app/lib/definitions";
+import {BulletText} from '@/lib/definitions';
 
 export default function TimeLinePoints({
     text
