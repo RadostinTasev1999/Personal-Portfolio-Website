@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {AboutButtonsData} from '@/lib/definitions';
 
-export default function AboutButtons() {
+export default function AboutButtons({
+    aboutButtonsText
+}: AboutButtonsData) {
 
     return (
         <div id="buttons" className="flex flex-wrap gap-3 items-center">
@@ -12,14 +15,14 @@ export default function AboutButtons() {
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                     </svg>
-                    Download my resume
+                    {aboutButtonsText.btnPrimary}
                 </Button>
             </Link>
 
             {/* Contact Form */}
             <Link href="/#contact-section">
                 <Button variant="outline" className="h-11 rounded-full border-sky-500 bg-transparent px-6 text-sm font-semibold text-sky-500 hover:bg-sky-50">
-                    Contact me
+                    {aboutButtonsText.btnSecondary}
                 </Button>
             </Link>
         </div>

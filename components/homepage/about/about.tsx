@@ -2,20 +2,23 @@
 
 import * as motion from "motion/react-client";
 
-import SectionHeader from '../section-header/sectionHeader';
-import AboutButtons from "./aboutButtons";
+import SectionHeader from '../section-header/SectionHeader';
+import AboutButtons from "./AboutButtons";
 
-import { AboutData } from "@/app/lib/definitions";
+import { AboutData } from "@/lib/definitions";
 
-import AboutValues from "./aboutValues";
-import AboutPhoto from "./aboutPhoto";
-import AboutFacts from './aboutFacts';
+import AboutValues from "./AboutValues";
+import AboutPhoto from "./AboutPhoto";
+import AboutFacts from './AboutFacts';
 
 export default function About({
     heading,
     header,
     text,
-    aboutBioText
+    aboutBioText,
+    valueCards,
+    aboutButtonsText,
+    aboutFacts
 }: AboutData) {
 
     return (
@@ -45,16 +48,22 @@ export default function About({
                                 }
                             </div>
                             {/* Values */}
-                            <AboutValues />
+                            <AboutValues 
+                                valueCards={valueCards}
+                                />
                             {/* Buttons */}
-                            <AboutButtons />
+                            <AboutButtons 
+                                aboutButtonsText={aboutButtonsText}
+                                />
                         </div>
                         {/* About Photo */}
                         <div id="about-photo-col" className="flex flex-col gap-8">
                             {/* Photo */}
                             <AboutPhoto />
                             {/* Quick Facts */}
-                            <AboutFacts />
+                            <AboutFacts 
+                                aboutFacts={aboutFacts}
+                                />
                         </div>
                     </div>
                 </div>

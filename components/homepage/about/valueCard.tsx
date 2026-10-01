@@ -1,4 +1,4 @@
-import { ValueCards } from "@/app/lib/definitions";
+import {ValueCards} from '@/lib/definitions';
 
 export default function ValueCard({
     heading,
