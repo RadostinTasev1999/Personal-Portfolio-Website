@@ -1,4 +1,4 @@
-import { SectionHeaders } from "@/app/lib/definitions";
+import {SectionHeaders} from '@/lib/definitions';
 
 export default function SectionHeader({
     heading, header, text
