@@ -1,4 +1,4 @@
-import {ItemData} from '@/app/lib/definitions';
+import { ItemData } from '@/lib/definitions';
 import Link from 'next/link';
 
 
@@ -21,4 +21,3 @@ export default function HighlightItem({
         </li>
     );
 }
-// ${id > 1 ? "after:content-['->Link'] after:text-sky-500 after:pl-[5px]" : ""}

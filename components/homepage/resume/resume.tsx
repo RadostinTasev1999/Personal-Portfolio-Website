@@ -1,18 +1,19 @@
 import * as motion from "motion/react-client";
-import SectionHeader from "../section-header/sectionHeader";
+import SectionHeader from "../section-header/SectionHeader";
 
-import ResumeTags from "./resumeTags";
-import ResumeButtons from "./resumeButtons";
-import ResumeNote from "./resumeNote";
-import ResumeHighlight from "./resumeHighlight";
-import { ResumeData } from "@/app/lib/definitions";
+import ResumeTags from "./ResumeTags";
+import ResumeButtons from "./ResumeButtons";
+import ResumeNote from "./ResumeNote";
+import ResumeHighlight from "./ResumeHighlight";
+import {ResumeData} from '@/lib/definitions';
 
 export default function Resume({
     resumeHeading,
     resumeHeader,
     resumeText,
     resumeTags,
-    resumeHighlights
+    resumeHighlights,
+    resumeData
 }: ResumeData) {
 
     
@@ -39,10 +40,12 @@ export default function Resume({
                     <div id="resume-left" className="flex flex-col gap-6">
 
                         {/* Heading */}
-                        <h2 className="m-0 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">Download My Resume</h2>
+                        <h2 className="m-0 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+                            {resumeData.headingText}
+                        </h2>
                         {/* Description */}
                         <p id="resume-note" className="max-w-md text-base leading-7 text-slate-600">
-                            Learn more about my background, including Skills, Experience and Projects.
+                            {resumeData.paragraphText}
                         </p>
                         {/* Technology tags */}
                         <div id="resume-tags" className="flex flex-wrap items-center gap-x-4 gap-y-1">
@@ -54,9 +57,14 @@ export default function Resume({
                             
                         </div>
                         {/* Buttons */}
-                        <ResumeButtons />
+                        <ResumeButtons 
+                            btnPrimary={resumeData.btnPrimary}
+                            btnSecondary={resumeData.btnSecondary}
+                        />
                         {/* Availability note / Status message */}
-                        <ResumeNote />
+                        <ResumeNote 
+                            resumeNote={resumeData.resumeNote}
+                            />
                     </div>
 
                     {/* Right side of card */}
