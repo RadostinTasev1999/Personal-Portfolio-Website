@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ImageUrl } from "@/app/lib/definitions";
+import {ImageUrl} from '@/lib/definitions';
 
 export default function ProjectImage({
     imgUrl

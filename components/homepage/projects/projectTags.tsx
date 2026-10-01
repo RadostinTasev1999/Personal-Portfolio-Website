@@ -1,4 +1,4 @@
-import { Tag } from "@/app/lib/definitions";
+import {Tag} from '@/lib/definitions';
 
 export default function ProjectTags({
     tag

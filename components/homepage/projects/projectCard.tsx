@@ -1,9 +1,9 @@
 
-import { ProjectCardData } from "@/app/lib/definitions";
+import {ProjectCardData} from '@/lib/definitions';
 
-import ProjectImage from "./projectImage";
+import ProjectImage from "./ProjectImage";
 
-import CardContent from "./projectCardContent";
+import CardContent from "./ProjectCardContent";
 
 export default function ProjectCard({
     imgUrl,
@@ -11,6 +11,7 @@ export default function ProjectCard({
     text,
     tags,
     url,
+    btnText,
     reversed
 }: ProjectCardData){
 
@@ -19,7 +20,7 @@ export default function ProjectCard({
                 {/* Image */}
                 <ProjectImage imgUrl={imgUrl} />
                 {/* Card content */}
-                <CardContent tags={tags} url={url} title={title} text={text} />
+                <CardContent tags={tags} url={url} title={title} text={text} btnText={btnText} />
             </article>
     );
 }

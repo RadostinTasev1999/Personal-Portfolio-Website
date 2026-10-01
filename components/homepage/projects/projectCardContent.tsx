@@ -1,12 +1,13 @@
-import ProjectTags from "./projectTags";
-import { CardContentData } from "@/app/lib/definitions";
-import ProjectLink from "./projectLink";
+import ProjectTags from "./ProjectTags";
+import {CardContentData} from '@/lib/definitions';
+import ProjectLink from "./ProjectLink";
 
 export default function CardContent({
     tags,
     url,
     title,
-    text
+    text,
+    btnText
 }: CardContentData) {
 
     return (
@@ -26,7 +27,7 @@ export default function CardContent({
 
             </div>
             {/* Project Link */}
-            <ProjectLink url={url}/>
+            <ProjectLink url={url} btnText={btnText}/>
         </div>
     );
 }

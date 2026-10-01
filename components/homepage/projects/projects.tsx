@@ -1,6 +1,6 @@
-import SectionHeader from "../section-header/sectionHeader";
-import ProjectCard from "./projectCard";
-import { ProjectsData } from "@/app/lib/definitions";
+import SectionHeader from "../section-header/SectionHeader";
+import ProjectCard from "./ProjectCard";
+import { ProjectsData } from "@/lib/definitions";
 
 
 export default function Projects({
@@ -33,6 +33,7 @@ return (
                             text={project.text} 
                             tags={project.tags}
                             url={project.url} 
+                            btnText={project.btnText}
                             reversed={index % 2 === 1}
                             />
                 ))
