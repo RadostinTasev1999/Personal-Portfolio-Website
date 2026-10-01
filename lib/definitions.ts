@@ -4,17 +4,20 @@
 import { ChangeEvent } from "react";
 import React from "react";
 
+
 export type TimelineItems = {
     year: string,
     position: string,
     company: string,
-    bullets: string [],
-    url: string
+    bullets: BulletsData,
+    url: string,
+    btnText?: string
 }
 // 
 
-export type LinkUrl = {
-    url: string
+export type TimelineBtnData = {
+    url: string,
+    btnText?: string
 }
 
 export type SectionHeaders = {
@@ -55,7 +58,7 @@ export type ContactFormData = {
     successState: {
         isSent: boolean,
         error: boolean
-    } | undefined,
+    },
     handleChange: (e:ChangeEvent) => void,
     formAction: () => void
 }
@@ -89,10 +92,10 @@ type Bullets = {
 }[];
 
 
-export type Facts = {
-    icon: React.FC,
-    text: string
+export interface Facts extends React.PropsWithChildren {
+    text: string,
 }
+
 
 export type ResumeTag = {
     tag: string
@@ -122,6 +125,7 @@ export type ProjectCardData = {
     text: string,
     tags: Tags,
     url: string,
+    btnText: string,
     reversed: boolean
 }
 
@@ -143,7 +147,8 @@ export type CardContentData = {
     tags: Tags,
     url: string,
     title: string,
-    text: string
+    text: string,
+    btnText: string
 }
 
 export type BiographyText = {
@@ -170,14 +175,69 @@ export type ToggleMenu = {
 export type HeroData = {
     firstName: string,
     lastName: string,
-    bioText: string
+    bioText: string,
+    heroBadgeText: string,
+    jobRolesText: string,
+    heroCtaButtons: HeroCtaBtns,
+    statistics: HeroStatistics
+}
+
+type HeroStatistics = {    
+    id: number,
+    name: string,
+    stat: string  
+}[]
+
+export type HeroStatsData = {
+    statistics: HeroStatistics
+}
+
+export type HeroCtaBtns = {
+    btnPrimary: string,
+    btnSecondary: string
+}
+
+export type CtaBtns = {
+    heroCtaButtons: HeroCtaBtns
 }
 
 export type AboutData = {
     heading: string,
     header: string,
     text: string,
-    aboutBioText: AboutText
+    aboutBioText: AboutText,
+    valueCards: AboutValueCards,
+    aboutButtonsText: AboutButtonsTxt,
+    aboutFacts: AboutFactsData
+};
+
+type AboutFactsData = {
+    id: number,
+    icon: React.ReactNode,
+    text: string
+} []
+
+export type AboutFactsProp = {
+    aboutFacts: AboutFactsData
+}
+
+type AboutButtonsTxt = {
+        btnPrimary: string,
+        btnSecondary: string
+    }
+
+export type AboutButtonsData = {
+    aboutButtonsText: AboutButtonsTxt
+}
+
+type AboutValueCards = {
+    id: number,
+    heading: string,
+    text: string
+} []
+
+export type AboutValuesData = {
+    valueCards: AboutValueCards
 }
 
 type AboutText = {
@@ -216,7 +276,8 @@ type TimeLineData = {
     position: string,
     company: string,
     bullets: BulletsData,
-    url: string
+    url: string,
+    btnText?: string
 }[]
 
 type BulletsData = {
@@ -237,7 +298,8 @@ type ProjectData = {
     title: string,
     text: string,
     tags: ProjectTags,
-    url: string
+    url: string,
+    btnText: string
 }[]
 
 type ProjectTags = {
@@ -245,13 +307,27 @@ type ProjectTags = {
     name: string
 }[]
 
+export type ProjectLinkData = {
+    url: string,
+    btnText: string
+}
+
 export type ResumeData = {
     resumeHeading: string,
     resumeHeader: string,
     resumeText: string,
     resumeTags: ResumeTags,
-    resumeHighlights: resumeHighlightsData
+    resumeHighlights: resumeHighlightsData,
+    resumeData: AppResumeData
 
+}
+
+type AppResumeData = {
+    headingText: string,
+    paragraphText: string,
+    btnPrimary: string,
+    btnSecondary: string,
+    resumeNote: string  
 }
 
 type ResumeTags = {
@@ -270,10 +346,42 @@ type resumeItemData = {
     text: string
 }[]
 
+export type ResumeButtonsData = {
+    btnPrimary: string,
+    btnSecondary: string
+}
+
+export type ResumeNoteData = {
+    resumeNote: string
+};
+
 export type ContactData = {
     contactHeading: string,
     contactHeader: string,
-    contactText: string
+    contactText: string,
+    initialInputs: InitialContactInputs,
+    initialErrors: InitialContactErrors,
+    initialState: InitialFormState,
+    contactFormHeading: string
+}
+
+type InitialContactInputs = {
+    name: string,
+    email: string,
+    subject: string,
+    message: string
+}
+
+type InitialContactErrors = {
+    nameError: string,
+    emailError: string,
+    subjectError: string,
+    messageError: string
+}
+
+type InitialFormState = {
+    isSent: boolean, 
+    error: boolean
 }
 
 
@@ -305,3 +413,12 @@ type SocialLinks = {
     url: string,
     icon: React.FC
 }[]
+
+export type HeroBadge = {
+    heroBadgeText: string
+}
+
+export type JobRoleText = {
+    jobRolesText: string
+}
+
