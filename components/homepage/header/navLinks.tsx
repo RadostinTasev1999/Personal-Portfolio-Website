@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { NavigationLinks } from '@/app/lib/definitions';
+import { NavigationLinks } from '@/lib/definitions';
 
 export default function NavLinks({
     name,

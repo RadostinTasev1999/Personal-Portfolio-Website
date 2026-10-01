@@ -2,7 +2,7 @@
 
 import * as motion from "motion/react-client";
 import ContactForm from "./contactForm";
-import { FieldLegend } from "../../../components/ui/field";
+import { FieldLegend } from "../../ui/field";
 import SectionHeader from "../section-header/sectionHeader";
 import {ContactData} from '@/app/lib/definitions';
 import { useReducer, useState } from "react";

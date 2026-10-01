@@ -1,16 +1,17 @@
 "use client";
 
-// import montserrat from '../fonts'
-
 import { useState, useCallback } from 'react';
-import {navigationLinks} from '@/app/lib/placeholder-data';
 import NavLinks from './navLinks';
 import HamburgerButton from './hamburgerButton';
 import Logo from './logo';
 import MobileLinks from './mobileLinks';
+import { HeaderData } from '@/lib/definitions';
 
 
-export default function AppHeader() {
+export default function AppHeader({
+    navigationLinks,
+    logo
+}: HeaderData) {
 
     const [menuOpen, setMenuOpen] = useState(false);
     // -> we prevent unnecessary creation of the function on re-renders
@@ -27,7 +28,9 @@ export default function AppHeader() {
             <div id="nav-inner" className='max-w-6xl mx-auto flex justify-between items-center px-6 py-4'>
                                        {/* mx-auto flex max-w-6xl items-center justify-between px-6 py-4 */}
                 {/* Nav Logo */}
-                <Logo />
+                <Logo 
+                    logo={logo}
+                    />
                 {/* Hamburger button */}
                 <HamburgerButton toggleMenu={toggleMenu} />
                 {/* Mobile Links */}

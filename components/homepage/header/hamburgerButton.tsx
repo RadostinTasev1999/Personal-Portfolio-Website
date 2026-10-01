@@ -1,4 +1,4 @@
-import { ToggleMenu } from "@/app/lib/definitions";
+import { ToggleMenu } from "@/lib/definitions";
 
 export default function HamburgerButton({
     toggleMenu

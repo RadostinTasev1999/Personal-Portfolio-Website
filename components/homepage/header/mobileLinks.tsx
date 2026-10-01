@@ -1,9 +1,9 @@
-import { NavLinks } from "@/app/lib/definitions";
+import { MobileLinksData } from "@/lib/definitions";
 import Link from "next/link";
 
 export default function MobileLinks({
     navLinks
-}: NavLinks){
+}: MobileLinksData){
 
     return (
         <ul id="mobile-links" className="flex flex-col absolute top-full right-0 px-6 py-2 left-0 z-10 border-b border-slate-200 bg-white shadow-sm md:hidden">
