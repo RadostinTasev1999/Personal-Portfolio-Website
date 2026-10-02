@@ -1,7 +1,7 @@
-import IconBook from "@/components/homepage/icons/learn";
-import IconLocation from "@/components/homepage/icons/location";
-import IconStudent from "@/components/homepage/icons/study";
-import IconWork from "@/components/homepage/icons/work";
+import IconBook from "@/components/homepage/icons/Learn";
+import IconLocation from "@/components/homepage/icons/Location";
+import IconStudent from "@/components/homepage/icons/Study";
+import IconWork from "@/components/homepage/icons/Work";
 
 import LinkedInIcon from '@/components/ui/LinkedInIcon';
 import GitHubIcon from '@/components/ui/GitHubIcon';
