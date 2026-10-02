@@ -1,4 +1,4 @@
-import { ResumeTag } from "@/app/lib/definitions";
+import { ResumeTag } from "@/lib/definitions";
 
 export default function ResumeTags({
     tag
