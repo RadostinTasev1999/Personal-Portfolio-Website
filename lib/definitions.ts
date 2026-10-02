@@ -55,12 +55,11 @@ export type ContactFormData = {
                 },
     isValid: boolean,
     isLoading: boolean,
-    successState: {
-        isSent: boolean,
-        error: boolean
-    },
-    handleChange: (e:ChangeEvent) => void,
-    formAction: () => void
+    isSent: boolean | undefined,
+    error: boolean | undefined,
+    handleChange: (e: OnChangeEvent) => void,
+    formAction: () => void,
+    buttonText: string
 }
 
 export type NavigationLinks = {
@@ -362,7 +361,12 @@ export type ContactData = {
     initialInputs: InitialContactInputs,
     initialErrors: InitialContactErrors,
     initialState: InitialFormState,
-    contactFormHeading: string
+    contactFormData: FormData
+}
+
+type FormData = {
+    headingText: string,
+    buttonText: string
 }
 
 type InitialContactInputs = {
@@ -405,7 +409,8 @@ export type SiteLogo = {
 }
 
 export type AppFooterData = {
-    socialLinks: SocialLinks
+    socialLinks: SocialLinks,
+    footerText: string
 }
 
 type SocialLinks = {
@@ -422,3 +427,39 @@ export type JobRoleText = {
     jobRolesText: string
 }
 
+export type InputState = {
+    name: string,
+    email: string,
+    subject: string,
+    message: string
+}
+
+export type InputAction = {
+    type: string,
+    name: string,
+    value: string
+}
+
+export type InputErrorState = {
+    nameError: string,
+    emailError: string,
+    subjectError: string,
+    messageError: string
+}
+
+export type InputErrorAction = {
+    type: string,
+    name: string,
+    message: string
+}
+
+export type SuccessState = {
+    isSent: boolean,
+    error: boolean
+}
+
+export type SuccessStateAction = {
+    type: string
+}
+
+export type OnChangeEvent = ChangeEvent<HTMLInputElement>
