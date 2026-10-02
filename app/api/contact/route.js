@@ -20,10 +20,16 @@ export async function POST(request){
         to: ['Radostin Tasev <radostintasev22@yahoo.com>'],
         subject: 'New message from portfolio contact form',
         text: `
+        Hello Radostin Tasev. You have received a new message from a user, regarding your
+        Portfolio Project.
+
             Name: ${name}
             Email: ${email}
             Subject: ${subject}
             Message: ${message}
+
+        Best Regards!
+        Support Team
         `
     };
 
