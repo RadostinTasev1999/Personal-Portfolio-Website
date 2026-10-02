@@ -8,12 +8,23 @@ import { ContactData } from "@/lib/definitions";
 import { useReducer, useState } from "react";
 import { initialInputs } from '@/lib/placeholder-data';
 import {
+    InputState,
+    InputAction,
+    InputErrorState,
+    InputErrorAction,
+    SuccessState,
+    SuccessStateAction,
+    OnChangeEvent
+} from '@/lib/definitions';
+
+import {
     nameRegExp,
     emailRegExp,
     textRegExp
 } from '@/lib/placeholder-data';
 
-function inputReducer(state, action){
+
+function inputReducer(state: InputState, action: InputAction): InputState{
     // TODO ...
 
     switch (action.type) {
@@ -31,23 +42,18 @@ function inputReducer(state, action){
         case 'RESET_INPUTS':
             
             return initialInputs;
-            
-    
-        default:
-            break;
+
+        
+            default:
+
+            return state;
     }
 
 }
 
-function errorReducer(state, action) {
+function errorReducer(state: InputErrorState, action: InputErrorAction): InputErrorState{
 
-    /*
-        {
-                type:'SET_ERROR',
-                name: 'nameError',
-                message: 'Please Enter Valid Name.'
-            }
-    */
+
 
     switch (action.type) {
         case 'SET_ERROR':
@@ -67,13 +73,13 @@ function errorReducer(state, action) {
             
     
         default:
-            break;
+            return state;
     }
     
 
 }
 
-function successReducer(state, action) {
+function successReducer(state: SuccessState, action: SuccessStateAction): SuccessState {
 
     switch (action.type) {
         case 'SHOW_ERROR':
@@ -92,7 +98,7 @@ function successReducer(state, action) {
             
     
         default:
-            break;
+            return state;
     }
 
 }
@@ -104,18 +110,22 @@ export default function Contact({
     initialInputs,
     initialErrors,
     initialState,
-    contactFormHeading
+    contactFormData
 }: ContactData){
 
     const [input, dispatchInput] = useReducer(inputReducer, initialInputs);
     
     const [inputError, dispatchError] = useReducer(errorReducer, initialErrors);
+
+    
     
     const [isValid, setIsValid] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [successState, dispatchSuccess] = useReducer(successReducer, initialState);
 
-    const handleChange = (e) => {
+    
+
+    const handleChange = (e: OnChangeEvent) => {
         // TODO ...
         dispatchInput({
             type: 'UPDATE_FIELD',
@@ -306,7 +316,7 @@ export default function Contact({
             <div id="container" className="flex flex-col gap-6">
 
                 <FieldLegend className="text-lg font-semibold text-sky-500">
-                    {contactFormHeading}
+                    {contactFormData.headingText}
                 </FieldLegend>
                 {/* Contact form */}
                 <ContactForm
@@ -319,7 +329,9 @@ export default function Contact({
                    inputError={inputError}
                    isValid={isValid}
                    isLoading={isLoading}
-                   successState={successState}
+                   isSent={successState?.isSent}
+                   error={successState?.error}
+                   buttonText={contactFormData.buttonText}
                 />
             </div>
         </motion.section>
