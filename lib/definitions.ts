@@ -436,8 +436,8 @@ export type InputState = {
 
 export type InputAction = {
     type: string,
-    name: string,
-    value: string
+    name?: string,
+    value?: string
 }
 
 export type InputErrorState = {
