@@ -4,7 +4,8 @@ import { AppFooterData } from "@/lib/definitions";
 
 
 export default function AppFooter({
-    socialLinks
+    socialLinks,
+	footerText
 }: AppFooterData){
 
     
@@ -12,11 +13,11 @@ export default function AppFooter({
         <footer id="footer" className="border-t border-slate-200 px-6 py-8 mt-auto relative">
 			<div id="footer-bottom" className="flex flex-wrap justify-between items-center gap-4 text-sm mx-auto max-w-6xl text-slate-600">
 				<span>
-					<p>&copy; {new Date().getFullYear()} Developed by Radostin Tasev</p>
+					<p>&copy; {new Date().getFullYear()} {footerText}</p>
 				</span>
 
 				<div id="social-links" className="flex items-center gap-4 text-lg">
-                                              {/* flex items-center gap-4 text-lg */}
+                                              
 				{
 					socialLinks.map((link) => (
 						<Link key={link.id} href={link.url} className="text-slate-600 transition-colors hover:text-blue-500">
