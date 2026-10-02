@@ -34,6 +34,10 @@ function inputReducer(state: InputState, action: InputAction): InputState{
             
             const name = action.name;
             const value = action.value;
+
+            if (!name || !value) {
+                return state;
+            }
             
             return {
                 ...state,
