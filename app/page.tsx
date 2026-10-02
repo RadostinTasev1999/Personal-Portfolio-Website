@@ -28,8 +28,7 @@ import {
     initialState
  } from "@/lib/placeholder-data";
 
- import { contactFormHeading } from "@/lib/placeholder-data";
-
+ import {contactFormData} from '@/lib/placeholder-data';
 
 export default function Page() {
 
@@ -101,7 +100,7 @@ export default function Page() {
           initialInputs={initialInputs}
           initialErrors={initialErrors}
           initialState={initialState}
-          contactFormHeading={contactFormHeading}
+          contactFormData={contactFormData}
         />
 
       </div>
