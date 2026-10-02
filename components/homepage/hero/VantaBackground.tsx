@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from 'three';
-import GLOBE from "vanta/dist/vanta.globe.min";
+import GLOBE from "vanta/dist/vanta.globe.min.js";
 import { VantaEffect } from "@/lib/definitions";
 
 export default function VantaBackground() {
