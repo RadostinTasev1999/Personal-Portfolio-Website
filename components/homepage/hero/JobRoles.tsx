@@ -1,5 +1,5 @@
 import * as motion from "motion/react-client";
-import JobRoleText from '@/lib/definitions';
+import {JobRoleText} from '@/lib/definitions';
 
 export default function JobRoles({
     jobRolesText
