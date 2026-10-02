@@ -57,7 +57,7 @@ export type ContactFormData = {
     isLoading: boolean,
     isSent: boolean | undefined,
     error: boolean | undefined,
-    handleChange: (e: OnChangeEvent) => void,
+    handleChange: (e: OnChangeInputEvent | OnChangeTextareaEvent) => void,
     formAction: () => void,
     buttonText: string
 }
@@ -462,4 +462,5 @@ export type SuccessStateAction = {
     type: string
 }
 
-export type OnChangeEvent = ChangeEvent<HTMLInputElement>
+export type OnChangeInputEvent = ChangeEvent<HTMLInputElement>
+export type OnChangeTextareaEvent = ChangeEvent<HTMLTextAreaElement>
