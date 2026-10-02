@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useCallback } from 'react';
-import NavLinks from './navLinks';
-import HamburgerButton from './hamburgerButton';
-import Logo from './logo';
-import MobileLinks from './mobileLinks';
+import NavLinks from './NavLinks';
+import HamburgerButton from './HamburgerButton';
+import Logo from './Logo';
+import MobileLinks from './MobileLinks';
 import { HeaderData } from '@/lib/definitions';
 
 
