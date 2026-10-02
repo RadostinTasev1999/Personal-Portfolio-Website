@@ -485,4 +485,9 @@ export const socialLinks = [
       resumeNote: 'I am open to full time roles and freelance projects'
     };
 
-    export const contactFormHeading = "Contact me";
+    export const contactFormData = {
+      headingText: "Contact me",
+      buttonText: "Submit"
+    };
+
+    export const footerText = "Developed by Radostin Tasev";
