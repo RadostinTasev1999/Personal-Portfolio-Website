@@ -1,12 +1,13 @@
 import '@/components/ui/globals.css';
-import AppHeader from '../components/homepage/header/header';
-import AppFooter from '../components/homepage/footer/footer';
+import AppHeader from '../components/homepage/header/Header';
+import AppFooter from '../components/homepage/footer/Footer';
 import { inter } from "../components/ui/fonts";
 import 'dotenv/config';
 // import {navigationLinks} from '@/app/lib/placeholder-data';
 import { navigationLinks } from '@/lib/placeholder-data';
 import { logo } from '@/lib/placeholder-data';
 import { socialLinks } from '@/lib/placeholder-data';
+import { footerText } from '@/lib/placeholder-data';
 
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </main>
         <AppFooter 
           socialLinks={socialLinks}
+          footerText={footerText}
         />
       </body>
     </html>
