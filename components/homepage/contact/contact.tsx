@@ -14,7 +14,8 @@ import {
     InputErrorAction,
     SuccessState,
     SuccessStateAction,
-    OnChangeEvent
+    OnChangeInputEvent,
+    OnChangeTextareaEvent
 } from '@/lib/definitions';
 
 import {
@@ -125,7 +126,7 @@ export default function Contact({
 
     
 
-    const handleChange = (e: OnChangeEvent) => {
+    const handleChange = (e: OnChangeInputEvent | OnChangeTextareaEvent) => {
         // TODO ...
         dispatchInput({
             type: 'UPDATE_FIELD',
