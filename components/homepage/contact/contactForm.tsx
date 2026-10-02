@@ -19,7 +19,9 @@ export default function ContactForm({
     inputError,
     isValid,
     isLoading,
-    successState
+    isSent,
+    error,
+    buttonText
 }: ContactFormData){
     
    
@@ -115,12 +117,12 @@ export default function ContactForm({
                 </FieldGroup>
                         
                     {
-                        successState.isSent && !successState.error && (
+                        isSent && !error && (
                             <Alert className="mt-8" variant="outlined" severity="success">Message successfully sent</Alert>
                         )
                     }
                     {
-                        !successState.isSent && successState.error && (
+                        !isSent && error && (
                             <Alert className="mt-8" variant="outlined" severity="error">Error sending message</Alert>
                         )
                     }
@@ -129,7 +131,9 @@ export default function ContactForm({
                         isLoading ?
                             <ClipLoader className="mt-8" color="#00a6f4" />
                                     :
-                            <Button type="submit" disabled={!isValid} className={`mt-8 h-11 w-fit rounded-full bg-sky-500 px-8 text-sm font-semibold text-white hover:bg-sky-600 ${!isValid ? 'bg-slate-400' : ''}`}>Send Message</Button>
+                            <Button type="submit" disabled={!isValid} className={`mt-8 h-11 w-fit rounded-full bg-sky-500 px-8 text-sm font-semibold text-white hover:bg-sky-600 ${!isValid ? 'bg-slate-400' : ''}`}>
+                                {buttonText}
+                            </Button>
                     } 
                             
             </form>
